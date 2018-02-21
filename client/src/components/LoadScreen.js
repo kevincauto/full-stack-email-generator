@@ -5,15 +5,17 @@ class LoadScreen extends Component {
   constructor() {
     super()
     this.state = {
-      files: []
+      files: [{ fileName: "Hello World!" }]
     }
     this.handleBackButton = this.handleBackButton.bind(this);
   }
-
-  componentDidMount() {
+  componentDidUpdate() {
+    console.log(this.state.files[0].fileName);
+  }
+  async componentDidMount() {
     //Should get an array of objects
-    let files = axios.get('/api/file-load');
-    this.setState({ files })
+    let files = await axios.get('/api/file-load');
+    this.setState({ files: files.data })
   }
 
   handleClickOnTableRow(key) {
@@ -30,22 +32,25 @@ class LoadScreen extends Component {
   renderTable() {
     return (
       <table className="load-table">
-        <tr>
-          <th>File Name</th>
-          <th>Last Updated</th>
-        </tr>
-        <tr key={'file.fileName'} onClick={(e) => this.handleClickOnTableRow(e.target.key)} >
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-        </tr>
-        <tr>
-          <td>Berglunds snabbköp</td>
-          <td>Christina Berglund</td>
-        </tr>
-        <tr>
-          <td>Centro comercial Moctezuma</td>
-          <td>Francisco Chang</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>File Name</th>
+            <th>Last Updated</th>
+          </tr>
+          <tr key={'file.fileName'} onClick={(e) => this.handleClickOnTableRow(e.target.key)} >
+            <td>{this.state.files[0].fileName ? this.state.files[0].fileName : ''}</td>
+            {/* <td>Pl</td> */}
+            <td>Maria Anders</td>
+          </tr>
+          <tr>
+            <td>Berglunds snabbköp</td>
+            <td>Christina Berglund</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+          </tr>
+        </tbody>
       </table>
     )
 

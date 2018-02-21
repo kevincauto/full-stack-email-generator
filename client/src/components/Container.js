@@ -1,19 +1,19 @@
 import React from 'react';
 import _ from 'lodash';
 import axios from 'axios';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from 'reactstrap';
+// import {
+//   Collapse,
+//   Navbar,
+//   NavbarToggler,
+//   NavbarBrand,
+//   Nav,
+//   NavItem,
+//   NavLink,
+//   UncontrolledDropdown,
+//   DropdownToggle,
+//   DropdownMenu,
+//   DropdownItem
+// } from 'reactstrap';
 
 // import 'bootstrap/dist/css/bootstrap.css';
 
@@ -42,7 +42,7 @@ class Container extends React.Component {
     super(props);
     this.state = {
       fileName: '',
-      showSaveDialog: true,
+      showSaveDialog: false,
       showLoadScreen: false,
       selected_template: 'idt_thematic',
       cced_digital: cced_digital_initial_state,
@@ -66,26 +66,8 @@ class Container extends React.Component {
     this.handleFormDelete = this.handleFormDelete.bind(this);
     this.handleFormSwitch = this.handleFormSwitch.bind(this);
     this.handleFormDrag = this.handleFormDrag.bind(this);
-
-    this.handleOpen = this.handleOpen.bind(this);
   }
-  componentDidUpdate() {
-    console.log(this.state);
-  }
-  updateFileName(fileName) {
-    this.setState({ fileName });
-    this.handleSave();
-  }
-  renderDialog() {
-    return (
-      <div>
-        <SaveDialog closeSaveDialog={() => this.toggleDialog()} OnUpdateFilenName={(fileName) => this.updateFileName(fileName)} />
-      </div>
-    )
-  }
-  toggleDialog() {
-    this.setState({ showSaveDialog: !this.state.showSaveDialog })
-  }
+  //form-related functions
   handleFormDrag(startIndex, endIndex) {
     let stateClone = _.cloneDeep(this.state);
     let arrayOfRows = stateClone[this.state.selected_template];
@@ -122,16 +104,38 @@ class Container extends React.Component {
     this.setState({ selected_template: template });
   }
 
+  // componentDidUpdate() {
+  //   console.log(this.state);
+  // }
+
+  updateFileName(fileName) {
+    this.setState({ fileName });
+    this.handleSave();
+  }
+
+  renderDialog() {
+    return (
+      <div>
+        <SaveDialog closeSaveDialog={() => this.toggleDialog()} OnUpdateFilenName={(fileName) => this.updateFileName(fileName)} onUpdateSaveAs={() => this.handleSave()} />
+      </div>
+    )
+  }
+
+
   handleSave() {
     //call to backend with state
     console.log('Save API call');
     if (this.state.fileName) {
       axios.post('/api/save-email', { state: this.state });
     }
-
   }
+
+  toggleDialog() {
+    this.setState({ showSaveDialog: !this.state.showSaveDialog })
+  }
+
   handleSaveAs() {
-    console.log('SaveAs API call');
+    console.log('Open Save Dialog');
     this.setState({ showSaveDialog: true })
   }
   handleOpen() {
@@ -163,7 +167,11 @@ class Container extends React.Component {
                 onFormSwitch={(formIndex, formToSwitch) => this.handleFormSwitch(formIndex, formToSwitch)}
                 onFormDrag={(startIndex, endIndex) => this.handleFormDrag(startIndex, endIndex)}
               />
-              <RightSideDisplay info={this.state} onSave={this.handleSave} onSaveAs={() => this.handleSaveAs()} onOpen={this.handleOpen} />
+              <RightSideDisplay
+                info={this.state} onSave={this.handleSave}
+                onSaveAs={() => this.handleSaveAs()}
+                onOpen={() => this.handleOpen()}
+              />
             </div>
           </div>
         }

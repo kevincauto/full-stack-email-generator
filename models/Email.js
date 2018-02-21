@@ -6,7 +6,8 @@ const EmailSchema = new Schema({
     type: String,
     index: true
   },
-  state: String
+  state: Schema.Types.Mixed,
+  lastUpdated: String
 });
 
 module.exports = mongoose.model('Email', EmailSchema);

@@ -1,7 +1,7 @@
 import React from 'react';
-import DOMPurify from 'dompurify';
+// import DOMPurify from 'dompurify';
 import { saveAs } from 'file-saver';
-import axios from 'axios';
+// import axios from 'axios';
 
 import * as cced_thematic from '../templates/cced_thematic.js';
 import * as idt_thematic from '../templates/idt_thematic.js';
@@ -58,7 +58,6 @@ class RightSideDisplay extends React.Component {
 
   }
   handleSaveAs() {
-    console.log('save as')
     this.props.onSaveAs();
   }
   handleOpen() {
@@ -81,13 +80,13 @@ class RightSideDisplay extends React.Component {
     //messing up what it looks like
     //let cleanHtml = DOMPurify.sanitize(html);
 
-    let textEmail = layout
-      .filter(form => (form.fields.length > 0))
-      .map(form => (form.fields
-        .map(field => (field.value))
-        .filter(value => (value !== undefined && value !== ''))
-        .join('\n'))
-      ).join('\n\n')
+    // let textEmail = layout
+    //   .filter(form => (form.fields.length > 0))
+    //   .map(form => (form.fields
+    //     .map(field => (field.value))
+    //     .filter(value => (value !== undefined && value !== ''))
+    //     .join('\n'))
+    //   ).join('\n\n')
 
 
 

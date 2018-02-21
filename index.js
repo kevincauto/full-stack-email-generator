@@ -11,20 +11,26 @@ mongoose.connect(keys.mongoURI);
 
 
 app.post('/api/save-email', async (req, res) => {
+  console.log(req.body.state);
+
   //take in state json data
   const { fileName } = req.body.state;
   const { state } = req.body;
 
+  //get current date
+  const { getDate } = require('./utils/helper.js')
+  const today = getDate();
   //save to the mongo
   const email = new Email({
     fileName,
-    state
+    state,
+    lastUpdated: today
   })
 
   //send back success message.
   try {
     await email.save();
-    res.send(email);
+    res.send('success');
   } catch (err) {
     res.status(422).send(err);
   }

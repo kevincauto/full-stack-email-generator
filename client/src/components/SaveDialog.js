@@ -13,17 +13,19 @@ class SaveDialog extends Component {
   handleFieldChange(value) {
     this.setState({ fileName: value })
   }
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
-    this.props.OnUpdateFilenName(this.state.fileName);
+    await this.props.OnUpdateFilenName(this.state.fileName);
     this.props.closeSaveDialog();
+    this.props.onUpdateSaveAs();
+
   }
   render() {
     return (
       <div className="popup" >
         <div className='popup_inner'>
-          <p className="float-right" onClick={() => this.closeDialog()}>[x]</p>
-          <img src="https://www.aegisdentalnetwork.com/img/layout/general/da-logo-large.png" width="250" />
+          <p className="float-right" onClick={() => this.closeDialog()}>[X]</p>
+          <img alt="logo" src="https://www.aegisdentalnetwork.com/img/layout/general/da-logo-large.png" width="250" />
           <p className="popup-para">Name this file...</p>
           <form onSubmit={(e) => this.handleSubmit(e)}>
             <input className="save-text-input" placeholder="File Name" value={this.state.fileName} onChange={(e) => this.handleFieldChange(e.target.value)} />

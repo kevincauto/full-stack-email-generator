@@ -1,47 +1,72 @@
 const express = require('express');
 const app = express();
-
-const port = process.env.PORT || 5000;
-
 const bodyParser = require('body-parser')
-const fs = require('fs');
-
+const keys = require('./config/keys')
 app.use(bodyParser.json());
 
-app.post('/api/save-email', (req, res) => {
+mongoose = require('mongoose');
+require('./models/Email');
+mongoose.connect(keys.mongoURI);
+
+
+
+app.post('/api/save-email', async (req, res) => {
   //take in state json data
-  //take in filepath of where it should be saved.
-  const { path, state } = req.body;
+  const { fileName } = req.body.state;
+  const { state } = req.body;
 
-  //convert to a file
-  //save to the computer
+  //save to the mongo
+  const email = new Email({
+    fileName,
+    state
+  })
 
-  let data = JSON.stringify(state, null, 2);
+  //send back success message.
+  try {
+    await email.save();
+    res.send(email);
+  } catch (err) {
+    res.status(422).send(err);
+  }
+});
 
-  fs.writeFile('student-3.json', data, (err) => {
-    if (err) throw err;
-    console.log('Data written to file');
+const Email = require('./models/Email');
+
+app.get('/api/file-load', (req, res) => {
+  Email.find({}).exec(function (err, files) {
+    if (err) {
+      res.send('error has occured');
+    } else {
+      res.json(files);
+    }
   });
-
-  //send back success method.
-
-  console.log(req.body);
 });
 
 app.get('/api/load-email', (req, res) => {
-  const { path } = req.body;
-  //recieve file path
 
-  //read in json data from file
-  var obj;
-  fs.readFile(path, 'utf8', function (err, data) {
-    if (err) throw err;
-    obj = JSON.parse(data);
-  });
+  Email.find({ fileName })
+
+
+  //read pull data from mongo
+
 
   //send back json data
 
   console.log(req.body);
 });
 
+if (process.env.NODE_ENV === 'production') {
+  //Express will serve up production assets
+  //like our main.js file, or main.css file!
+  app.use(express.static('client/build'));
+
+  //Express will sever up the index.html file
+  //if it doesn't recognize the route
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -1,0 +1,316 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color:#ddd;
+}
+#load-container{
+  width: 700px;
+  margin: 0 auto;
+}
+#container {
+  /* display: flex; */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#main-form {
+  background: #fff;
+  float: left;
+  width: 310px;
+  min-width: 310px;
+  padding: 10px;
+  margin: 4px 10px 2px 10px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  box-shadow: 0px 1px 1px 0px rgb(43, 43, 44);
+  overflow-y: scroll;
+  max-height: 1200px;
+}
+#text-results {
+  background-color: #fff;
+  border: solid #000 1px;
+  float: left;
+  max-width: 750px;
+  /* min-width: 700px; */
+  margin: 0px 20px 0px 20px;
+  padding: 10px;
+  margin: 4px 10px 2px 0px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  box-shadow: 0px 1px 1px 0px rgb(43, 43, 44);
+  overflow-y: scroll;
+  max-height: 1200px;
+}
+.load-screen{
+  background-color: #fff;
+  border: solid #000 1px;
+
+  max-width: 750px;
+  /* min-width: 700px; */
+  margin: 0px 20px 0px 20px;
+  padding: 10px 10px 20px;
+  margin: 4px 10px 2px 0px;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  box-shadow: 0px 1px 1px 0px rgb(43, 43, 44);
+  overflow-y: scroll;
+  max-height: 1200px;
+}
+.copyHtml {
+  width: 50%;
+  max-height: 50px;
+}
+.lyris{
+  padding: 5px;
+  border-radius: 4px;
+}
+.copyArea{
+  width:50%;
+}
+.common-Button {
+  flex-shrink: 0;
+  white-space: nowrap;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  background: #fff;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  color: #5d6291;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+.common-Button {
+  color: #fff;
+  background: #2e0dc2;
+}
+input[type=text]{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 1px 0 4px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,.18);
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #bbb;
+  border-top-color: #999;
+}
+select{
+  height: 32px;
+  padding: 5px;
+  width: 100%;
+  padding: 6px 10px;
+  margin: 1px 0 4px;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size:14px;
+  background-color: rgb(234, 235, 245);
+  box-shadow: 0 1px 1px rgb(164, 164, 167);
+}
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgb(234, 235, 245);
+  border: 1px solid rgb(234, 235, 245);
+}
+/* input:focus {
+ outline: none;
+}
+*/
+button:focus{
+ outline: none;
+}
+.copy-paste{
+  display: flex;
+  padding:10px;
+  padding: 10px;
+  margin: 4px 5px 2px 5px;
+}
+.download-header{
+  padding:10px;
+  margin: 4px 5px 2px 5px;
+}
+textarea{
+  min-height: 162px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+ /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+ /* Firefox, other Gecko */
+  box-sizing: border-box;
+ /* Opera/IE 8+ */
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 11px;
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,.18);
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #bbb;
+  border-top-color: #999;
+}
+.download-button {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 2px 0 8px;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size:16px;
+  background-color: rgb(234, 235, 245);
+  box-shadow: 0 1px 1px rgb(164, 164, 167);
+  box-shadow: 0 2px #999;
+  width: 100%;
+}
+.download-button:hover {
+ background-color: rgba(234, 235, 245, 0.5);
+}
+.download-button:active {
+  background-color: rgba(234, 235, 245, 0.5);
+  box-shadow: 0 0px #666;
+  transform: translateY(4px);
+}
+.html-copy{
+  padding: 0px 5px 0px 0px;
+}
+.text-copy{
+  padding: 0px 0px 0px 5px;
+}
+.individual-form{
+  padding: 5px;
+  background-color: rgb(231, 238, 250);
+  background-color: #eee;
+  border-radius: 4px;
+  margin: 5px 0px;
+ /* border: solid 1px #333;
+  */
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  box-shadow: 0px 1px 1px 0px rgb(43, 43, 44);
+}
+.individual-form:hover{
+  background-color: #e8e8e8;
+}
+h4{
+  padding-left: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+h3{
+  font-family: 'Roboto', sans-serif;
+  padding-left: 5px;
+}
+.close{
+  font-size: 30px;
+  float: right;
+ /* color: rgb(114, 2, 2);
+  */
+  color:#444;
+}
+.close:hover{
+  font-size: 30px;
+  float: right;
+  color: rgb(117, 27, 27);
+}
+.add{
+  font-size: 44px;
+  color: #444;
+  text-align: right;
+}
+.add:hover{
+  font-size: 44px;
+  color: rgb(26, 102, 26) 
+}
+.header-dropdown{
+  margin: 10px 0px 50px;
+}
+.bold{
+  font-weight: bold;
+}
+
+#main-form > div > div:nth-child(1) > div > div:hover{
+  background-color: #eee;
+}
+
+.load-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.load-table td, .load-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.load-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.load-table tr:hover {background-color: #ddd;}
+
+.load-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #345bad;
+  color: white;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+}
+
+.popup_inner {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 15%;
+  bottom: 15%;
+  margin: auto;
+  background: white;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.popup-para{
+  padding: 20px 0px 0px;
+}
+
+.form-control{
+  color: #000;
+}
+
+.save-text-input{
+  width: 100%;
+  padding: 6px 10px;
+  margin: 1px 0 4px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,.18);
+  -webkit-font-smoothing: antialiased;
+  border: 1px solid #bbb;
+  border-top-color: #999;
+}
+
+.float-right{
+  float: right;
+}

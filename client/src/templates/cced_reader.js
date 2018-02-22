@@ -432,9 +432,10 @@ export function beginning(fields) {
                         <tr>
                           <td align="center" height="20" style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:10px; color:#6d6f72; text-transform:uppercase;">Having trouble viewing this email? <span class="grey"><a href="https://www.dentalaegis.com/cced/${year}/${month}/newsletter" style="color:#ffffff; text-decoration:none;" target="_blank">Click here.</a></span></td>
                         </tr>
-                        <tr>
-                          <td align="center"><a href="${mastheadLink}" target="_blank"><img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
-                        </tr>
+                        ${mastheadSrc ? `                        <tr>
+                        <td align="center"><a href="${mastheadLink}" target="_blank"><img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600"></a></td>
+                      </tr>` : ``}
+
                         <tr>
                           <td align="center"><img alt="" border="0" class="w100" src="http://aegispublications.com/news/cced/2017/dash-3.jpg" style="display:block; margin:0px; max-width:600px;" width="600"></td>
                         </tr>
@@ -492,12 +493,13 @@ export function ce(fields) {
             <td class="w28" width="28"></td>
             <td align="center">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
+                ${header ? `<tr>
                   <td align="center" height="20"></td>
                 </tr>
                 <tr>
                   <td align="left" style="font-size: 20px; line-height:22px; font-family:Georgia, 'Times New Roman', Times, serif; font-weight: normal; color: #000000;">${header}</td>
-                </tr>
+                </tr>` : ''}
+
                 <tr>
                   <td align="center">
                     <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="345">

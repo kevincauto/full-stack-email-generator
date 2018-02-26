@@ -356,11 +356,13 @@ export function beginning(fields) {
                                          <td align="center">
                                             <table border="0" cellpadding="0" cellspacing="0" class="w650" style="min-width:650px; border:1px solid #000000;" width="650">
                                                <tbody>
-                                                  <tr>
-                                                     <td align="center" style="padding:5px 5px;">
-                                                        <a href="${mastheadLink}" target="_blank"><img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600" /></a>
-                                                     </td>
-                                                  </tr>
+                                               ${mastheadSrc ? `
+                                            <tr>
+                                               <td align="center" style="padding:5px 5px;">
+                                                  <a href="${mastheadLink}" target="_blank"><img alt="" border="0" class="w100" src="${mastheadSrc}" style="display:block; margin:0px; max-width:600px;" width="600" /></a>
+                                               </td>
+                                            </tr>` : ``}
+
                                                   <tr>
                                                      <td align="center" bgcolor="#000000" height="16" style="font-family:Arial, Helvetica, sans-serif; font-size:9px; line-height:10px; color:#efefef; text-transform:uppercase;">
                                                         Having trouble viewing this email? <span class="white"><a href="${url}" style="color:#ffffff; text-decoration:none;" target="_blank">Click here.</a></span>

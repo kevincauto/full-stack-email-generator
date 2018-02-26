@@ -48,7 +48,10 @@ export const idt_digital_forms = {
             },
             { label: 'Header Image Source', name: 'headerSrc', value: 'https://www.aegisdentalnetwork.com/media/65652/' },
             { label: 'Cover Image Source', name: 'coverSrc', value: 'http://placehold.it/180x220' },
-            { label: 'Digimag Link', name: 'link' }
+            { label: 'Digimag Link', name: 'link' },
+            { label: 'Volume Number', name: 'volume' },
+            { label: 'Magazine Number', name: 'number' }
+
         ]
     },
     article: {
@@ -134,6 +137,8 @@ export function beginning(fields) {
     let headerSrc = fields[3].value;
     let coverSrc = fields[4].value;
     let link = fields[5].value;
+    let volume = fields[6].value;
+    let number = fields[7].value;
     let monthName;
     if (month === '01') { monthName = 'January' };
     if (month === '02') { monthName = 'February' };
@@ -166,9 +171,15 @@ export function beginning(fields) {
                               Having trouble viewing this email? <a href="https://www.dentalaegis.com/idt/${year}/${month}/newsletter/digital" style="color:#db1f28; text-decoration:none;" target="_blank">Click here</a>.</td>
                       </tr>
                       <tr>
-                          <td align="center" colspan="2">
-                              <a href="http://www.dentalaegis.com/idt/" target="_blank"><img alt="" height="118" src="${headerSrc}" usemap="#Map4" width="600" /></a></td>
-                      </tr>
+                      <td align="center" colspan="2">
+                          <a href="http://www.dentalaegis.com/idt/" target="_blank"><img src="https://www.aegisdentalnetwork.com/media/65757/" style="padding: 5px;" width="120" /></a></td>
+                  </tr>
+                  <tr>
+                      <td valign="middle">
+                          <div style="color:#FFFFFF; font-family: 'Times New Roman', serif; font-size:13px; padding: 8px 5px; margin: 0px 5px; background-color:#ac1d0f;  vertical-align:middle; text-align: center;">
+                              <a href="http://www.dentalaegis.com/idt/${year}/${month}" style="color:#fff; text-decoration: none;" target="_blank">${monthName} ${year} | Vol. ${volume}, No. ${number}</a> | <a href="http://insidedentaltech.com" style="color:#fff; text-decoration: none;" target="_blank">insidedentaltech.com</a> | <a href="https://dentalaegis-sub.halldata.com/site/AEG000021IDnew/init.do" style="color:#fff; text-decoration: none;" target="_blank">Free Subscription</a> | <a href="mailto:?subject=FW:%20Inside%20Dental%20Technology%20${monthName}%20${year}%20Digital%20Edition%20&amp;body=I%20thought%20you%20might%20be%20interested%20in%20this: https://www.dentalaegis.com/idt/${year}/${month}/newsletter/digital?refer=true" style="color:#fff; text-decoration: none;" target="_blank">Forward to a Colleague</a></div>
+                      </td>
+                  </tr>
                       <tr>
                           <td align="center" colspan="2">
                               <table border="0" cellpadding="0" cellspacing="0" style="margin:4% 0 0 0; background-color:#aaa;" width="555">

@@ -47,7 +47,7 @@ export const cced_thematic_forms = {
           { value: '2022', text: 'Send Year: 2022' }
         ]
       },
-      { label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com' },
+      { label: 'Masthead Link', name: 'mastheadLink', value: '' },
       { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
       { label: 'Thematic Topic', name: 'topic', value: 'Implantology' },
       { label: 'Subscribe Link', name: 'subscribe' },
@@ -140,7 +140,25 @@ export const cced_thematic_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150' }
+      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150' },
+      { label: 'Call-to-Action Phrase', name: 'cta', value: 'Learn More' }
+    ]
+  },
+  featured_video: {
+    typeOfRow: 'featured_video',
+    header: 'Featured Video',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'FEATURED VIDEO' },
+      { label: 'Title', name: 'title' },
+      { label: 'Author', name: 'author' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150' },
+      { label: 'Call-to-Action Phrase', name: 'cta', value: 'Watch Now' }
     ]
   },
   products: {
@@ -183,7 +201,7 @@ export const cced_thematic_initial_state = [
   _.cloneDeep(cced_thematic_forms.three_column),
   _.cloneDeep(cced_thematic_forms.featured),
   _.cloneDeep(cced_thematic_forms.products),
-  _.cloneDeep(cced_thematic_forms.featured),
+  _.cloneDeep(cced_thematic_forms.featured_video),
   _.cloneDeep(cced_thematic_forms.end)
 ];
 
@@ -914,6 +932,7 @@ export function featured(fields) {
   let description = fields[3].value;
   let link = fields[4].value;
   let imgLink = fields[5].value;
+  let cta = fields[6].value;
 
   return (
     `
@@ -940,7 +959,61 @@ export function featured(fields) {
                                         <a href="${link}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title}</a></div>
                                       <div style="font-size:14px; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
                                         ${description}<br />
-                                        <a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">Learn More ▶</a></div>
+                                        <a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">${cta} ▶</a></div>
+                                    </td>
+                                    <td width="40%">
+                                      <center>
+                                        <a href="${link}" target="_blank"><img align="right" alt="" src="${imgLink}" style="border-width:0;max-width:150px; margin-right:10px;" width="150" /></a></center>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                            </tr>
+    <!-- FEATURED SECTION -->  `
+  )
+}
+
+export function featured_video(fields) {
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let author = fields[2].value;
+  let description = fields[3].value;
+  let link = fields[4].value;
+  let imgLink = fields[5].value;
+  let cta = fields[6].value;
+
+  return (
+    `
+    <!-- Featured Section -->
+    
+                <tr>
+                  <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                    <table style="border-spacing:0;font-family:sans-serif;color:#333333; " width="100%">
+                      <tbody>
+                        <tr>
+                          <td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:0px;padding-left:0px;text-align:left;">
+                            <div style=" border-top:solid 1px #d0d0d2; background-image:url(http://aegispublications.com/news/cced/2016/02/webinar-bg.jpg); background-repeat:repeat-x; font-family:Arial, san-serif; padding: 0px 10px 10px; margin: 0px 0px 0px; font-size: 13px; text-align: left; color:#000; font-weight: 300; letter-spacing: .8; display:block;
+    
+    overflow:auto;">
+                              <center>
+                                <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;">
+                                  ${header}</div>
+                              </center>
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <td width="60%">
+                                      <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
+                                        <a href="${link}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title}</a></div>
+                                      <div style="font-size:14px; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
+                                        ${description}<br />
+                                        <a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">${cta} ▶</a></div>
                                     </td>
                                     <td width="40%">
                                       <center>

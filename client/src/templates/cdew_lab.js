@@ -545,7 +545,7 @@ export function live_webinar_w_header(fields) {
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         <span class="black">${date}</span></td>
     </tr>
     <tr>
@@ -598,7 +598,7 @@ export function live_webinar_wo_header(fields) {
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         <span class="black">${date}</span></td>
     </tr>
     <tr>
@@ -711,7 +711,7 @@ export function on_demand_webinar_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:12px;"><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>
 ${title}</strong></td>
     </tr>
     <tr>
@@ -794,7 +794,7 @@ export function new_content_w_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         ${presenter}</td>
     </tr>
     <tr>
@@ -840,7 +840,7 @@ export function new_content_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; padding-bottom:6px;"><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>
 ${title}</strong><br />
         <span style="font-size:13px; line-height:18px;">${presenter}</span></td>
     </tr>
@@ -930,7 +930,7 @@ export function ebook(fields) {
           
           <table cellpadding="0" cellspacing="0" border="0" width="420" align="right" class="w100">
             <tr>
-              <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
+              <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong></td>
             </tr>
             <tr>
               <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#676262;"><p><strong>By:</strong> ${author}<strong><br />

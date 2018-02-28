@@ -171,6 +171,15 @@ export const cdew_da_forms = {
       { label: 'Link', name: 'link' }
     ]
   },
+  new_content_end: {
+    typeOfRow: 'new_content_end',
+    header: 'New Content End',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   ebook: {
     typeOfRow: 'ebook',
     header: 'eBook',
@@ -286,6 +295,7 @@ export const cdew_da_initial_state = [
   _.cloneDeep(cdew_da_forms.center_banner),
   _.cloneDeep(cdew_da_forms.new_content_w_header),
   _.cloneDeep(cdew_da_forms.new_content_wo_header),
+  _.cloneDeep(cdew_da_forms.new_content_end),
   _.cloneDeep(cdew_da_forms.ebook),
   _.cloneDeep(cdew_da_forms.portal_partner),
   _.cloneDeep(cdew_da_forms.featured_event),
@@ -549,7 +559,7 @@ export function live_webinar_w_header(fields) {
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         <span class="black">${date}</span></td>
     </tr>
     <tr>
@@ -601,7 +611,7 @@ export function live_webinar_wo_header(fields) {
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         <span class="black">${date}</span></td>
     </tr>
     <tr>
@@ -716,7 +726,7 @@ export function on_demand_webinar_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; "><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; "><strong>
 ${title}</strong></td>
     </tr>
     <tr>
@@ -795,7 +805,7 @@ export function new_content_w_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         ${presenter}</td>
     </tr>
     <tr>
@@ -838,7 +848,7 @@ export function new_content_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; "><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; "><strong>
 ${title}</strong><br />
         <span style="font-size:13px; line-height:18px;">${presenter}</span></td>
     </tr>
@@ -870,6 +880,26 @@ ${title}</strong><br />
       <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
     </tr>
     <!--END OF NEW CONTENT WITHOUT HEADER-->`)
+}
+export function new_content_end(fields) {
+
+  return (`                  
+  <!--END NEW CONTENT--> 
+  <tr>
+    <td height="35" align="center"></td>
+  </tr>
+  <tr>
+    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold; padding-bottom:5px;"><a href="https://cdeworld.com/courses/search?c=281" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to CE courses for Dental Assistants! »</a></td>
+  </tr>
+<tr>
+    <td height="20" align="center"></td>
+  </tr>
+
+  <tr>
+    <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>
+ <!--END NEW CONTENT-->  
+  `)
 }
 
 export function ebook(fields) {
@@ -983,23 +1013,23 @@ export function portal_partner(fields) {
     <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured Portal Partner</td>
   </tr>
   <tr>
-    <td height="25" align="center"></td>
+    <td height="20" align="center"></td>
   </tr>
   <tr>
     <td align="left" style="padding-bottom:10px;"><a href="${brandLink}" target="_blank"> <img src="${imgSrc}" alt="" width="190" border="0" style="display:block; margin:0px;"/> </a></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; color:#333333; padding-bottom:15px;"><strong>${title}</strong></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:15px;"><strong>${title}</strong></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:auto; color:#333333; padding-bottom:7px;">${presenter}</td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height: 16px; color:#333333; padding-bottom:7px;">${presenter}</td>
   </tr>
   <tr>
     <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr>
           <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="240" align="left" class="w100">
               <tr>
-                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
+                <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333;"> Provider: ${provider}<br>
                   Source: <em>${source}</em>
                   </td>
               </tr>
@@ -1104,15 +1134,7 @@ export function end(fields) {
   let year = fields[1].value;
   return (
     ` <!--END-->
-    <tr>
-      <td height="35" align="center"></td>
-    </tr>
-    <tr>
-      <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold; padding-bottom:5px;"><a href="https://cdeworld.com/courses/search?c=281" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to CE courses for Dental Assistants! »</a></td>
-    </tr>
-<tr>
-      <td height="20" align="center"></td>
-    </tr>
+    
     <!--<tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:8px;">Featured Video</td>
     </tr>
@@ -1170,9 +1192,7 @@ export function end(fields) {
     <tr>
       <td height="30" align="center"></td>
     </tr>-->
-    <tr>
-      <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-    </tr>
+
     <!--<tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:8px;">Featured Live Event</td>
     </tr>

@@ -199,6 +199,15 @@ export const cdew_dds_forms = {
       { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180' }
     ]
   },
+  ebook_end: {
+    typeOfRow: 'ebook_end',
+    header: 'End of eBook Sections',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   portal_partner: {
     typeOfRow: 'portal_partner',
     header: 'Portal Partner',
@@ -297,6 +306,7 @@ export const cdew_dds_initial_state = [
   _.cloneDeep(cdew_dds_forms.new_content_wo_header),
   _.cloneDeep(cdew_dds_forms.end_new_content),
   _.cloneDeep(cdew_dds_forms.ebook),
+  _.cloneDeep(cdew_dds_forms.ebook_end),
   _.cloneDeep(cdew_dds_forms.portal_partner),
   _.cloneDeep(cdew_dds_forms.featured_event),
   _.cloneDeep(cdew_dds_forms.border),
@@ -554,7 +564,7 @@ export function live_webinar_w_header(fields) {
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         <span class="black">${date}</span></td>
     </tr>
     <tr>
@@ -606,7 +616,7 @@ export function live_webinar_wo_header(fields) {
     </tr>
 
 <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         <span class="black">${date}</span></td>
     </tr>
     <tr>
@@ -663,7 +673,7 @@ export function on_demand_webinar_w_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:12px;"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tbody>
           <tr>
             <td align="left"><strong>${title}</strong></td>
@@ -721,7 +731,7 @@ export function on_demand_webinar_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:12px;"><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>
 ${title}</strong></td>
     </tr>
     <tr>
@@ -801,7 +811,7 @@ export function new_content_w_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333;"><strong>${title}</strong><br />
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong><br />
         ${presenter}</td>
     </tr>
     <tr>
@@ -844,7 +854,7 @@ export function new_content_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#333333; "><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; "><strong>
 ${title}</strong><br />
         <span style="font-size:13px; line-height:18px;">${presenter}</span></td>
     </tr>
@@ -963,7 +973,17 @@ export function ebook(fields) {
           </table></td>
       </tr>
     </table></td>
-</tr>
+
+                       
+<!--END EBOOK SECTION --> `
+  )
+}
+
+export function ebook_end(fields) {
+
+  return (
+    `
+    <!--END EBOOK -->
 <tr>
   <td height="20" align="center"></td>
 </tr>
@@ -974,8 +994,8 @@ export function ebook(fields) {
 <tr>
   <td height="20" align="center"></td>
 </tr>
-                       
-<!--END EBOOK SECTION --> `
+<!--END EBOOK -->
+    `
   )
 }
 
@@ -1122,10 +1142,10 @@ export function end(fields) {
   let year = fields[1].value;
   return (
     `  <!--START OF THE END -->
-    <tr>
+    <!--<tr>
                  <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
                </tr>
-
+    -->
 
                <tr>
                  <td align="center" style="padding:10px 0px;"> <img src="https://cdeworld.com/media/14014/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>

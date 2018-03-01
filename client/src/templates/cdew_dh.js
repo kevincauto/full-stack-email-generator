@@ -17,7 +17,7 @@ export const cdew_dh_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName', value: 'ce3' },
+      { label: 'Email Name', name: 'emailName' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -122,6 +122,15 @@ export const cdew_dh_forms = {
       { label: 'Link', name: 'link' }
     ]
   },
+  on_demand_webinar_end: {
+    typeOfRow: 'on_demand_webinar_end',
+    header: 'On-Demand Webinar End',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   center_banner: {
     typeOfRow: 'center_banner',
     header: "Center Banner Ad",
@@ -216,9 +225,37 @@ export const cdew_dh_forms = {
       { label: 'Brand Link', name: 'brandLink' },
     ]
   },
+  featured_event: {
+    typeOfRow: 'featured_event',
+    header: 'Featured Event',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured Event' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description' },
+      { label: 'Location', name: 'location' },
+      { label: 'Date', name: 'date' },
+      { label: 'Credits', name: 'credits' },
+      { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here!' },
+      { label: 'Link', name: 'link' },
+      { label: 'Event Image Source', name: 'imgSrc', value: 'http://placehold.it/150x150' }
+    ]
+  },
   border: {
     typeOfRow: 'border',
     header: 'Border',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
+  space: {
+    typeOfRow: 'space',
+    header: 'Space',
     closable: true,
     switchable: true,
     addable: true,
@@ -271,18 +308,23 @@ export const cdew_dh_initial_state = [
   _.cloneDeep(cdew_dh_forms.live_webinar_wo_header),
   _.cloneDeep(cdew_dh_forms.on_demand_webinar_w_header),
   _.cloneDeep(cdew_dh_forms.on_demand_webinar_wo_header),
+  _.cloneDeep(cdew_dh_forms.on_demand_webinar_end),
   _.cloneDeep(cdew_dh_forms.center_banner),
   _.cloneDeep(cdew_dh_forms.new_content_w_header),
   _.cloneDeep(cdew_dh_forms.new_content_wo_header),
   _.cloneDeep(cdew_dh_forms.end_new_content),
   _.cloneDeep(cdew_dh_forms.ebook),
   _.cloneDeep(cdew_dh_forms.portal_partner),
+  _.cloneDeep(cdew_dh_forms.featured_event),
+  _.cloneDeep(cdew_dh_forms.space),
   _.cloneDeep(cdew_dh_forms.border),
   _.cloneDeep(cdew_dh_forms.end)
 ];
 
 export function beginning(fields) {
-  let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  if (fields[0].value) {
+    let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  }
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -303,8 +345,6 @@ export function beginning(fields) {
   if (month === '11') { monthName = 'November' };
   if (month === '12') { monthName = 'December' };
 
-  //put the url together
-  //let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
 
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
@@ -444,7 +484,17 @@ export function beginning(fields) {
   <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f9f6f1">
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="662" style="min-width:662px;" class="w662">
-          
+      ${mastheadSrc ? `<tr>
+      <td height="20" align="center"></td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0px 10px;"><a href="${mastheadLink}" target="_blank"> <img src="${mastheadSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
+    </tr>
+    <tr>
+      <td height="20" align="center"></td>
+    </tr>` : ''}
+
+    <tr>
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff" style="border:solid 1px #EAE9E2;">
                 <tr>
@@ -730,6 +780,22 @@ ${title}</strong></td>
     <!--END ON-DEMAND WEBINAR WITHOUT HEADER-->`
   )
 }
+
+export function on_demand_webinar_end(fields) {
+  return (
+    `<tr>
+    <td height="35" align="center"></td>
+    </tr>
+    <tr>
+    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?c=280" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to on-demand webinars produced with Dental Hygienists in mind! »</a></td>
+    </tr>
+    <tr>
+    <td height="20" align="center"></td>
+    </tr>`
+  )
+}
+
+
 
 export function center_banner(fields) {
   let link = fields[0].value;
@@ -1025,11 +1091,74 @@ export function portal_partner(fields) {
 <!--END FEATURED PORTAL PARTNER-->
 `)
 }
+
+export function featured_event(fields) {
+
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let location = fields[3].value;
+  let date = fields[4].value;
+  let credits = fields[5].value;
+  let cta = fields[6].value;
+  let link = fields[7].value;
+  let imgSrc = fields[8].value;
+
+  return (
+    `<!--FEATURED EVENT -->
+    <tr>
+    <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
+    </tr>
+<tr>
+      <td height="20" align="center"></td>
+    </tr>
+    <tr>
+      <td align="left"><a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:block; margin:0px; max-width:156px;" width="156"/> </a></td>
+    </tr>
+    <tr>
+      <td height="25" align="center"></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">${description}<br />
+        <span style="font-size:13px; line-height:28px;">${location} | ${date} | ${credits}</span></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
+    </tr>
+<tr>
+<td height="31" align="center"></td>
+</tr>
+    <tr>
+      <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Event Listing for exciting upcoming live events »</a></td>
+    </tr>
+    <tr>
+      <td height="20" align="center"></td>
+    </tr>
+<!--END FEATURED EVENT -->   
+`)
+}
+
 export function border(fields) {
   return (
     `<tr>
       <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100" /></td>
     </tr>`
+  )
+}
+export function space(fields) {
+  return (
+    `    <tr>
+    <td height="20" align="center"></td>
+  </tr>`
   )
 }
 
@@ -1039,9 +1168,7 @@ export function end(fields) {
   return (
     `  
   <!--START OF THE END -->
-    <tr>
-                 <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-               </tr>
+ 
 
 
                <tr>

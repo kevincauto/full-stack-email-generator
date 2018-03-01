@@ -44,7 +44,7 @@ class Container extends React.Component {
       fileName: '',
       showSaveDialog: false,
       showLoadScreen: false,
-      selected_template: 'cdew_da',
+      selected_template: 'cdew_lab',
       cced_digital: cced_digital_initial_state,
       cced_reader: cced_reader_initial_state,
       cced_thematic: cced_thematic_initial_state,

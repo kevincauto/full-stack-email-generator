@@ -122,6 +122,15 @@ export const cdew_lab_forms = {
       { label: 'Link', name: 'link' }
     ]
   },
+  on_demand_webinar_end: {
+    typeOfRow: 'on_demand_webinar_end',
+    header: 'On-Demand Webinar End',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   center_banner: {
     typeOfRow: 'center_banner',
     header: "Center Banner Ad",
@@ -301,6 +310,7 @@ export const cdew_lab_initial_state = [
   _.cloneDeep(cdew_lab_forms.live_webinar_wo_header),
   _.cloneDeep(cdew_lab_forms.on_demand_webinar_w_header),
   _.cloneDeep(cdew_lab_forms.on_demand_webinar_wo_header),
+  _.cloneDeep(cdew_lab_forms.on_demand_webinar_end),
   _.cloneDeep(cdew_lab_forms.center_banner),
   _.cloneDeep(cdew_lab_forms.new_content_w_header),
   _.cloneDeep(cdew_lab_forms.new_content_wo_header),
@@ -777,21 +787,25 @@ ${title}</strong></td>
     <!--END ON-DEMAND WEBINAR WITHOUT HEADER-->`
   )
 }
-
+export function on_demand_webinar_end(fields) {
+  return (
+    `  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+  <tr>
+    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=314&p=&o=&commit=SEARCH" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to on-demand webinars produced with lab technicians in mind! »</a></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>`
+  )
+}
 export function center_banner(fields) {
   let link = fields[0].value;
   let imgSrc = fields[1].value;
   return (`
   <!--CENTER BANNER-->
-  <tr>
-  <td height="35" align="center"></td>
-</tr>
-<tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold; padding-bottom:5px;"><a href="https://cdeworld.com/courses/search?c=314" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to CE courses for Lab Technicians!  »</a></td>
-</tr>
-<tr>
-  <td height="20" align="center"></td>
-</tr>
+
 
 ${imgSrc ? `
 <tr>

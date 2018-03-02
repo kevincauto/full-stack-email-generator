@@ -124,6 +124,15 @@ export const cdew_dds_forms = {
       { label: 'Link', name: 'link' }
     ]
   },
+  on_demand_webinar_end: {
+    typeOfRow: 'on_demand_webinar_end',
+    header: 'On-Demand Webinar End',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   center_banner: {
     typeOfRow: 'center_banner',
     header: "Center Banner Ad",
@@ -301,6 +310,8 @@ export const cdew_dds_initial_state = [
   _.cloneDeep(cdew_dds_forms.live_webinar_wo_header),
   _.cloneDeep(cdew_dds_forms.on_demand_webinar_w_header),
   _.cloneDeep(cdew_dds_forms.on_demand_webinar_wo_header),
+  _.cloneDeep(cdew_dds_forms.on_demand_webinar_end),
+  _.cloneDeep(cdew_dds_forms.border),
   _.cloneDeep(cdew_dds_forms.center_banner),
   _.cloneDeep(cdew_dds_forms.new_content_w_header),
   _.cloneDeep(cdew_dds_forms.new_content_wo_header),
@@ -471,15 +482,17 @@ export function beginning(fields) {
   <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f9f6f1">
     <tr>
       <td align="center"> <table cellpadding="0" cellspacing="0" border="0" width="662" style="min-width:662px;" class="w662">
-          <tr>
-            <td height="20" align="center"></td>
-          </tr>
-          <tr>
-            <td align="center" style="padding:0px 10px;"><a href="${mastheadLink}" target="_blank"> <img src="${mastheadSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
-          </tr>
-          <tr>
-            <td height="20" align="center"></td>
-          </tr>
+          
+      ${mastheadSrc ? `<tr>
+      <td height="20" align="center"></td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0px 10px;"><a href="${mastheadLink}" target="_blank"> <img src="${mastheadSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
+    </tr>
+    <tr>
+      <td height="20" align="center"></td>
+    </tr>` : ``}
+
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff" style="border:solid 1px #EAE9E2;">
                 <tr>
@@ -766,24 +779,27 @@ ${title}</strong></td>
   )
 }
 
+export function on_demand_webinar_end(fields) {
+
+  return (
+    `  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+  <tr>
+    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=279&p=&o=&commit=SEARCH" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to on-demand webinars produced with Dentists in mind! »</a></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>`
+  )
+}
+
 export function center_banner(fields) {
   let link = fields[0].value;
   let imgSrc = fields[1].value;
 
   return (`
   <!--CENTER BANNER-->
-  <tr>
-  <td height="20" align="center"></td>
-</tr>
-<tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?c=279 " target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to more FREE CE programs »</a></td>
-</tr>
-<tr>
-  <td height="20" align="center"></td>
-</tr>
-<tr>
-  <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-</tr>
 <tr>
    <td align="center"><a href="${link}" target="_blank"><img src="${imgSrc}" width="600" height="80" alt=""/></a>
    </td>

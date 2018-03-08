@@ -49,7 +49,7 @@ export const cced_thematic_forms = {
       },
       { label: 'Masthead Link', name: 'mastheadLink', value: '' },
       { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
-      { label: 'Thematic Topic', name: 'topic', value: 'Implantology' },
+      { label: 'Thematic Topic', name: 'topic', value: '' },
       { label: 'Subscribe Link', name: 'subscribe' },
       { label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150' },
       { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },

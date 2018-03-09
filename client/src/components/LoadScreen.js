@@ -8,7 +8,7 @@ class LoadScreen extends Component {
     this.handleBackButton = this.handleBackButton.bind(this);
   }
   componentDidUpdate() {
-    console.log(this.state.files[0].fileName);
+    console.log(this.state.files);
   }
   async componentDidMount() {
     //Should get an array of objects
@@ -16,12 +16,10 @@ class LoadScreen extends Component {
     this.setState({ files: files.data })
   }
 
-  handleClickOnTableRow(key) {
+  handleClickOnTableRow(file) {
     //lookup the proper object needed to populate state
-    let fileState = this.state.files.find(file => {
-      return file.fileName === key;
-    });
-    this.props.onFileSelection(fileState);
+    console.log(file);
+    this.props.onFileSelection(file)
   }
   handleBackButton() {
     this.props.backButton();
@@ -35,24 +33,19 @@ class LoadScreen extends Component {
             <th>File Name</th>
             <th>Last Updated</th>
           </tr>
-          <tr key={'file.fileName'} onClick={(e) => this.handleClickOnTableRow(e.target.key)} >
-            <td>{this.state.files[0].fileName ? this.state.files[0].fileName : ''}</td>
-            {/* <td>Pl</td> */}
-            <td>{this.state.files[0].lastUpdated ? this.state.files[0].lastUpdated : ''}</td>
-          </tr>
-          <tr>
-            <td>Berglunds snabbköp</td>
-            <td>Christina Berglund</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-          </tr>
+          {this.state.files.map((file, i) => {
+            return (
+              <tr key={i} onClick={() => this.handleClickOnTableRow(file.state)} >
+                <td>{file.fileName}</td>
+                <td>{file.lastUpdated}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     )
-
   }
+
   render() {
     if (this.state.files) {
       return (

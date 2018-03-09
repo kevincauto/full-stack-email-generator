@@ -22,6 +22,9 @@ app.post('/api/save-new-email', async (req, res) => {
   //get current date
   const { getDate } = require('./utils/helper.js')
   const today = getDate();
+
+  //TODO make sure fileName is not already taken!
+
   //save to the mongo
   const email = new Email({
     fileName,
@@ -40,9 +43,14 @@ app.post('/api/save-new-email', async (req, res) => {
 
 app.put('/api/update-email', async (req, res) => {
   const { fileName } = req.body.state;
-  console.log(req.body);
-  // Email.findOneAndUpdate({ fileName }, this.req.body)
-
+  Email.findOne({ fileName }, function (err, foundObject) {
+    if (err) {
+      res.send('error has occured');
+    } else {
+      foundObject.state = req.body.state;
+      foundObject.save();
+    }
+  });
 });
 
 app.get('/api/file-load', (req, res) => {

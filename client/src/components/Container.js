@@ -63,12 +63,12 @@ class Container extends React.Component {
   }
 
   //log local state
-  componentDidMount() {
-    console.log(this.state);
-  }
-  componentDidUpdate() {
-    console.log(this.state);
-  }
+  // componentDidMount() {
+  //   console.log(this.state);
+  // }
+  // componentDidUpdate() {
+  //   console.log(this.state);
+  // }
 
   //form-related functions
   handleFormDrag(startIndex, endIndex) {

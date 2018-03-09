@@ -55,7 +55,7 @@ class RightSideDisplay extends React.Component {
   }
 
   handleSave() {
-
+    this.props.onSave();
   }
   handleSaveAs() {
     this.props.onSaveAs();

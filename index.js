@@ -2,15 +2,17 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 const keys = require('./config/keys')
+const { getDate } = require('./utils/helper.js')
 app.use(bodyParser.json());
 
 mongoose = require('mongoose');
 require('./models/Email');
 mongoose.connect(keys.mongoURI);
 
+const Email = require('./models/Email');
 
 
-app.post('/api/save-email', async (req, res) => {
+app.post('/api/save-new-email', async (req, res) => {
   console.log(req.body.state);
 
   //take in state json data
@@ -36,7 +38,17 @@ app.post('/api/save-email', async (req, res) => {
   }
 });
 
-const Email = require('./models/Email');
+app.put('/api/update-email', async (req, res) => {
+  const { fileName } = req.body.state;
+  Email.findOne({ fileName }).exec((err, file) => {
+    if (err) {
+      res.send('error has occured');
+    } else {
+      console.log(file);
+    }
+  }
+  )
+});
 
 app.get('/api/file-load', (req, res) => {
   Email.find({}).exec(function (err, files) {

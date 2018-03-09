@@ -10,7 +10,7 @@ body {
 }
 #container {
   /* display: flex; */
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 #main-form {
@@ -31,7 +31,7 @@ body {
   border: solid #000 1px;
   float: left;
   max-width: 750px;
-  /* min-width: 700px; */
+  /* min-width: 310px; */
   margin: 0px 20px 0px 20px;
   padding: 10px;
   margin: 4px 10px 2px 0px;

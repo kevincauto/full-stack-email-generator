@@ -4,9 +4,7 @@ import axios from 'axios';
 class LoadScreen extends Component {
   constructor() {
     super()
-    this.state = {
-      files: [{ fileName: "Hello World!" }]
-    }
+    this.state = {}
     this.handleBackButton = this.handleBackButton.bind(this);
   }
   componentDidUpdate() {
@@ -40,7 +38,7 @@ class LoadScreen extends Component {
           <tr key={'file.fileName'} onClick={(e) => this.handleClickOnTableRow(e.target.key)} >
             <td>{this.state.files[0].fileName ? this.state.files[0].fileName : ''}</td>
             {/* <td>Pl</td> */}
-            <td>Maria Anders</td>
+            <td>{this.state.files[0].lastUpdated ? this.state.files[0].lastUpdated : ''}</td>
           </tr>
           <tr>
             <td>Berglunds snabbköp</td>
@@ -56,14 +54,23 @@ class LoadScreen extends Component {
 
   }
   render() {
-    return (
-      <div className="load-screen">
-        <h2>Select a File to Open.</h2>
-        {this.renderTable()}
-        <p onClick={this.handleBackButton}>&lt; Back</p>
-      </div >
+    if (this.state.files) {
+      return (
+        <div className="load-screen">
+          <h2>Select a File to Open.</h2>
+          {this.renderTable()}
+          <p onClick={this.handleBackButton}>&lt; Back</p>
+        </div >
+      )
+    } else {
+      return (
+        <div className="load-screen">
+          <h2>Loading...</h2>
+          <p onClick={this.handleBackButton}>&lt; Back</p>
+        </div >
+      )
+    }
 
-    )
   }
 }
 

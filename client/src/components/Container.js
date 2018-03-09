@@ -67,6 +67,7 @@ class Container extends React.Component {
     this.handleFormSwitch = this.handleFormSwitch.bind(this);
     this.handleFormDrag = this.handleFormDrag.bind(this);
   }
+
   //form-related functions
   handleFormDrag(startIndex, endIndex) {
     let stateClone = _.cloneDeep(this.state);
@@ -103,41 +104,34 @@ class Container extends React.Component {
     }
     this.setState({ selected_template: template });
   }
+  //end form related functions
 
-  // componentDidUpdate() {
-  //   console.log(this.state);
-  // }
 
   updateFileName(fileName) {
     this.setState({ fileName });
     this.handleSave();
   }
 
-  renderDialog() {
-    return (
-      <div>
-        <SaveDialog closeSaveDialog={() => this.toggleDialog()} OnUpdateFilenName={(fileName) => this.updateFileName(fileName)} onUpdateSaveAs={() => this.handleSave()} />
-      </div>
-    )
-  }
-
-
+  //When you hit the save button, there are two scenarios:
+  //1. This is your first save, you need to name the file
+  //2. You have saved before, this is updating the file
   handleSave() {
-    //call to backend with state
-    console.log('Save API call');
-    if (this.state.fileName) {
-      axios.post('/api/save-email', { state: this.state });
+    if (this.state.filename !== '') {
+      this.handleSaveNew()
+    } else {
+      axios.put('/api/update-email', { state: this.state });
     }
   }
-
-  toggleDialog() {
-    this.setState({ showSaveDialog: !this.state.showSaveDialog })
+  handleSaveNew() {
+    axios.post('/api/save-new-email', { state: this.state });
   }
-
   handleSaveAs() {
     console.log('Open Save Dialog');
     this.setState({ showSaveDialog: true })
   }
+
+
+
   handleOpen() {
     this.setState({ showLoadScreen: true })
   }
@@ -148,6 +142,18 @@ class Container extends React.Component {
   showHomeScreen() {
     this.setState({ showLoadScreen: false })
   }
+
+  toggleDialog() {
+    this.setState({ showSaveDialog: !this.state.showSaveDialog })
+  }
+  renderDialog() {
+    return (
+      <div>
+        <SaveDialog closeSaveDialog={() => this.toggleDialog()} OnUpdateFilenName={(fileName) => this.updateFileName(fileName)} onUpdateSaveAs={() => this.handleSaveNew()} />
+      </div>
+    )
+  }
+
   render() {
     return (
       <div>
@@ -168,7 +174,8 @@ class Container extends React.Component {
                 onFormDrag={(startIndex, endIndex) => this.handleFormDrag(startIndex, endIndex)}
               />
               <RightSideDisplay
-                info={this.state} onSave={this.handleSave}
+                info={this.state}
+                onSave={() => this.handleSave()}
                 onSaveAs={() => this.handleSaveAs()}
                 onOpen={() => this.handleOpen()}
               />

@@ -36,7 +36,7 @@ import { cdew_dds_initial_state } from '../templates/cdew_dds';
 import { cdew_dh_initial_state } from '../templates/cdew_dh';
 import { cdew_lab_initial_state } from '../templates/cdew_lab';
 import { cdew_thematic_initial_state } from '../templates/cdew_thematic';
-//
+
 class Container extends React.Component {
   constructor(props) {
     super(props);
@@ -60,12 +60,14 @@ class Container extends React.Component {
       cdew_lab: cdew_lab_initial_state,
       cdew_thematic: cdew_thematic_initial_state,
     };
+  }
 
-    this.handleFieldChange = this.handleFieldChange.bind(this);
-    this.handleFormAdd = this.handleFormAdd.bind(this);
-    this.handleFormDelete = this.handleFormDelete.bind(this);
-    this.handleFormSwitch = this.handleFormSwitch.bind(this);
-    this.handleFormDrag = this.handleFormDrag.bind(this);
+  //log local state
+  componentDidMount() {
+    console.log(this.state);
+  }
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   //form-related functions
@@ -113,23 +115,21 @@ class Container extends React.Component {
   }
 
   //When you hit the save button, there are two scenarios:
-  //1. This is your first save, you need to name the file
-  //2. You have saved before, this is updating the file
+  //1. If you have saved before, this is updating the file
+  //2. If this is your first save, you need to name the file
   handleSave() {
-    if (this.state.filename !== '') {
-      this.handleSaveNew()
-    } else {
+    if (this.state.fileName !== '') {
       axios.put('/api/update-email', { state: this.state });
+    } else {
+      this.handleSaveAs();
     }
+  }
+  handleSaveAs() {
+    this.setState({ showSaveDialog: true })
   }
   handleSaveNew() {
     axios.post('/api/save-new-email', { state: this.state });
   }
-  handleSaveAs() {
-    console.log('Open Save Dialog');
-    this.setState({ showSaveDialog: true })
-  }
-
 
 
   handleOpen() {
@@ -153,15 +153,16 @@ class Container extends React.Component {
       </div>
     )
   }
-
   render() {
     return (
       <div>
         {this.state.showSaveDialog ? this.renderDialog() : null}
-        {this.state.showLoadScreen ?
+        {this.state.showLoadScreen
+          ?
           <div id="load-container">
             <LoadScreen onFileSelection={(fileState) => this.handleFileSelection(fileState)} backButton={() => this.showHomeScreen()} />
-          </div> :
+          </div>
+          :
           <div>
             <div id="container">
               <FormSection
@@ -182,7 +183,6 @@ class Container extends React.Component {
             </div>
           </div>
         }
-
       </div>
 
     );

@@ -40,14 +40,9 @@ app.post('/api/save-new-email', async (req, res) => {
 
 app.put('/api/update-email', async (req, res) => {
   const { fileName } = req.body.state;
-  Email.findOne({ fileName }).exec((err, file) => {
-    if (err) {
-      res.send('error has occured');
-    } else {
-      console.log(file);
-    }
-  }
-  )
+  console.log(req.body);
+  // Email.findOneAndUpdate({ fileName }, this.req.body)
+
 });
 
 app.get('/api/file-load', (req, res) => {

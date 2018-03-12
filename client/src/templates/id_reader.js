@@ -357,7 +357,7 @@ export function beginning(fields) {
                           </tr>
                           <tr>
                             <td align="center" style="padding-top:10px;">
-                              <img alt="" border="0" src="https://www.aegisdentalnetwork.com/media/thumbnail/67072/" style="display:block; margin:0px; max-width:221px;" width="221" /> 
+                              <img alt="" border="0" src="https://www.aegisdentalnetwork.com/media/67072/" style="display:block; margin:0px; max-width:221px;" width="221" /> 
                             </td>
                           </tr>
                           <tr>

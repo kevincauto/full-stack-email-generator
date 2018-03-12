@@ -13,7 +13,7 @@ const Email = require('./models/Email');
 
 
 app.post('/api/save-new-email', async (req, res) => {
-  console.log(req.body.state);
+  // console.log(req.body.state);
 
   //take in state json data
   const { fileName } = req.body.state;
@@ -24,21 +24,34 @@ app.post('/api/save-new-email', async (req, res) => {
   const today = getDate();
 
   //TODO make sure fileName is not already taken!
-
-  //save to the mongo
-  const email = new Email({
-    fileName,
-    state,
-    lastUpdated: today
+  await Email.findOne({ fileName }, async (err, foundItem) => {
+    if (err) {
+      console.log(error)
+    } else {
+      if (foundItem) {
+        console.log('found item');
+        res.send('This filename is already being used!');
+      } else {
+        console.log('not found');
+        //save to mongo
+        const email = new Email({
+          fileName,
+          state,
+          lastUpdated: today
+        })
+        //send back success message.
+        try {
+          await email.save();
+          res.send('success');
+        } catch (err) {
+          res.status(422).send(err);
+        }
+      }
+    }
   })
 
-  //send back success message.
-  try {
-    await email.save();
-    res.send('success');
-  } catch (err) {
-    res.status(422).send(err);
-  }
+
+
 });
 
 app.put('/api/update-email', async (req, res) => {

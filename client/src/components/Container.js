@@ -127,10 +127,10 @@ class Container extends React.Component {
   handleSaveAs() {
     this.setState({ showSaveDialog: true })
   }
-  handleSaveNew() {
-    axios.post('/api/save-new-email', { state: this.state });
+  async handleSaveNew() {
+    let response = await axios.post('/api/save-new-email', { state: this.state });
+    console.log(response.data);
   }
-
 
   handleOpen() {
     this.setState({ showLoadScreen: true })

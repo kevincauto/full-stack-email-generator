@@ -132,6 +132,11 @@ class Container extends React.Component {
     console.log(response.data);
   }
 
+  //make a call to the backend to delete
+  async handleDelete(fileName) {
+    await axios.delete('/api/delete-email', fileName);
+  }
+
   handleOpen() {
     this.setState({ showLoadScreen: true })
   }

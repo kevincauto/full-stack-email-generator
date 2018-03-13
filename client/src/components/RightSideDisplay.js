@@ -75,11 +75,6 @@ class RightSideDisplay extends React.Component {
       return TEMPLATES[this.props.info.selected_template][row.typeOfRow](row.fields)
     }).join('');
 
-    //Sanitize data to avoid XSS attack
-    //Sanitize strips css from the header and make the email render oddly.  Need to find a solution to clean without
-    //messing up what it looks like
-    //let cleanHtml = DOMPurify.sanitize(html);
-
     // let textEmail = layout
     //   .filter(form => (form.fields.length > 0))
     //   .map(form => (form.fields
@@ -88,10 +83,6 @@ class RightSideDisplay extends React.Component {
     //     .join('\n'))
     //   ).join('\n\n')
 
-
-
-    //fix this.
-    // let emailName =  'Untitled';
     return (
       <div id="text-results">
         <div className="content" dangerouslySetInnerHTML={{ __html: html }}></div>

@@ -18,7 +18,6 @@ class SaveDialog extends Component {
     await this.props.OnUpdateFilenName(this.state.fileName);
     this.props.closeSaveDialog();
     this.props.onUpdateSaveAs();
-
   }
   render() {
     return (

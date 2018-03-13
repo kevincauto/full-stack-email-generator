@@ -49,9 +49,6 @@ app.post('/api/save-new-email', async (req, res) => {
       }
     }
   })
-
-
-
 });
 
 app.put('/api/update-email', async (req, res) => {
@@ -76,16 +73,17 @@ app.get('/api/file-load', (req, res) => {
   });
 });
 
+app.get('/api/delete-email', (req, res) => {
+  //find record
+
+  //delete record
+
+});
+
 app.get('/api/load-email', (req, res) => {
-
   Email.find({ fileName })
-
-
   //read pull data from mongo
-
-
   //send back json data
-
   console.log(req.body);
 });
 

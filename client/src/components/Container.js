@@ -62,14 +62,6 @@ class Container extends React.Component {
     };
   }
 
-  //log local state
-  // componentDidMount() {
-  //   console.log(this.state);
-  // }
-  // componentDidUpdate() {
-  //   console.log(this.state);
-  // }
-
   //form-related functions
   handleFormDrag(startIndex, endIndex) {
     let stateClone = _.cloneDeep(this.state);
@@ -130,6 +122,7 @@ class Container extends React.Component {
   async handleSaveNew() {
     let response = await axios.post('/api/save-new-email', { state: this.state });
     console.log(response.data);
+    //alert the user that the 
   }
 
   //make a call to the backend to delete

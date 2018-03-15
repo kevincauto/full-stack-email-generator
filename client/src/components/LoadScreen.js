@@ -16,6 +16,13 @@ class LoadScreen extends Component {
     this.setState({ files: files.data })
   }
 
+  async reload() {
+    //Should get an array of objects
+    let files = await axios.get('/api/file-load');
+    this.setState({ files: files.data })
+  }
+
+
   handleClickOnTableRow(file) {
     //lookup the proper object needed to populate state
     console.log(file);
@@ -25,6 +32,11 @@ class LoadScreen extends Component {
     this.props.backButton();
   }
 
+  handleDelete(fileName) {
+    this.props.onDelete(fileName);
+    this.reload();
+  }
+
   renderTable() {
     return (
       <table className="load-table">
@@ -32,12 +44,14 @@ class LoadScreen extends Component {
           <tr>
             <th>File Name</th>
             <th>Last Updated</th>
+            <th>DELETE</th>
           </tr>
           {this.state.files.map((file, i) => {
             return (
-              <tr key={i} onClick={() => this.handleClickOnTableRow(file.state)} >
-                <td>{file.fileName}</td>
-                <td>{file.lastUpdated}</td>
+              <tr key={i} >
+                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>{file.fileName}</td>
+                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>{file.lastUpdated}</td>
+                <td className="clickable red" onClick={() => this.handleDelete(file.fileName)}>DELETE PERMENANTLY</td>
               </tr>
             )
           })}

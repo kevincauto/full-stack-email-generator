@@ -73,11 +73,14 @@ app.get('/api/file-load', (req, res) => {
   });
 });
 
-app.get('/api/delete-email', (req, res) => {
+app.delete('/api/delete-email', (req, res) => {
   //find record
 
   //delete record
+  let { fileName } = req.body;
 
+
+  Email.find({ fileName }).remove(() => { console.log('The record is deleted.') });
 });
 
 app.get('/api/load-email', (req, res) => {

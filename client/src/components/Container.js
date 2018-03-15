@@ -134,7 +134,8 @@ class Container extends React.Component {
 
   //make a call to the backend to delete
   async handleDelete(fileName) {
-    await axios.delete('/api/delete-email', fileName);
+    console.log(fileName);
+    await axios.delete('/api/delete-email', { data: { fileName } });
   }
 
   handleOpen() {
@@ -165,7 +166,11 @@ class Container extends React.Component {
         {this.state.showLoadScreen
           ?
           <div id="load-container">
-            <LoadScreen onFileSelection={(fileState) => this.handleFileSelection(fileState)} backButton={() => this.showHomeScreen()} />
+            <LoadScreen
+              onFileSelection={(fileState) => this.handleFileSelection(fileState)}
+              backButton={() => this.showHomeScreen()}
+              onDelete={(fileName) => this.handleDelete(fileName)}
+            />
           </div>
           :
           <div>

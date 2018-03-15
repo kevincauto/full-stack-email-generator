@@ -314,3 +314,11 @@ h3{
 .float-right{
   float: right;
 }
+
+.clickable{
+  cursor: pointer;
+}
+
+.red{
+  color:red;
+}

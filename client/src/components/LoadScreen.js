@@ -22,7 +22,6 @@ class LoadScreen extends Component {
     this.setState({ files: files.data })
   }
 
-
   handleClickOnTableRow(file) {
     //lookup the proper object needed to populate state
     console.log(file);
@@ -49,9 +48,15 @@ class LoadScreen extends Component {
           {this.state.files.map((file, i) => {
             return (
               <tr key={i} >
-                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>{file.fileName}</td>
-                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>{file.lastUpdated}</td>
-                <td className="clickable red" onClick={() => this.handleDelete(file.fileName)}>DELETE PERMENANTLY</td>
+                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>
+                  {file.fileName}
+                </td>
+                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>
+                  {file.lastUpdated}
+                </td>
+                <td className="clickable red" onClick={() => this.handleDelete(file.fileName)}>
+                  DELETE PERMENANTLY
+                </td>
               </tr>
             )
           })}

@@ -1329,9 +1329,9 @@ export function end(fields) {
 <tr>
 <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px;" valign="middle">
   <br>
-You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-215892@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-215892@news.aegispublications.com</a> to your address book<br />
+You received this e-mail because you are a customer of <a href="https://www.aegisdentalnetwork.com" target="_blank" style="color:#666 !important; text-decoration:none;">AEGIS Dental Network</a> | CDEWorld.<br />To ensure delivery, please add <a href="mailto:reply-215892@news.aegispublications.com" style="color:#666 !important; text-decoration:none;" target="_blank">reply-215892@news.aegispublications.com</a> to your address book.<br />
 %%PLUGIN_UNSUBSCRIBE: 1146575-UNSUBSCRIBE%% <br />
- CDEWorld a part of the AEGIS Dental Network | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
+ CDEWorld, part of the AEGIS Dental Network | 104 Pheasant Run, Suite 105 | Newtown, PA 18940 | <a href="https://www.aegisdentalnetwork.com/privacy-policy" target="_blank" style="color:#666; text-decoration:none;">Privacy Policy</a><br><br></td>
 </tr>
 </table>
 <map name="Map">

@@ -306,7 +306,22 @@ You received this e-mail because you are a customer of <a href="https://www.aegi
 </table>
 </center>
 <p>
-<map name="Map"><area coords="371,4,441,29" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> <area coords="454,4,536,29" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" /></map><map name="Map2"><area coords="44,92,231,114" href="https://www.dentalaegis.com/id/${year}/${month}" shape="rect" target="_blank" /> <area coords="232,93,338,112" href="https://www.dentalaegis.com/id/" shape="rect" target="_blank" /> <area coords="341,91,402,111" href="${subscribe}" shape="rect" target="_blank" /> <area coords="402,94,537,113" href="mailto:?subject=FW:%20Your%20${monthName}%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" /></map><map name="Map3"><area coords="3,2,34,35" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" /> <area coords="57,3,85,30" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> <area coords="108,4,138,29" href="mailto:?subject=FW:%20Your%20${monthName}%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" /></map></p>
+<map name="Map">
+<area coords="371,4,441,29" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> 
+<area coords="454,4,536,29" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" />
+</map>
+<map name="Map2">
+<area coords="44,92,231,114" href="https://www.dentalaegis.com/id/${year}/${month}" shape="rect" target="_blank" /> 
+<area coords="232,93,338,112" href="https://www.dentalaegis.com/id/" shape="rect" target="_blank" /> 
+<area coords="341,91,402,111" href="${subscribe}" shape="rect" target="_blank" /> 
+<area coords="402,94,537,113" href="mailto:?subject=FW:%20Your%20${monthName}%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" />
+</map>
+<map name="Map3">
+<area coords="3,2,34,35" href="https://www.facebook.com/InsideDentistry" shape="rect" target="_blank" /> 
+<area coords="57,3,85,30" href="https://twitter.com/insidedentistry" shape="rect" target="_blank" /> 
+<area coords="108,4,138,29" href="mailto:?subject=FW:%20Your%20${monthName}%20Digital%20Edition%20is%20Available&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital?refer=true" shape="rect" target="_blank" />
+</map>
+</p>
 </body>
 </html>`)
 }

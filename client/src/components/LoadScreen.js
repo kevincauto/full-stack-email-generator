@@ -45,21 +45,23 @@ class LoadScreen extends Component {
             <th>Last Updated</th>
             <th>DELETE</th>
           </tr>
-          {this.state.files.map((file, i) => {
-            return (
-              <tr key={i} >
-                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>
-                  {file.fileName}
-                </td>
-                <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>
-                  {file.lastUpdated}
-                </td>
-                <td className="clickable red" onClick={() => this.handleDelete(file.fileName)}>
-                  DELETE PERMENANTLY
-                </td>
-              </tr>
-            )
-          })}
+          {this.state.files
+            .reverse()
+            .map((file, i) => {
+              return (
+                <tr key={i} >
+                  <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>
+                    {file.fileName}
+                  </td>
+                  <td className="clickable" onClick={() => this.handleClickOnTableRow(file.state)}>
+                    {file.lastUpdated}
+                  </td>
+                  <td className="clickable red">
+                    <button className="clickable red" onClick={() => this.handleDelete(file.fileName)}>DELETE</button>
+                  </td>
+                </tr>
+              )
+            })}
         </tbody>
       </table>
     )

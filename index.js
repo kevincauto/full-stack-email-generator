@@ -73,14 +73,15 @@ app.get('/api/file-load', (req, res) => {
   });
 });
 
-app.delete('/api/delete-email', (req, res) => {
+app.delete('/api/delete-email', async (req, res) => {
   //find record
 
   //delete record
   let { fileName } = req.body;
 
 
-  Email.find({ fileName }).remove(() => { console.log('The record is deleted.') });
+  await Email.find({ fileName }).remove(() => { console.log('The record is deleted.') });
+  res.status(204).end();
 });
 
 app.get('/api/load-email', (req, res) => {

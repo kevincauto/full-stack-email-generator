@@ -7,9 +7,7 @@ class LoadScreen extends Component {
     this.state = {}
     this.handleBackButton = this.handleBackButton.bind(this);
   }
-  componentDidUpdate() {
-    console.log(this.state.files);
-  }
+
   async componentDidMount() {
     //Should get an array of objects
     let files = await axios.get('/api/file-load');
@@ -24,7 +22,6 @@ class LoadScreen extends Component {
 
   handleClickOnTableRow(file) {
     //lookup the proper object needed to populate state
-    console.log(file);
     this.props.onFileSelection(file)
   }
   handleBackButton() {

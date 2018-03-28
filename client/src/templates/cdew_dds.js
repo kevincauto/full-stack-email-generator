@@ -605,7 +605,7 @@ export function live_webinar_w_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="https://cdeworld.com/webinars/register/20856" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
     </tr>
     <!--END LIVE WEBINAR WITH HEADER -->`
   )

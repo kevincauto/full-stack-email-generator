@@ -979,7 +979,8 @@ export function ebook(fields) {
               <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>${title}</strong></td>
             </tr>
             <tr>
-              <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#676262;"><p><strong>By:</strong> ${author}<strong><br />
+              <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#676262;">
+              ${author ? `<p><strong>By:</strong> ${author}<strong><br />` : ``}
               Supported By:</strong> <em>${supporter}</em><br>
                   <strong>Cost:</strong> ${cost}  | <strong>Source:</strong> ${source}<strong><br>
                     Credits:</strong> ${credits} </p></td>

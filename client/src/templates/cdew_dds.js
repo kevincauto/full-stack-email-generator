@@ -18,7 +18,7 @@ export const cdew_dds_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName', value: 'ce3' },
+      { label: 'Email Name', name: 'emailName', value: '' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -254,6 +254,15 @@ export const cdew_dds_forms = {
       { label: 'Event Image Source', name: 'imgSrc', value: 'http://placehold.it/150x150' }
     ]
   },
+  event_end: {
+    typeOfRow: 'event_end',
+    header: 'End of Event Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   border: {
     typeOfRow: 'border',
     header: 'Border',
@@ -319,6 +328,7 @@ export const cdew_dds_initial_state = [
   _.cloneDeep(cdew_dds_forms.ebook_end),
   _.cloneDeep(cdew_dds_forms.portal_partner),
   _.cloneDeep(cdew_dds_forms.featured_event),
+  _.cloneDeep(cdew_dds_forms.event_end),
   _.cloneDeep(cdew_dds_forms.border),
   _.cloneDeep(cdew_dds_forms.end)
 ];
@@ -1108,12 +1118,14 @@ export function featured_event(fields) {
     <tr>
     <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
   </tr>
-  <tr>
-    <td height="20" align="center"></td>
-  </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
-    </tr>
+ 
+  ${header ? `    <tr>
+  <td height="20" align="center"></td>
+</tr>
+ <tr>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
+</tr>` : ``}
+
 <tr>
       <td height="20" align="center"></td>
     </tr>
@@ -1135,15 +1147,19 @@ export function featured_event(fields) {
     </tr>
 <tr>
 <td height="31" align="center"></td>
-</tr>
-    <tr>
-      <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Event Listing for exciting upcoming live events »</a></td>
-    </tr>
-    <tr>
-      <td height="20" align="center"></td>
-    </tr>
 <!--END FEATURED EVENT -->   
 `)
+}
+export function event_end(fields) {
+  return (
+    `
+    <tr>
+    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Event Listing for exciting upcoming live events »</a></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>`
+  )
 }
 export function border(fields) {
   return (

@@ -3,7 +3,9 @@ const app = express();
 const bodyParser = require('body-parser')
 const keys = require('./config/keys')
 const { getDate } = require('./utils/helper.js')
-app.use(bodyParser.json());
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
 
 mongoose = require('mongoose');
 require('./models/Email');

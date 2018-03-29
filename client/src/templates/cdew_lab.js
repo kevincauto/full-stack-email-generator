@@ -47,7 +47,9 @@ export const cdew_lab_forms = {
       },
       { label: 'Masthead Link', name: 'mastheadLink' },
       { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
-      { label: 'Subscribe Link', name: 'subscribe' }
+      { label: 'Subscribe Link', name: 'subscribe' },
+      { label: 'Header', name: 'header', value: 'New CE Opportunities for Lab Technicians' },
+      { label: 'Description', name: 'description', value: 'CDEWorld, your partner in continuing education, has created and curated new CE opportunities to fit into your busy schedule. Explore our newest CE courses below.' }
     ]
   },
   live_webinar_w_header: {
@@ -333,6 +335,8 @@ export function beginning(fields) {
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
   let subscribe = fields[5].value;
+  let header = fields[6].value;
+  let description = fields[7].value;
 
   let monthName;
   if (month === '01') { monthName = 'January' };
@@ -553,10 +557,10 @@ export function beginning(fields) {
                               <td height="30" align="center"></td>
                             </tr>
                             <tr>
-                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:21px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">New CE Opportunities for Lab Technicians | ${monthName} ${year}</td>
+                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:21px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">${header} | ${monthName} ${year}</td>
                             </tr>
                             <tr>
-                              <td align="center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:18px; color:#333333;">CDEWorld, your partner in continuing education, has created and curated new CE opportunities to fit into your busy schedule. Explore our newest CE courses below.</td>
+                              <td align="center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:18px; color:#333333;">${description}</td>
                             </tr>
                             <!--END OF THE BEGINNING -->
   `

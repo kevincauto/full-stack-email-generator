@@ -68,6 +68,9 @@ export const id_thematic_forms = {
             { label: 'Second News Title', name: 'title2' },
             { label: 'Second News Description', name: 'description2' },
             { label: 'Second News Link', name: 'link2' },
+            { label: 'Third News Title', name: 'title3' },
+            { label: 'Third News Description', name: 'description3' },
+            { label: 'Third News Link', name: 'link3' },
         ]
     },
     ce: {
@@ -1073,28 +1076,28 @@ export function news(fields) {
     let title2 = fields[3].value;
     let description2 = fields[4].value;
     let link2 = fields[5].value;
-
+    let title3 = fields[6].value;
+    let description3 = fields[7].value;
+    let link3 = fields[8].value;
     return (
         `
     <!--START NEWS SECTION -->
     <tr>
-
         <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-
             <table style="border-spacing:0;font-family:sans-serif;color:#333333;" width="100%">
-
                 <tbody>
-
                     <tr>
-
-                        <td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;">
-
+                        
+                    
+                    ${title2 || title3 ?
+            `<td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;">`
+            :
+            `<td class="inner contents" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#333;">`
+        }
                             <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:15px;Margin-bottom:10px;text-transform:uppercase;color:#888;">
-
                                 News & Notes</p>
 
                             <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:20px;Margin-bottom:4px;">
-
                                 <a href="${link1}" style="text-decoration:none;color:#444;" target="_blank">${title1}</a></p>
     ${description1 ?
             `<p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:14px;Margin-bottom:4px;">
@@ -1102,57 +1105,62 @@ export function news(fields) {
             ``
         }
 											<p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:15px;Margin-bottom:10px;text-transform:uppercase;color:#9d0707;">
-
                                 <a href="${link1}" style="text-decoration:none;text-transform:uppercase;color:#9d0707;" target="_blank">Read More</a></p>
-
                         </td>
-
                     </tr>
-
                 </tbody>
-
             </table>
-
         </td>
-
     </tr>
-
-    <tr>
-
+    ${title2 ?
+            `<tr>
         <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
-
             <table style="border-spacing:0;font-family:sans-serif;color:#333333;" width="100%">
-
                 <tbody>
-
                     <tr>
-
-                        <td class="inner contents" style="padding-top:0px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#333;">
+                        ${title3 ?
+                `<td class="inner contents" style="padding-top:0px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;">`
+                :
+                `<td class="inner contents" style="padding-top:0px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#333;">`}
+                        
 
                             <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:20px;Margin-bottom:4px;">
-
                                 <a href="${link2}" style="text-decoration:none;color:#444;" target="_blank">${title2}</a></p>
-
-                                ${description2 ?
-            `<p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:14px;Margin-bottom:4px;">
-                                    ${description2} </p>` :
-            ``
-        }
+                                ${description2 ? `<p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:14px;Margin-bottom:4px;">
+                                    ${description2} </p>`
+                : ``}
 											<p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:15px;Margin-bottom:10px;text-transform:uppercase;color:#9d0707;">
-
                                 <a href="${link2}" style="text-decoration:none;text-transform:uppercase;color:#9d0707;" target="_blank">Read More</a></p>
-
                         </td>
-
                     </tr>
-
                 </tbody>
-
             </table>
-
         </td>
-
-    </tr>
+    </tr>`
+            :
+            ``}
+    ${title3 ?
+            `<tr>
+        <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+            <table style="border-spacing:0;font-family:sans-serif;color:#333333;" width="100%">
+                <tbody>
+                    <tr>
+                        <td class="inner contents" style="padding-top:0px;padding-bottom:10px;padding-right:10px;padding-left:10px;text-align:left;border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:#333;">
+                            <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:20px;Margin-bottom:4px;">
+                                        <a href="${link3}" style="text-decoration:none;color:#444;" target="_blank">${title3}</a></p>
+                                        ${description3 ? `<p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:14px;Margin-bottom:4px;">
+                                            ${description3} </p>`
+                : ``}
+                            <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:15px;Margin-bottom:10px;text-transform:uppercase;color:#9d0707;">
+                            <a href="${link3}" style="text-decoration:none;text-transform:uppercase;color:#9d0707;" target="_blank">Read More</a></p>
+                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>`
+            :
+            ``}
 <!--END NEWS SECTION-->
     `
     )

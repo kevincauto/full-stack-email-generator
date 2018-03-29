@@ -47,7 +47,9 @@ export const cdew_dh_forms = {
       },
       { label: 'Masthead Link', name: 'mastheadLink' },
       { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
-      { label: 'Subscribe Link', name: 'subscribe' }
+      { label: 'Subscribe Link', name: 'subscribe' },
+      { label: 'Header', name: 'header', value: 'New CE Opportunities for Dental Hygienists' },
+      { label: 'Description', name: 'description', value: 'CDEWorld, your partner in continuing education, has created and curated new CE opportunities to fit into your busy schedule. Explore our newest CE courses below.' }
     ]
   },
   live_webinar_w_header: {
@@ -330,6 +332,8 @@ export function beginning(fields) {
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
   let subscribe = fields[5].value;
+  let header = fields[6].value;
+  let description = fields[7].value;
 
   let monthName;
   if (month === '01') { monthName = 'January' };
@@ -526,7 +530,7 @@ export function beginning(fields) {
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2f84c0">
                                   <tr>
-                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year}</span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/ce4.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Hygienists News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/ce4.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
+                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year}</span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/dh.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Hygienists News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/dh.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
                                     <td width="25"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="25"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="35" class="w35"></td>
@@ -547,10 +551,10 @@ export function beginning(fields) {
                               <td height="30" align="center"></td>
                             </tr>
                             <tr>
-                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:20px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">New CE Opportunities for Dental Hygienists</td>
+                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:20px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">${header}</td>
                             </tr>
                             <tr>
-                              <td align="center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:18px; color:#333333;">CDEWorld, your partner in continuing education, has created and curated new CE opportunities to fit into your busy schedule. Explore our newest CE courses below.</td>
+                              <td align="center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:18px; color:#333333;">${description}</td>
                             </tr>
                               <!--END OF BEGINNING-->`
 }

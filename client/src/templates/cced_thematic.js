@@ -69,8 +69,10 @@ export const cced_thematic_forms = {
       { label: 'First News Link', name: 'link1' },
       { label: 'Second News Title', name: 'title2' },
       { label: 'Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
-      { label: 'First News Link', name: 'link2' },
-
+      { label: 'Second News Link', name: 'link2' },
+      { label: 'Third News Title', name: 'title3' },
+      { label: 'Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Third News Link', name: 'link3' }
     ]
   },
   ce: {
@@ -650,6 +652,9 @@ export function news(fields) {
   let title2 = fields[4].value;
   let description2 = fields[5].value;
   let link2 = fields[6].value;
+  let title3 = fields[7].value;
+  let description3 = fields[8].value;
+  let link3 = fields[9].value;
 
   return (
     `
@@ -668,7 +673,7 @@ export function news(fields) {
                                   ${header}</div>
                                                         </center>
                                                         
-                                                        <!--SINGLE NEWS ITEM -->
+                          <!--SINGLE NEWS ITEM -->
                               <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
                                 <a href="${link1}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">
                                 ${title1}</a></div>
@@ -676,17 +681,36 @@ export function news(fields) {
                                 ${description1}</div>
                               <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 14px;">
                                                             <a href="${link1}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a></div>
-                                                        <!--END SINGLE NEWS ITEM -->    
-  <!--SECOND NEWS ITEM --> 
-                              <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
-                                <a href="${link2}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title2}</a></div>
-                              <div style="font-size:14px;  margin:0 0 0 14px; font-family:'Times New Roman', serif; font-weight:normal;">
-                                ${description2}</div>
-                              <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 14px;">
-                                <a href="${link2}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a></div>
-                                                        </div>
-                                                        
-    
+                          <!--END SINGLE NEWS ITEM --> 
+                      ${title2 ? `                          
+                    <!--SECOND NEWS ITEM --> 
+                      <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
+                        <a href="${link2}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title2}</a>
+                      </div>
+                      <div style="font-size:14px;  margin:0 0 0 14px; font-family:'Times New Roman', serif; font-weight:normal;">
+                        ${description2}
+                      </div>
+                      <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 14px;">
+                        <a href="${link2}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a>
+                      </div>
+                    <!--SECOND NEWS ITEM --> ` : ``}   
+
+                      ${title3 ? `
+                        <!--THIRD NEWS ITEM -->
+                          <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
+                            <a href="${link3}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">
+                            ${title3}</a>
+                          </div>
+                          <div style="font-size:14px; margin:0 0 0 14px; font-family:'Times New Roman', serif; font-weight:normal;">
+                            ${description3}
+                          </div>
+                          <div style="font-family:Gotham, sans-serif; font-size:12px; margin:0 0 14px 14px;">
+                            <a href="${link3}" style="color:#76706a; text-decoration:none; font-weight:normal;" target="_blank">More Info ▶</a>
+                          </div>
+                      <!--END THIRD NEWS ITEM --> 
+                          `
+      : ``}
+                                                           
                           </td>
                         </tr>
                       </tbody>

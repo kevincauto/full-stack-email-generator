@@ -466,15 +466,16 @@ export function beginning(fields) {
   <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f9f6f1">
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="662" style="min-width:662px;" class="w662">
-          <tr>
-            <td height="20" align="center"></td>
-          </tr>
-          <tr>
-            <td align="center" style="padding:0px 10px;"><a href="${mastheadLink}" target="_blank"> <img src="${mastheadSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
-          </tr>
-          <tr>
-            <td height="20" align="center"></td>
-          </tr>
+      ${mastheadSrc ? `<tr>
+      <td height="20" align="center"></td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0px 10px;"><a href="${mastheadLink}" target="_blank"> <img src="${mastheadSrc}" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </a></td>
+    </tr>
+    <tr>
+      <td height="20" align="center"></td>
+    </tr>` : ``}    
+
           <tr>
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff" style="border:solid 1px #EAE9E2;">
                 <tr>
@@ -506,7 +507,7 @@ export function beginning(fields) {
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2f84c0">
                                   <tr>
-                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year} </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/da.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/${emailName}.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
+                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year} </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/da.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/da.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
                                     <td width="25"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="25"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="35" class="w35"></td>

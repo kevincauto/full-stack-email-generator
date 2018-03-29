@@ -47,7 +47,7 @@ export const id_reader_forms = {
         ]
       },
       { label: 'Masthead Link', name: 'mastheadLink' },
-      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
       { label: 'Volume Number', name: 'volume' },
       { label: 'Issue Number', name: 'issue' },
       { label: 'Subscribe Link', name: 'subscribe' },
@@ -56,7 +56,7 @@ export const id_reader_forms = {
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  ' },
       { label: 'Author', name: 'author' },
       { label: 'Link', name: 'link' },
-      { label: 'Cover Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x220' }
+      { label: 'Cover Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x220' }
     ]
   },
   red_header: {
@@ -88,7 +88,7 @@ export const id_reader_forms = {
       { label: 'Supporter', name: 'supporter' },
       { label: 'Dates', name: 'dates' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
     ]
   },
   peer_reviewed: {
@@ -103,7 +103,7 @@ export const id_reader_forms = {
       { label: 'Description', name: 'description' },
       { label: 'Author', name: 'author' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
     ]
   },
   article: {
@@ -134,7 +134,7 @@ export const id_reader_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Call-to-Action', name: 'cta' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
     ]
   },
   end: {
@@ -597,7 +597,7 @@ export function peer_reviewed(fields) {
     { label: 'Description', name: 'description' },
     { label: 'Author', name: 'author' },
     { label: 'Link', name: 'link' },
-    { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+    { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
   ]
 
   let title = fields[0].value;

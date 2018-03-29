@@ -46,7 +46,7 @@ export const cced_digital_forms = {
                 ]
             },
             { label: 'Header Image Source', name: 'headerSrc', value: 'https://www.aegisdentalnetwork.com/media/66135/' },
-            { label: 'Cover Image Source', name: 'coverSrc', value: 'http://placehold.it/180x220' },
+            { label: 'Cover Image Source', name: 'coverSrc', value: 'https://placehold.it/180x220' },
             { label: 'Digimag Link', name: 'link' },
             { label: 'Subscribe Link', name: 'subscribe' },
         ]

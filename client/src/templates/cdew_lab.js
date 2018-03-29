@@ -46,7 +46,7 @@ export const cdew_lab_forms = {
         ]
       },
       { label: 'Masthead Link', name: 'mastheadLink' },
-      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
       { label: 'Subscribe Link', name: 'subscribe' },
       { label: 'Header', name: 'header', value: 'New CE Opportunities for Lab Technicians' },
       { label: 'Description', name: 'description', value: 'CDEWorld, your partner in continuing education, has created and curated new CE opportunities to fit into your busy schedule. Explore our newest CE courses below.' }
@@ -142,7 +142,7 @@ export const cdew_lab_forms = {
     draggable: true,
     fields: [
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/600x70' },
     ]
   },
   new_content_w_header: {
@@ -207,7 +207,7 @@ export const cdew_lab_forms = {
       { label: 'Credits', name: 'credits' },
       { label: 'Description', name: 'description' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180' }
+      { label: 'Image Link Source', name: 'imgSrc', value: 'https://placehold.it/155x180' }
     ]
   },
   portal_partner: {
@@ -245,7 +245,7 @@ export const cdew_lab_forms = {
       { label: 'Credits', name: 'credits' },
       { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here!' },
       { label: 'Link', name: 'link' },
-      { label: 'Event Image Source', name: 'imgSrc', value: 'http://placehold.it/150x150' }
+      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x150' }
     ]
   },
   space: {
@@ -535,7 +535,7 @@ export function beginning(fields) {
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2f84c0">
                                   <tr>
-                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year} </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/lab.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Lab Technicians News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/lab.html" target="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
+                                    <td align="center" class="f12" height="50" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#ffffff; padding-left:20px;"><span class="white">${monthName} ${year} </span> | <span class="white1"> <a href="http://www.cdeworld.com" target="_blank" style="color:#ffffff;">Visit Our Website</a></span> | <span class="white1"><a href="http://aegispublications.com/news/ce/${year}/${month}/lab.html" target="_blank" style="color:#ffffff;">Read Online</a></span> | <span class="white1"><a href="mailto:?subject=FW: Lab Technicians News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/ltarget="_blank" style="color:#ffffff;">Forward&nbsp;to&nbsp;a&nbsp;Colleague</a></span></td>
                                       <td width="25"><a href="https://www.facebook.com/CDEWorldDentistry/" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="25"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
                                     <td width="35" class="w35"></td>
@@ -1091,7 +1091,7 @@ export function portal_partner(fields) {
     <td height="30" align="center"></td>
   </tr>
   <!--<tr>
-    <td align="center"><img src="http://placehold.it/600x70" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+    <td align="center"><img src="https://placehold.it/600x70" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
   </tr>-->
 
 <!--END FEATURED PORTAL PARTNER-->

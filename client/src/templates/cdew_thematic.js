@@ -44,10 +44,10 @@ export const cdew_thematic_forms = {
                 ]
             },
             { label: 'Masthead Link', name: 'mastheadLink' },
-            { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+            { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
             { label: 'Subscribe Link', name: 'subscribe' },
             { label: 'Thematic Topic', name: 'topic' },
-            { label: 'Banner Image Source', name: 'imgSrc', value: 'http://placehold.it/600x150' }
+            { label: 'Banner Image Source', name: 'imgSrc', value: 'https://placehold.it/600x150' }
         ]
     },
     live_webinar: {
@@ -192,7 +192,7 @@ export const cdew_thematic_forms = {
         draggable: true,
         fields: [
             { label: 'Link', name: 'link' },
-            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/600x70' },
+            { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/600x70' },
         ]
     },
     featured_article: {
@@ -239,7 +239,7 @@ export const cdew_thematic_forms = {
             { label: 'Credits', name: 'credits' },
             { label: 'Description', name: 'description' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x250' },
+            { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/200x250' },
         ]
     },
     event: {
@@ -255,7 +255,7 @@ export const cdew_thematic_forms = {
             { label: 'Details', name: 'details', value: 'November 18, 2017 | Boston, MA | 7 CEU' },
             { label: 'Description', name: 'description' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x150' }
+            { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/200x150' }
         ]
     },
     video: {
@@ -268,7 +268,7 @@ export const cdew_thematic_forms = {
         fields: [
             { label: 'Title', name: 'title' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x150' }
+            { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/200x150' }
         ]
     },
     featured_webinar: {
@@ -284,7 +284,7 @@ export const cdew_thematic_forms = {
             { label: 'Presenter', name: 'presenter' },
             { label: 'Dates', name: 'dates' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/200x150' }
+            { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/200x150' }
         ]
     },
     featured_product: {
@@ -299,7 +299,7 @@ export const cdew_thematic_forms = {
             { label: 'Title', name: 'title' },
             { label: 'Description', name: 'description' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/200150' }
+            { label: 'Image Link Source', name: 'imgSrc', value: 'https://placehold.it/200150' }
         ]
     },
     products: {

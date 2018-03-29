@@ -47,7 +47,7 @@ export const cdew_dds_forms = {
         ]
       },
       { label: 'Masthead Link', name: 'mastheadLink' },
-      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
       { label: 'Subscribe Link', name: 'subscribe' },
       { label: 'Header', name: 'header', value: 'New CE Opportunities for Dentists' },
       { label: 'Description', name: 'description', value: 'CDEWorld, your partner in continuing education, has created and curated new CE opportunities to fit into your busy schedule. Explore our newest CE courses below.' }
@@ -143,7 +143,7 @@ export const cdew_dds_forms = {
     draggable: true,
     fields: [
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/600x70' },
     ]
   },
   new_content_w_header: {
@@ -206,7 +206,7 @@ export const cdew_dds_forms = {
       { label: 'Credits', name: 'credits' },
       { label: 'Description', name: 'description' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/155x180' }
+      { label: 'Image Link Source', name: 'imgSrc', value: 'https://placehold.it/155x180' }
     ]
   },
   ebook_end: {
@@ -253,7 +253,7 @@ export const cdew_dds_forms = {
       { label: 'Credits', name: 'credits' },
       { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here!' },
       { label: 'Link', name: 'link' },
-      { label: 'Event Image Source', name: 'imgSrc', value: 'http://placehold.it/150x150' }
+      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x150' }
     ]
   },
   event_end: {
@@ -1099,7 +1099,7 @@ export function portal_partner(fields) {
     <td height="30" align="center"></td>
   </tr>
   <!--<tr>
-    <td align="center"><img src="http://placehold.it/600x70" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+    <td align="center"><img src="https://placehold.it/600x70" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
   </tr>-->
 
 <!--END FEATURED PORTAL PARTNER-->

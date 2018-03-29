@@ -44,10 +44,10 @@ export const idt_thematic_forms = {
         ]
       },
       { label: 'Masthead Link', name: 'mastheadLink' },
-      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
       { label: 'Subscribe Link', name: 'subscribe' },
       { label: 'Thematic Topic', name: 'topic', value: 'Implantology' },
-      { label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150' },
+      { label: 'Main Image Link Source', name: 'mainImg', value: 'https://placehold.it/600x150' },
       { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Thematic Topic Header', name: 'thematicSrc', value: 'https://www.dentalaegis.com/media/64338/' }
     ]
@@ -83,7 +83,7 @@ export const idt_thematic_forms = {
       { label: 'Provider', name: 'provider' },
       { label: 'Available Dates', name: 'dates' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/150x120' },
+      { label: 'Image Link Source', name: 'imgSrc', value: 'https://placehold.it/150x120' },
     ]
   },
   resources: {
@@ -114,7 +114,7 @@ export const idt_thematic_forms = {
     draggable: true,
     fields: [
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'https://placehold.it/600x70' },
     ]
   },
   featured_article: {
@@ -130,7 +130,7 @@ export const idt_thematic_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/300x200' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/300x200' },
     ]
   },
   featured_video: {
@@ -146,7 +146,7 @@ export const idt_thematic_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/300x200' }
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/300x200' }
     ]
   },
   products: {
@@ -174,7 +174,7 @@ export const idt_thematic_forms = {
       { label: 'Featured Product Name', name: 'product3' },
       { label: 'Featured Product Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Featured Link', name: 'link3' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/150' }
     ]
   },
   end: {

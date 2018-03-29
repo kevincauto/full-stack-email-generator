@@ -47,10 +47,10 @@ export const id_thematic_forms = {
                 ]
             },
             { label: 'Masthead Link', name: 'mastheadLink', value: 'https://www.pulpdent.com' },
-            { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+            { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
             { label: 'Subscribe Link', name: 'subscribe' },
             { label: 'Thematic Topic', name: 'topic', value: 'Implantology' },
-            { label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150' },
+            { label: 'Main Image Link Source', name: 'mainImg', value: 'https://placehold.it/600x150' },
             { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
         ]
     },
@@ -90,7 +90,7 @@ export const id_thematic_forms = {
             { label: 'Provider', name: 'provider' },
             { label: 'Available Dates', name: 'dates' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/180x140' },
+            { label: 'Image Link Source', name: 'imgSrc', value: 'https://placehold.it/180x140' },
         ]
     },
     article: {
@@ -107,7 +107,7 @@ export const id_thematic_forms = {
             { label: 'Author', name: 'author' },
             { label: 'Call-to-Action', name: 'cta', value: 'Read More' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/180x140' }
+            { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/180x140' }
         ]
     },
     center_banner: {
@@ -119,7 +119,7 @@ export const id_thematic_forms = {
         draggable: true,
         fields: [
             { label: 'Link', name: 'link' },
-            { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70' },
+            { label: 'Image Source Link', name: 'imgLink', value: 'https://placehold.it/600x70' },
         ]
     },
     featured: {

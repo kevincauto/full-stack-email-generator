@@ -47,7 +47,7 @@ export const idt_reader_forms = {
                 ]
             },
             { label: 'Masthead Link', name: 'mastheadLink' },
-            { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+            { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
             { label: 'Volume Number', name: 'volume' },
             { label: 'Issue Number', name: 'issue' },
             { label: 'Header', name: 'header', value: 'Cover Story' },
@@ -55,7 +55,7 @@ export const idt_reader_forms = {
             { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  ' },
             { label: 'Author', name: 'author', value: 'Lorem Ipsum, DDS' },
             { label: 'Link', name: 'link' },
-            { label: 'Cover Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x220' }
+            { label: 'Cover Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x220' }
         ]
     },
     article: {
@@ -71,7 +71,7 @@ export const idt_reader_forms = {
             { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos. ' },
             { label: 'Author', name: 'author', value: 'Lorem Ipsum, DDS' },
             { label: 'Article link', name: 'link' },
-            { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+            { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
             { label: 'Image Link (Same? or Button Ad?)', name: 'imgLink' }
         ]
     },
@@ -84,7 +84,7 @@ export const idt_reader_forms = {
         draggable: true,
         fields: [
             { label: 'Link', name: 'link' },
-            { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70' },
+            { label: 'Image Source Link', name: 'imgLink', value: 'https://placehold.it/600x70' },
         ]
     },
     live_webinar: {
@@ -104,7 +104,7 @@ export const idt_reader_forms = {
             { label: 'Provider', name: 'provider' },
             { label: 'Supporter', name: 'supporter' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+            { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
         ]
     },
     on_demand_webinar: {
@@ -124,7 +124,7 @@ export const idt_reader_forms = {
             { label: 'Provider', name: 'provider' },
             { label: 'Supporter', name: 'supporter' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+            { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
         ]
     },
     featured: {
@@ -140,7 +140,7 @@ export const idt_reader_forms = {
             { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  Lorem ipsum dolar emet eres dormus volenquar elementos.  ' },
             { label: 'Author', name: 'author', value: 'Lorem Ipsum, DDS' },
             { label: 'Link', name: 'link' },
-            { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/180x150' },
+            { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
             { label: 'Image Link', name: 'imgLink' }
         ]
     },

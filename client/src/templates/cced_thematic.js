@@ -48,10 +48,10 @@ export const cced_thematic_forms = {
         ]
       },
       { label: 'Masthead Link', name: 'mastheadLink', value: '' },
-      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
       { label: 'Thematic Topic', name: 'topic', value: '' },
       { label: 'Subscribe Link', name: 'subscribe' },
-      { label: 'Main Image Link Source', name: 'mainImg', value: 'http://placehold.it/600x150' },
+      { label: 'Main Image Link Source', name: 'mainImg', value: 'https://placehold.it/600x150' },
       { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
     ]
   },
@@ -92,7 +92,7 @@ export const cced_thematic_forms = {
       { label: 'Provider', name: 'provider' },
       { label: 'Available Dates', name: 'dates' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Link Source', name: 'imgSrc', value: 'http://placehold.it/120x100' },
+      { label: 'Image Link Source', name: 'imgSrc', value: 'https://placehold.it/120x100' },
     ]
   },
   center_banner: {
@@ -104,7 +104,7 @@ export const cced_thematic_forms = {
     draggable: true,
     fields: [
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/600x70' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'https://placehold.it/600x70' },
     ]
   },
   three_column: {
@@ -142,7 +142,7 @@ export const cced_thematic_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'https://placehold.it/150' },
       { label: 'Call-to-Action Phrase', name: 'cta', value: 'Learn More' }
     ]
   },
@@ -159,7 +159,7 @@ export const cced_thematic_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgLink', value: 'http://placehold.it/150' },
+      { label: 'Image Source Link', name: 'imgLink', value: 'https://placehold.it/150' },
       { label: 'Call-to-Action Phrase', name: 'cta', value: 'Watch Now' }
     ]
   },
@@ -181,7 +181,7 @@ export const cced_thematic_forms = {
       { label: 'Featured Product', name: 'product3' },
       { label: 'Featured Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Featured Link', name: 'link3' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/150' },
     ]
   },
   end: {

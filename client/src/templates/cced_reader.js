@@ -48,7 +48,7 @@ export const cced_reader_forms = {
         ]
       },
       { label: 'Masthead Link', name: 'mastheadLink' },
-      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'http://placehold.it/600x80' },
+      { label: 'Masthead Image Source Link', name: 'mastheadSrc', value: 'https://placehold.it/600x80' },
       { label: 'Subscribe Link', name: 'subscribe' },
       { label: 'Volume Number', name: 'volume' },
       { label: 'Issue Number', name: 'issue' }
@@ -72,7 +72,7 @@ export const cced_reader_forms = {
       { label: 'Source', name: 'source' },
       { label: 'Dates', name: 'dates' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/165' }
+      { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/165' }
     ]
   },
   center_banner: {
@@ -84,7 +84,7 @@ export const cced_reader_forms = {
     draggable: true,
     fields: [
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/600x70' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/600x70' },
     ]
   },
   article: {
@@ -125,7 +125,7 @@ export const cced_reader_forms = {
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Author', name: 'author' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/150' }
     ]
   },
   featured_article: {
@@ -141,7 +141,7 @@ export const cced_reader_forms = {
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Author', name: 'author' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'http://placehold.it/150' }
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/150' }
     ]
   },
   live_webinar: {
@@ -161,7 +161,7 @@ export const cced_reader_forms = {
       { label: 'Provider', name: 'provider' },
       { label: 'Supporter', name: 'supporter' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150' }
+      { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/150' }
     ]
   },
   on_demand_webinar: {
@@ -180,7 +180,7 @@ export const cced_reader_forms = {
       { label: 'Provider', name: 'provider' },
       { label: 'Supporter', name: 'supporter' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source', name: 'imgSrc', value: 'http://placehold.it/150' }
+      { label: 'Image Source', name: 'imgSrc', value: 'https://placehold.it/150' }
     ]
   },
   end: {

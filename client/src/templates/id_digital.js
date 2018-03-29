@@ -47,7 +47,7 @@ export const id_digital_forms = {
                 ]
             },
             { label: 'Header Image Source', name: 'headerSrc', value: 'https://www.dentalaegis.com/media/64933/' },
-            { label: 'Cover Image Source', name: 'coverSrc', value: 'http://placehold.it/180x220' },
+            { label: 'Cover Image Source', name: 'coverSrc', value: 'https://placehold.it/180x220' },
             { label: 'Digimag Link', name: 'link' }
         ]
     },

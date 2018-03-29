@@ -335,8 +335,9 @@ export function beginning(fields) {
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
   let subscribe = fields[5].value;
-  let header = fields[6].value;
-  let description = fields[7].value;
+  if (fields[6].value) { let header = fields[6].value; }
+  if (fields[7].value) { let description = fields[7].value; }
+
 
   let monthName;
   if (month === '01') { monthName = 'January' };
@@ -557,10 +558,10 @@ export function beginning(fields) {
                               <td height="30" align="center"></td>
                             </tr>
                             <tr>
-                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:21px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">${header} | ${monthName} ${year}</td>
+                              <td align="center" class="f26" style="font-family:Arial, Helvetica, sans-serif; font-size:21px; line-height:30px; font-weight:bold; color:#333333; padding-bottom:10px;">${header ? `${header}` : ``} | ${monthName} ${year}</td>
                             </tr>
                             <tr>
-                              <td align="center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:18px; color:#333333;">${description}</td>
+                              <td align="center" style="font-family:Georgia, 'Times New Roman', Times, serif; font-size:16px; line-height:18px; color:#333333;">${description ? `${description}` : ``}</td>
                             </tr>
                             <!--END OF THE BEGINNING -->
   `

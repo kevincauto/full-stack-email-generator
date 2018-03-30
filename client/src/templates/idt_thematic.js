@@ -48,8 +48,7 @@ export const idt_thematic_forms = {
       { label: 'Subscribe Link', name: 'subscribe' },
       { label: 'Thematic Topic', name: 'topic', value: 'Implantology' },
       { label: 'Main Image Link Source', name: 'mainImg', value: 'https://placehold.it/600x150' },
-      { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
-      { label: 'Thematic Topic Header', name: 'thematicSrc', value: 'https://www.dentalaegis.com/media/64338/' }
+      { label: 'Intro Paragraph', name: 'intro', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' }
     ]
   },
   news: {
@@ -210,7 +209,7 @@ export function beginning(fields) {
   let topic = fields[6].value;
   let mainImg = fields[7].value;
   let intro = fields[8].value;
-  let thematicSrc = fields[9].value;
+
 
   //put the url together
   let url = `https://www.aegisdentalnetwork.com/idt/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
@@ -422,8 +421,22 @@ export function beginning(fields) {
                                                                   </tr>
                                                                   <tr>
                                                                       <td align="center">
-                                                                          <img alt="" border="0" class="w100" src="${thematicSrc}" style="display:block; margin:0px; max-width:600px;" width="600" /></td>
+                                                                          <img alt="" border="0" class="w100" src="https://www.aegisdentalnetwork.com/media/68159/" style="display:block; margin:0px; max-width:600px;" width="600" /></td>
                                                                   </tr>
+                                                                                                                                    <tr><td>
+<div style="padding: 0px 12px; color: #E4311E; font-family: 'Times New Roman', serif; font-size: 30px">
+
+${topic} <em>Update</em>
+</div>
+                                                                  </td></tr>
+<tr>
+	<td style="padding: 10px 0px 0px">
+		<img src="https://www.aegisdentalnetwork.com/media/68160/" />
+	</td>
+</tr>
+                                                                  
+                                                                
+                                                                  
                                                                   <tr>
                                                                       <td align="right" style="padding-bottom:4px;">
                                                                           <table border="0" cellpadding="0" cellspacing="0">
@@ -440,6 +453,7 @@ export function beginning(fields) {
                                                                           </table>
                                                                       </td>
                                                                   </tr>
+
                                                                   <tr>
                                                                       <td align="center">
                                                                           <img alt="" border="0" class="w100" src="${mainImg}" style="display:block; margin:0px; max-width:582px;" width="582" /></td>

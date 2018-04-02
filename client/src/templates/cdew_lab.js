@@ -1016,10 +1016,7 @@ export function ebook(fields) {
 </tr>
 <tr>
   <td height="20" align="center"></td>
-</tr>
-<tr>
-  <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-</tr>                        
+</tr>                      
 <!--END EBOOK SECTION --> `
   )
 }

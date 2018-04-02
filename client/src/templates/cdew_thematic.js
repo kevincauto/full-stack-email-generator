@@ -17,7 +17,7 @@ export const cdew_thematic_forms = {
         addable: true,
         draggable: false,
         fields: [
-            { label: 'Email Name', name: 'emailName', value: 'ce3' },
+            { label: 'Email Name', name: 'emailName', value: '' },
             {
                 label: 'Month', name: 'month', value: month, dropdown: [
                     { value: '01', text: 'Send Month: January' },
@@ -536,7 +536,7 @@ export function beginning(fields) {
                               <table cellspacing="0" cellpadding="0" border="0" align="right">
                                   <tr>
                                       <td align="right">
-                                          ${monthName} ${year} | <a href="http://www.cdeworld.com" target="_blank" style="color:#2f84c0;">Visit Our Website</a> | <a href="http://aegispublications.com/news/cdeworld/2017/12/${emailName}.html" target="_blank" style="color:#2f84c0;">Read Online</a> | <a href="mailto:?subject=FW: ${topic} eNews!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/2017/12/${emailName}.html" target="_blank" style="color:#2f84c0;">Forward to a Colleague</a> |&nbsp;
+                                          ${monthName} ${year} | <a href="http://www.cdeworld.com" target="_blank" style="color:#2f84c0;">Visit Our Website</a> | <a href="http://aegispublications.com/news/cdeworld/${year}/${month}/${emailName}.html" target="_blank" style="color:#2f84c0;">Read Online</a> | <a href="mailto:?subject=FW: ${topic} eNews!&amp;body=I thought you might be interested in this: http://aegispublications.com/news/cdeworld/${year}/${month}/${emailName}.html" target="_blank" style="color:#2f84c0;">Forward to a Colleague</a> |&nbsp;
                                       </td>
                                       <td align="right">
                                           <img class="soc" src="http://aegispublications.com/news/ce/2016/templates/soc-2.png" alt="" width="33" height="14" usemap="#Map2" style="padding-top:1px;">

@@ -1,21 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 import axios from 'axios';
-// import {
-//   Collapse,
-//   Navbar,
-//   NavbarToggler,
-//   NavbarBrand,
-//   Nav,
-//   NavItem,
-//   NavLink,
-//   UncontrolledDropdown,
-//   DropdownToggle,
-//   DropdownMenu,
-//   DropdownItem
-// } from 'reactstrap';
-
-// import 'bootstrap/dist/css/bootstrap.css';
 
 import RightSideDisplay from './RightSideDisplay';
 import FormSection from './FormSection';

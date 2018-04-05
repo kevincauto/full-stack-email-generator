@@ -179,8 +179,8 @@ export const cdew_thematic_forms = {
         addable: true,
         draggable: true,
         fields: [
-            { label: 'Message', name: 'message', value: 'Visit the CDEWorld Library for access to additional CE courses focused on Infection Control!' },
-            { label: 'Link', name: 'link', value: 'https://cdeworld.com/courses/search?utf8=%E2%9C%93&q=&c=294&p=&o=&s=&commit=SEARCH' }
+            { label: 'Message', name: 'message', value: 'Visit the CDEWorld Library for access to additional dental CE courses!' },
+            { label: 'Link', name: 'link', value: 'https://cdeworld.com/courses' }
         ]
     },
     center_banner: {
@@ -885,7 +885,7 @@ export function end_featured_ce_section(fields) {
                   <tr>
                       <td>
                           <div style="padding: 18px 20px; font-family:Arial, sans-serif; font-size: 12px; line-height:1.4em; color: #525252;">
-                            <a href="https://cdeworld.com/courses" target="_blank" style="color:#2469aa; text-decoration: none;">Visit the CDEWorld Library for access to additional dental CE courses!</a>
+                            <a href="${link}" target="_blank" style="color:#2469aa; text-decoration: none;">${message}</a>
                           </div>
                       </td>
                   </tr>

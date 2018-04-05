@@ -367,7 +367,7 @@ export function beginning(fields) {
     let imgSrc = fields[7].value;
 
     //uppercase all words.
-    topic = topic.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+    // topic = topic.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 
     let monthName;
     if (month === '01') { monthName = 'January' };

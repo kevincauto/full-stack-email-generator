@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
-if (currentMonth < 10) { currentMonth = '0' + '' + currentMonth }
+if (currentMonth < 10) { currentMonth = '0' + currentMonth }
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
@@ -200,12 +200,12 @@ export const idt_thematic_initial_state = [
 ];
 
 export function beginning(fields) {
-  let emailName = fields[0].value;
+  // let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
-  let subscribe = fields[5].value;
+  // let subscribe = fields[5].value;
   let topic = fields[6].value;
   let mainImg = fields[7].value;
   let intro = fields[8].value;
@@ -554,12 +554,12 @@ export function news(fields) {
 
 export function ce(fields) {
   let title = fields[0].value;
-  let description = fields[1].value;
+  // let description = fields[1].value;
   let author = fields[2].value;
   let credits = fields[3].value;
   let cost = fields[4].value;
   let source = fields[5].value;
-  let provider = fields[6].value;
+  // let provider = fields[6].value;
   let dates = fields[7].value;
   let link = fields[8].value;
   let imgSrc = fields[9].value;
@@ -801,7 +801,7 @@ export function featured_article(fields) {
 export function featured_video(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
-  let author = fields[2].value;
+  // let author = fields[2].value;
   let description = fields[3].value;
   let link = fields[4].value;
   let imgSrc = fields[5].value;

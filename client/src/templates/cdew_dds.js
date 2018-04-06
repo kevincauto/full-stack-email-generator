@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if (month < 10) { month = '0' + '' + month }
+if (month < 10) { month = '0' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -90,6 +90,15 @@ export const cdew_dds_forms = {
       { label: 'Link', name: 'link' }
     ]
   },
+  end_live_webinar: {
+    typeOfRow: 'end_live_webinar',
+    header: 'End of Live Webinar Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   on_demand_webinar_w_header: {
     typeOfRow: 'on_demand_webinar_w_header',
     header: 'On-Demand Webinar w/ Header',
@@ -105,7 +114,8 @@ export const cdew_dds_forms = {
       { label: 'Commercial Supporter', name: 'supporter' },
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
-      { label: 'Link', name: 'link' }
+      { label: 'Link', name: 'link' },
+      { label: 'Img Src', name: 'img', value: 'https://placehold.it/150x100' }
     ]
   },
   on_demand_webinar_wo_header: {
@@ -122,7 +132,8 @@ export const cdew_dds_forms = {
       { label: 'Commercial Supporter', name: 'supporter' },
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
-      { label: 'Link', name: 'link' }
+      { label: 'Link', name: 'link' },
+      { label: 'Img Src', name: 'img', value: 'https://placehold.it/150x100' }
     ]
   },
   on_demand_webinar_end: {
@@ -274,6 +285,15 @@ export const cdew_dds_forms = {
     draggable: true,
     fields: []
   },
+  space: {
+    typeOfRow: 'space',
+    header: 'Space',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
@@ -318,6 +338,7 @@ export const cdew_dds_initial_state = [
   _.cloneDeep(cdew_dds_forms.beginning),
   _.cloneDeep(cdew_dds_forms.live_webinar_w_header),
   _.cloneDeep(cdew_dds_forms.live_webinar_wo_header),
+  _.cloneDeep(cdew_dds_forms.end_live_webinar),
   _.cloneDeep(cdew_dds_forms.on_demand_webinar_w_header),
   _.cloneDeep(cdew_dds_forms.on_demand_webinar_wo_header),
   _.cloneDeep(cdew_dds_forms.on_demand_webinar_end),
@@ -332,16 +353,17 @@ export const cdew_dds_initial_state = [
   _.cloneDeep(cdew_dds_forms.featured_event),
   _.cloneDeep(cdew_dds_forms.event_end),
   _.cloneDeep(cdew_dds_forms.border),
+  _.cloneDeep(cdew_dds_forms.space),
   _.cloneDeep(cdew_dds_forms.end)
 ];
 
 export function beginning(fields) {
-  let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  // let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
-  let subscribe = fields[5].value;
+  // let subscribe = fields[5].value;
   let header = fields[6].value;
   let description = fields[7].value;
 
@@ -619,7 +641,7 @@ export function live_webinar_w_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE »</a></td>
     </tr>
     <!--END LIVE WEBINAR WITH HEADER -->`
   )
@@ -671,11 +693,24 @@ export function live_webinar_wo_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">REGISTER HERE »</a></td>
     </tr>
+
     <!--END LIVE WEBINAR-->`
   )
 }
+
+
+
+export function end_live_webinar(fields) {
+  return (
+    `	<tr>
+	  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><br><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=279&p=&o=&commit=SEARCH" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All Live CDEWorld Webinars »</a></td>
+	</tr>`
+  )
+}
+
+
 
 export function on_demand_webinar_w_header(fields) {
   let header = fields[0].value;
@@ -683,9 +718,10 @@ export function on_demand_webinar_w_header(fields) {
   let presenter = fields[2].value;
   let provider = fields[3].value;
   let supporter = fields[4].value;
-  let cost = fields[5].value;
-  let credits = fields[6].value;
+  // let cost = fields[5].value;
+  // let credits = fields[6].value;
   let link = fields[7].value;
+  let img = fields[8].value;
 
   return (
     `<!--ON-DEMAND WEBINAR WITH HEADER-->
@@ -712,11 +748,13 @@ export function on_demand_webinar_w_header(fields) {
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
+            <td align="center">
+            <table cellpadding="0" cellspacing="0" border="0" align="left" class="w100">
                 <tr>
-                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter: ${presenter}  <br>
+                  <td width="247" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter: ${presenter} <br>
                     Provider: ${provider}<br>
-                    Commercial Supporter: <em>${supporter}</em></td>
+                    Commercial Supporter: <em>${supporter}</em><br />
+					</td>
                 </tr>
               </table>
               
@@ -725,17 +763,20 @@ export function on_demand_webinar_w_header(fields) {
               <td align="center"  valign="top">
 <![endif]-->
               
-              <table cellpadding="0" cellspacing="0" border="0" width="265" align="left" style="margin:0 0 0 14px;" class="w100">
+              <table cellpadding="0" cellspacing="0" border="0" width="333" align="left" style="margin:0 0 0 14px;" class="w100">
                 <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
-                  Credits: ${credits}</td>
+                  <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br>
+                  Credits: 1 Self-Study CEU</td>
+                  <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
+                    </td>
                 </tr>
               </table></td>
           </tr>
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR »</a></td>
     </tr>
     <!--END ON-DEMAND WEBINAR WITH HEADER-->`
   )
@@ -747,9 +788,10 @@ export function on_demand_webinar_wo_header(fields) {
   let presenter = fields[1].value;
   let provider = fields[2].value;
   let supporter = fields[3].value;
-  let cost = fields[4].value;
-  let credits = fields[5].value;
+  // let cost = fields[4].value;
+  // let credits = fields[5].value;
   let link = fields[6].value;
+  let img = fields[7].value;
 
   return (
     `<!--ON-DEMAND WEBINAR WITHOUT HEADER-->
@@ -763,11 +805,13 @@ ${title}</strong></td>
     <tr>
       <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
+            <td align="center">
+            <table cellpadding="0" cellspacing="0" border="0" align="left" class="w100">
                 <tr>
-                  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter:  ${presenter}<br>
+                  <td width="247" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Presenter: ${presenter} <br>
                     Provider: ${provider}<br>
-                    Commercial Supporter: <em>${supporter}</em></td>
+                    Commercial Supporter: <em>${supporter}</em><br />
+					</td>
                 </tr>
               </table>
               
@@ -776,17 +820,20 @@ ${title}</strong></td>
               <td align="center"  valign="top">
 <![endif]-->
               
-              <table cellpadding="0" cellspacing="0" border="0" width="265" align="left" style="margin:0 0 0 14px;" class="w100">
+              <table cellpadding="0" cellspacing="0" border="0" width="333" align="left" style="margin:0 0 0 14px;" class="w100">
                 <tr>
-                  <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
-                  Credits: ${credits}</td>
+                  <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br>
+                  Credits: 1 Self-Study CEU</td>
+                  <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
+                    </td>
                 </tr>
               </table></td>
           </tr>
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR »</a></td>
     </tr>
     <!--END ON-DEMAND WEBINAR WITHOUT HEADER-->`
   )
@@ -799,7 +846,7 @@ export function on_demand_webinar_end(fields) {
     <td height="20" align="center"></td>
   </tr>
   <tr>
-    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=279&p=&o=&commit=SEARCH" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to on-demand webinars produced with Dentists in mind! »</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=279&p=&o=&commit=SEARCH" target="_blank"  style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All On-Demand CDEWorld Webinars »</a></td>
   </tr>
   <tr>
     <td height="20" align="center"></td>
@@ -864,7 +911,7 @@ export function new_content_w_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION »</a></td>
     </tr>
     <!--END OF NEW CONTENT WITH HEADER-->`)
 }
@@ -912,7 +959,7 @@ ${title}</strong><br />
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION »</a></td>
     </tr>
     <!--END OF NEW CONTENT WITHOUT HEADER-->`)
 }
@@ -923,8 +970,8 @@ export function end_new_content(fields) {
   <td height="20" align="center"></td>
 </tr>
 <tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/courses/search?c=279&hq_e=el&hq_m=4255273&hq_l=19&hq_v=1030197208" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to more  CE programs!  »
-  </a></td>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/courses/search?c=279&hq_e=el&hq_m=4255273&hq_l=19&hq_v=1030197208" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld CE Articles »</a>
+  </td>
 </tr>
 <tr>
   <td height="20" align="center"></td>
@@ -992,7 +1039,7 @@ export function ebook(fields) {
               <td align="left" style="padding-top:15px;"><table cellpadding="0" cellspacing="0" border="0" bgcolor="#2f84c0" style="border-radius: 5px;">
                   <tr>
                     <td width="10"></td>
-                    <td align="left" height="40" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#ffffff;"><a href="${link}" target="_blank" style="color:#ffffff; text-decoration:none;">Download your free eBook</a></td>
+                    <td align="left" height="40" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#ffffff;"><a href="${link}" target="_blank" style="color:#ffffff; text-decoration:none;">Download your free eBook »</a></td>
                     <td width="15"></td>
                   </tr>
                 </table></td>
@@ -1018,8 +1065,7 @@ export function ebook_end(fields) {
   <td height="20" align="center"></td>
 </tr>
 <tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="http://cdeworld.com/ebooks" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld eBook Library for access to the dental information <br>
-    you need, when you need it »</a></td>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="http://cdeworld.com/ebooks" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld eBooks »</a></td>
 </tr>
 <tr>
   <td height="20" align="center"></td>
@@ -1093,7 +1139,7 @@ export function portal_partner(fields) {
     <td height="20" align="center"></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION »</a></td>
   </tr>
   <tr>
     <td height="30" align="center"></td>
@@ -1159,7 +1205,7 @@ export function event_end(fields) {
   return (
     `
     <tr>
-    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Event Listing for exciting upcoming live events »</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld Events »</a></td>
   </tr>
   <tr>
     <td height="20" align="center"></td>
@@ -1173,16 +1219,71 @@ export function border(fields) {
     </tr>`
   )
 }
+export function space(fields) {
+  return (
+    `<tr>
+      <td height="20" align="center"></td>
+    </tr>`
+  )
+}
 export function end(fields) {
-  let month = fields[0].value;
-  let year = fields[1].value;
+  // let month = fields[0].value;
+  // let year = fields[1].value;
   return (
     `  <!--START OF THE END -->
     <!--<tr>
                  <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
                </tr>
     -->
-
+				<tr>
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						  <tbody>
+							<tr>
+							  <td colspan="3">
+								<div style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; margin:18px 0 0 0;">Featured Dental Categories <span style="font-weight:normal !important">(Click on the topic to view all CE in the category)</span></div>
+							   </td>
+							</tr>
+							<tr>
+							  <td colspan="3" height="25" align="center"></td>
+							</tr>
+							<tr>
+							  <td width="33%" align="left" valign="top" style="text-transform:uppercase; text-decoration:underline; font-size:13px; line-height:21px;">
+								<a href="https://cdeworld.com/courses/dentist/cad-cam" style="color:#2f84c0;" target="_blank">CAD/CAM</a><br>
+								<a href="https://cdeworld.com/courses/dentist/dental-materials" style="color:#2f84c0;" target="_blank">Dental Materials</a><br>
+								<a href="https://cdeworld.com/courses/dentist/digital-radiography-and-imaging" style="color:#2f84c0; line-height:17px !important;" target="_blank">Digital Radiography &amp; Imaging</a><br>
+								<a href="https://cdeworld.com/courses/dentist/endodontics" style="color:#2f84c0;" target="_blank">Endodontics</a><br>
+								<a href="https://cdeworld.com/courses/dentist/esthetic-dentistry" style="color:#2f84c0;" target="_blank">Esthetic Dentistry</a><br>
+								<a href="https://cdeworld.com/courses/dentist/general-and-comprehensive-dentistry" style="color:#2f84c0; line-height:17px !important;" target="_blank">General &amp; Comprehensive Dentistry</a><br>
+								<a href="https://cdeworld.com/courses/dentist/implantology" style="color:#2f84c0;" target="_blank">Implantology</a><br>
+								<a href="https://cdeworld.com/courses/dentist/infection-control" style="color:#2f84c0;" target="_blank">Infection Control</a>
+							  </td>
+							  <td width="33%" align="left" valign="top" style="text-transform:uppercase; text-decoration:underline; font-size:13px; line-height:21px;">
+								<a href="https://cdeworld.com/courses/dentist/laser-therapy" style="color:#2f84c0;" target="_blank">Laser Therapy</a><br>
+								<a href="https://cdeworld.com/courses/dentist/occlusion" style="color:#2f84c0;" target="_blank">Occlusion</a><br>
+								<a href="https://cdeworld.com/courses/dentist/oral-surgery" style="color:#2f84c0;" target="_blank">Oral Surgery</a><br>
+								<a href="https://cdeworld.com/courses/dentist/orthodontics" style="color:#2f84c0;" target="_blank">Orthodontics</a><br>
+								<a href="https://cdeworld.com/courses/dentist/pain-management-and-anesthesia" style="color:#2f84c0; line-height:17px !important;" target="_blank">Pain Management &amp; Anesthesia</a><br>
+								<a href="https://cdeworld.com/courses/dentist/pediatric-dentistry" style="color:#2f84c0;" target="_blank">Pediatric Dentistry</a><br>
+								<a href="https://cdeworld.com/courses/dentist/periodontics" style="color:#2f84c0;" target="_blank">Periodontics</a>
+							  </td>
+							  <td width="33%" align="left" valign="top" style="text-transform:uppercase; text-decoration:underline; font-size:13px; line-height:21px;">
+								<a href="https://cdeworld.com/courses/dentist/pharmacology" style="color:#2f84c0;" target="_blank">Pharmacology</a><br>
+								<a href="https://cdeworld.com/courses/dentist/practice-management" style="color:#2f84c0;" target="_blank">Practice Management</a><br>
+								<a href="https://cdeworld.com/courses/dentist/preventative-dentistry" style="color:#2f84c0;" target="_blank">Preventative Dentistry</a><br>
+								<a href="https://cdeworld.com/courses/dentist/prosthodontics" style="color:#2f84c0;" target="_blank">Prosthodontics</a><br>
+								<a href="https://cdeworld.com/courses/dentist/removable-prosthodontics" style="color:#2f84c0;" target="_blank">Removable Prosthodontics</a><br>
+								<a href="https://cdeworld.com/courses/dentist/restorative-dentistry" style="color:#2f84c0;" target="_blank">Restorative Dentistry</a><br>
+								<a href="https://cdeworld.com/courses/dentist/specialty-care" style="color:#2f84c0; target="_blank"">Specialty Care</a>
+							  </td>
+							</tr>
+						  </tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px; margin:18px 0 0 0;" width="600" class="w100"></td>
+			   </tr>	
                <tr>
                  <td align="center" style="padding:10px 0px;"> <img src="https://cdeworld.com/media/14014/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
                </tr>

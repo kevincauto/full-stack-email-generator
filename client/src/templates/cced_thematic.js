@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if (month < 10) { month = '0' + '' + month }
+if (month < 10) { month = '0' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -208,7 +208,7 @@ export const cced_thematic_initial_state = [
 ];
 
 export function beginning(fields) {
-  let emailName = fields[0].value;
+  // let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -952,7 +952,7 @@ ${header2}</span>	`
 export function featured(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
-  let author = fields[2].value;
+  // let author = fields[2].value;
   let description = fields[3].value;
   let link = fields[4].value;
   let imgLink = fields[5].value;
@@ -1006,7 +1006,7 @@ export function featured(fields) {
 export function featured_video(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
-  let author = fields[2].value;
+  // let author = fields[2].value;
   let description = fields[3].value;
   let link = fields[4].value;
   let imgLink = fields[5].value;

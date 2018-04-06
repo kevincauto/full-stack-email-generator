@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year.  
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
-if (currentMonth < 10) { currentMonth = '0' + '' + currentMonth }
+if (currentMonth < 10) { currentMonth = '0' + currentMonth }
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
@@ -194,7 +194,7 @@ export const id_reader_initial_state = [
 ];
 
 export function beginning(fields) {
-  let emailName = fields[0].value;
+  // let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -223,7 +223,7 @@ export function beginning(fields) {
   if (month === '11') { monthName = 'November' };
   if (month === '12') { monthName = 'December' };
   //put the url together
-  let url = `https://www.dentalaegis.com/id/${year}/${month}/newsletter`;
+  // let url = `https://www.dentalaegis.com/id/${year}/${month}/newsletter`;
 
   return (`
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -505,7 +505,7 @@ export function ce(fields) {
   let credits = fields[4].value;
   let cost = fields[5].value;
   let provider = fields[6].value;
-  let supporter = fields[7].value;
+  // let supporter = fields[7].value;
   let dates = fields[8].value;
   let link = fields[9].value;
   let imgSrc = fields[10].value;
@@ -591,15 +591,6 @@ export function ce(fields) {
   )
 }
 export function peer_reviewed(fields) {
-
-  fields: [
-    { label: 'Title', name: 'title' },
-    { label: 'Description', name: 'description' },
-    { label: 'Author', name: 'author' },
-    { label: 'Link', name: 'link' },
-    { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/180x150' },
-  ]
-
   let title = fields[0].value;
   let description = fields[1].value;
   let author = fields[2].value;
@@ -746,7 +737,7 @@ export function featured(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let description = fields[2].value;
-  let author = fields[3].value;
+  // let author = fields[3].value;
   let cta = fields[4].value;
   let link = fields[5].value;
   let imgSrc = fields[6].value;
@@ -821,19 +812,19 @@ export function end(fields) {
   let month = fields[0].value;
   let year = fields[1].value;
 
-  let monthName;
-  if (month === '01') { monthName = 'January' };
-  if (month === '02') { monthName = 'February' };
-  if (month === '03') { monthName = 'March' };
-  if (month === '04') { monthName = 'April' };
-  if (month === '05') { monthName = 'May' };
-  if (month === '06') { monthName = 'June' };
-  if (month === '07') { monthName = 'July' };
-  if (month === '08') { monthName = 'August' };
-  if (month === '09') { monthName = 'September' };
-  if (month === '10') { monthName = 'October' };
-  if (month === '11') { monthName = 'November' };
-  if (month === '12') { monthName = 'December' };
+  // let monthName;
+  // if (month === '01') { monthName = 'January' };
+  // if (month === '02') { monthName = 'February' };
+  // if (month === '03') { monthName = 'March' };
+  // if (month === '04') { monthName = 'April' };
+  // if (month === '05') { monthName = 'May' };
+  // if (month === '06') { monthName = 'June' };
+  // if (month === '07') { monthName = 'July' };
+  // if (month === '08') { monthName = 'August' };
+  // if (month === '09') { monthName = 'September' };
+  // if (month === '10') { monthName = 'October' };
+  // if (month === '11') { monthName = 'November' };
+  // if (month === '12') { monthName = 'December' };
 
 
   return (`

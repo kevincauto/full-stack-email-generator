@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if (month < 10) { month = '0' + '' + month }
+if (month < 10) { month = '0' + month }
 
 month = month.toString();
 let year = d.getFullYear().toString();
@@ -243,7 +243,7 @@ export const cced_reader_initial_state = [
 
 export function beginning(fields) {
 
-  let emailName = fields[0].value;
+  // let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -267,7 +267,7 @@ export function beginning(fields) {
   if (month === '12') { monthName = 'December' };
 
   //put the url together
-  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
+  // let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
 
   return `<!DOCTYPE html>
   <html>
@@ -654,7 +654,7 @@ export function image_article(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
   let description = fields[2].value;
-  let author = fields[3].value;
+  // let author = fields[3].value;
   let link = fields[4].value;
   let imgSrc = fields[5].value;
 
@@ -964,7 +964,7 @@ export function end(fields) {
   if (month === '11') { monthName = 'November' };
   if (month === '12') { monthName = 'December' };
   //put the url together
-  let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
+  // let url = `https://www.aegisdentalnetwork.com/cced/${year}/${month}/newsletter`;
 
   return (
     `<tr>

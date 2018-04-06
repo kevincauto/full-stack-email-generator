@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year.  
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
-if (currentMonth < 10) { currentMonth = '0' + '' + currentMonth }
+if (currentMonth < 10) { currentMonth = '0' + currentMonth }
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
@@ -131,10 +131,10 @@ export const idt_digital_initial_state = [
 ];
 
 export function beginning(fields) {
-    let emailName = fields[0].value;
+    // let emailName = fields[0].value;
     let month = fields[1].value;
     let year = fields[2].value;
-    let headerSrc = fields[3].value;
+    // let headerSrc = fields[3].value;
     let coverSrc = fields[4].value;
     let link = fields[5].value;
     let volume = fields[6].value;
@@ -259,7 +259,7 @@ export function end(fields) {
     let link = fields[1].value;
     let month = fields[2].value;
     let year = fields[3].value;
-    let subscribe = fields[4].value;
+    // let subscribe = fields[4].value;
     let monthName;
     if (month === '01') { monthName = 'January' };
     if (month === '02') { monthName = 'February' };

@@ -29,7 +29,7 @@ class Container extends React.Component {
       fileName: '',
       showSaveDialog: false,
       showLoadScreen: false,
-      selected_template: 'idt_thematic',
+      selected_template: 'cdew_dds',
       cced_digital: cced_digital_initial_state,
       cced_reader: cced_reader_initial_state,
       cced_thematic: cced_thematic_initial_state,

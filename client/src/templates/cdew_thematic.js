@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if (month < 10) { month = '0' + '' + month }
+if (month < 10) { month = '0' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -1062,7 +1062,7 @@ ${title}</span>
     `)
 }
 export function event(fields) {
-    let header = fields[0].value;
+    // let header = fields[0].value;
     let title = fields[1].value;
     let details = fields[2].value;
     let description = fields[3].value;
@@ -1224,21 +1224,6 @@ export function featured_product(fields) {
 }
 
 export function products(fields) {
-    fields: [
-        { label: 'Header', name: 'header' },
-        { label: 'First Product', name: 'product1' },
-        { label: 'First Company', name: 'company1' },
-        { label: 'First Description', name: 'description1' },
-        { label: 'First Link', name: 'link1' },
-        { label: 'First Image Source', name: 'imgSrc1' },
-        { label: 'Second Product', name: 'product2' },
-        { label: 'Second Company', name: 'company2' },
-        { label: 'Second Description', name: 'description2' },
-        { label: 'Second Link', name: 'link2' },
-        { label: 'Second Image Source', name: 'imgSrc2' },
-    ]
-
-
     let header = fields[0].value;
     let product1 = fields[1].value;
     let company1 = fields[2].value;

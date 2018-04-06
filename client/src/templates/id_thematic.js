@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year.  
 let d = new Date();
 let currentMonth = d.getMonth() + 1;
-if (currentMonth < 10) { currentMonth = '0' + '' + currentMonth }
+if (currentMonth < 10) { currentMonth = '0' + currentMonth }
 currentMonth = currentMonth.toString();
 let currentYear = d.getFullYear().toString();
 
@@ -181,12 +181,12 @@ export const id_thematic_initial_state = [
 ];
 
 export function beginning(fields) {
-    let emailName = fields[0].value;
+    // let emailName = fields[0].value;
     let month = fields[1].value;
     let year = fields[2].value;
     let mastheadLink = fields[3].value;
     let mastheadSrc = fields[4].value;
-    let subscribe = fields[5].value;
+    // let subscribe = fields[5].value;
     let topic = fields[6].value;
     let mainImg = fields[7].value;
     let intro = fields[8].value;
@@ -1169,7 +1169,7 @@ export function news(fields) {
 export function ce(fields) {
 
     let title = fields[0].value;
-    let description = fields[1].value;
+    // let description = fields[1].value;
     let author = fields[2].value;
     let credits = fields[3].value;
     let cost = fields[4].value;

@@ -700,8 +700,6 @@ export function live_webinar_wo_header(fields) {
   )
 }
 
-
-
 export function end_live_webinar(fields) {
   return (
     `	<tr>
@@ -709,8 +707,6 @@ export function end_live_webinar(fields) {
 	</tr>`
   )
 }
-
-
 
 export function on_demand_webinar_w_header(fields) {
   let header = fields[0].value;

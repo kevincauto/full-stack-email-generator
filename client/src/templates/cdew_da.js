@@ -113,7 +113,8 @@ export const cdew_da_forms = {
       { label: 'Commercial Supporter', name: 'supporter' },
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
-      { label: 'Link', name: 'link' }
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'img', value: 'https://placehold.it/150x100' }
     ]
   },
   on_demand_webinar_wo_header: {
@@ -130,7 +131,8 @@ export const cdew_da_forms = {
       { label: 'Commercial Supporter', name: 'supporter' },
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
-      { label: 'Link', name: 'link' }
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'img', value: 'https://placehold.it/150x100' }
     ]
   },
   center_banner: {
@@ -674,6 +676,7 @@ export function on_demand_webinar_w_header(fields) {
   let cost = fields[5].value;
   let credits = fields[6].value;
   let link = fields[7].value;
+  let img = fields[8].value;
 
   return (
     `<!--ON-DEMAND WEBINAR WITH HEADER-->
@@ -720,7 +723,7 @@ export function on_demand_webinar_w_header(fields) {
                   <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br>
                   Credits: 1 Self-Study CEU</td>
                   <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
-                  	<a href="${link}" target="_blank"><img src="http://aegispublications.com/news/ce/2018/04/od-webinar1.png" width="140" alt=""/></a>
+                  	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
                     </td>
                 </tr>
               </table></td>
@@ -743,6 +746,7 @@ export function on_demand_webinar_wo_header(fields) {
   let cost = fields[4].value;
   let credits = fields[5].value;
   let link = fields[6].value;
+  let img = fields[7].value;
 
   return (
     `<!--ON-DEMAND WEBINAR WITHOUT HEADER-->
@@ -776,7 +780,7 @@ ${title}</strong></td>
                   <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br>
                   Credits: 1 Self-Study CEU</td>
                   <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
-                  	<a href="${link}" target="_blank"><img src="http://aegispublications.com/news/ce/2018/04/od-webinar1.png" width="140" alt=""/></a>
+                  	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
                     </td>
                 </tr>
               </table></td>

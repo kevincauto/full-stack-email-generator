@@ -250,13 +250,13 @@ export const cdew_dds_forms = {
   },
   featured_event: {
     typeOfRow: 'featured_event',
-    header: 'Featured Event',
+    header: 'Upcoming Event',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
     fields: [
-      { label: 'Header', name: 'header', value: 'Featured Event' },
+      { label: 'Header', name: 'header', value: 'Upcoming Event' },
       { label: 'Title', name: 'title' },
       { label: 'Description', name: 'description' },
       { label: 'Location', name: 'location' },
@@ -1032,10 +1032,10 @@ export function ebook(fields) {
               <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; padding-top:4px; color:#676262;">${description}</td>
             </tr>
             <tr>
-              <td align="left" style="padding-top:15px;"><table cellpadding="0" cellspacing="0" border="0" bgcolor="#2f84c0" style="border-radius: 5px;">
+              <td align="left" ><table cellpadding="0" cellspacing="0" border="0">
                   <tr>
-                    <td width="10"></td>
-                    <td align="left" height="40" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#ffffff;"><a href="${link}" target="_blank" style="color:#ffffff; text-decoration:none;">Download your free eBook »</a></td>
+                    <td width="0"></td>
+                    <td align="left" height="40" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">Download your free eBook »</a></td>
                     <td width="15"></td>
                   </tr>
                 </table></td>
@@ -1218,7 +1218,7 @@ export function border(fields) {
 export function space(fields) {
   return (
     `<tr>
-      <td height="20" align="center"></td>
+      <td height="2" align="center"></td>
     </tr>`
   )
 }

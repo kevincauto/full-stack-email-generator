@@ -231,13 +231,13 @@ export const cdew_lab_forms = {
   },
   featured_event: {
     typeOfRow: 'featured_event',
-    header: 'Featured Event',
+    header: 'Upcoming Event',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
     fields: [
-      { label: 'Header', name: 'header', value: 'Featured Event' },
+      { label: 'Header', name: 'header', value: 'Upcoming Event' },
       { label: 'Title', name: 'title' },
       { label: 'Description', name: 'description' },
       { label: 'Location', name: 'location' },
@@ -619,7 +619,7 @@ export function live_webinar_w_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR »</a></td>
     </tr>
     <!--END LIVE WEBINAR WITH HEADER -->
     `
@@ -672,7 +672,7 @@ export function live_webinar_wo_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase;">CLICK HERE TO VIEW THE WEBINAR »</a></td>
     </tr>
     <!--END LIVE WEBINAR-->`
   )
@@ -735,7 +735,7 @@ export function on_demand_webinar_w_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR »</a></td>
     </tr>
     <!--END ON-DEMAND WEBINAR WITH HEADER-->`
   )
@@ -785,7 +785,7 @@ ${title}</strong></td>
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:10px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">CLICK HERE TO VIEW THE WEBINAR »</a></td>
     </tr>
     <!--END ON-DEMAND WEBINAR WITHOUT HEADER-->`
   )
@@ -796,7 +796,7 @@ export function on_demand_webinar_end(fields) {
     <td height="20" align="center"></td>
   </tr>
   <tr>
-    <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=314&p=&o=&commit=SEARCH" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to on-demand webinars produced with lab technicians in mind! »</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=314&p=&o=&commit=SEARCH" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All On-Demand CDEWorld Webinars »</a></td>
   </tr>
   <tr>
     <td height="20" align="center"></td>
@@ -869,7 +869,7 @@ export function new_content_w_header(fields) {
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION »</a></td>
     </tr>
     <!--END OF NEW CONTENT WITH HEADER-->`)
 }
@@ -920,7 +920,7 @@ ${title}</strong><br />
         </table></td>
     </tr>
     <tr>
-      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+      <td align="left" class="blue" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:15px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION »</a></td>
     </tr>
     <!--END OF NEW CONTENT WITHOUT HEADER-->`)
 }
@@ -932,7 +932,7 @@ export function end_new_content(fields) {
   <td height="35" align="center"></td>
 </tr>
 <tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold; padding-bottom:5px;"><a href="https://cdeworld.com/courses/search?c=314" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Library for access to CE courses for Lab Technicians!  »</a></td>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/courses/search?c=314" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld CE Articles »</a></td>
 </tr>
 <tr>
   <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
@@ -992,10 +992,10 @@ export function ebook(fields) {
               <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:17px; padding-top:4px; color:#676262;">${description}</td>
             </tr>
             <tr>
-              <td align="left" style="padding-top:15px;"><table cellpadding="0" cellspacing="0" border="0" bgcolor="#2f84c0" style="border-radius: 5px;">
+              <td align="left" ><table cellpadding="0" cellspacing="0" border="0">
                   <tr>
-                    <td width="10"></td>
-                    <td align="left" height="40" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#ffffff;"><a href="${link}" target="_blank" style="color:#ffffff; text-decoration:none;">Download your free eBook</a></td>
+                    <td width="0"></td>
+                    <td align="left" height="40" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">Download your free eBook »</a></td>
                     <td width="15"></td>
                   </tr>
                 </table></td>
@@ -1011,8 +1011,7 @@ export function ebook(fields) {
   <td height="20" align="center"></td>
 </tr>
 <tr>
-  <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="http://cdeworld.com/ebooks" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld eBook Library for access to the dental information <br>
-    you need, when you need it »</a></td>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="http://cdeworld.com/ebooks" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld eBooks »</a></td>
 </tr>
 <tr>
   <td height="20" align="center"></td>
@@ -1082,7 +1081,7 @@ export function portal_partner(fields) {
     <td height="20" align="center"></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline;">MORE INFORMATION »</a></td>
   </tr>
   <tr>
     <td height="30" align="center"></td>
@@ -1141,8 +1140,9 @@ export function featured_event(fields) {
 <td height="31" align="center"></td>
 </tr>
     <tr>
-      <td align="left" class="blue1" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; color:#2f84c0; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#2f84c0;text-decoration:none;">Visit the CDEWorld Event Listing for exciting upcoming live events »</a></td>
-    </tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld Events »</a></td>
+  </tr>
+  <tr>
     <tr>
       <td height="20" align="center"></td>
     </tr>
@@ -1175,6 +1175,39 @@ export function end(fields) {
 
 
 
+<tr>
+<td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+</tr>
+<tr>
+      <td>
+      	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td colspan="3">
+                <div style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; margin:18px 0 0 0;">Featured Lab Categories <span style="font-weight:normal !important">(Click on the topic to view all CE in the category)</span></div>
+               </td>
+            </tr>
+            <tr>
+              <td colspan="3" height="25" align="center"></td>
+            </tr>
+            <tr>
+              <td width="33%" align="left" valign="top" style="text-transform:uppercase; text-decoration:underline; font-size:13px; line-height:21px;">
+              		<a href="https://cdeworld.com/courses/lab-tech/cad-cam" style="color:#2f84c0;" target="_blank">CAD/CAM</a><br>
+                    <a href="https://cdeworld.com/courses/lab-tech/crown-and-bridge" style="color:#2f84c0;" target="_blank">Crown & Bridge</a>
+              </td>
+              <td width="33%" align="left" valign="top" style="text-transform:uppercase; text-decoration:underline; font-size:13px; line-height:21px;">
+                <a href="https://cdeworld.com/courses/lab-tech/implants" style="color:#2f84c0;" target="_blank">Implants</a><br>
+                <a href="https://cdeworld.com/courses/lab-tech/dental-materials" style="color:#2f84c0;" target="_blank">Materials</a>
+              </td>
+              <td width="33%" align="left" valign="top" style="text-transform:uppercase; text-decoration:underline; font-size:13px; line-height:21px;">
+                <a href="https://cdeworld.com/courses/lab-tech/regulatory-standards-infection-control" style="color:#2f84c0; line-height:17px !important;" target="_blank">Regulatory Standards / Infection Control</a><br />
+                <a href="https://cdeworld.com/courses/lab-tech/removable-prosthodontics" style="color:#2f84c0;" target="_blank">Removable Prosthodontics</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
 <tr>
 <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
 </tr>

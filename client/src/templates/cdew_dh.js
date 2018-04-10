@@ -238,13 +238,13 @@ export const cdew_dh_forms = {
   },
   featured_event: {
     typeOfRow: 'featured_event',
-    header: 'Featured Event',
+    header: 'Upcoming Event',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
     fields: [
-      { label: 'Header', name: 'header', value: 'Featured Event' },
+      { label: 'Header', name: 'header', value: 'Upcoming Event' },
       { label: 'Title', name: 'title' },
       { label: 'Description', name: 'description' },
       { label: 'Location', name: 'location' },
@@ -1194,7 +1194,7 @@ export function end(fields) {
 					  <tbody>
 						<tr>
 						  <td colspan="3">
-							<div style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured Hygiene Categories <span style="font-weight:normal !important">(Click on the topic to view all CE in the category)</span></div>
+							<div style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; margin:18px 0 0 0;">Featured Hygiene Categories <span style="font-weight:normal !important">(Click on the topic to view all CE in the category)</span></div>
 						   </td>
 						</tr>
 						<tr>

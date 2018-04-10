@@ -625,7 +625,7 @@ export function live_webinar(fields) {
                             </tr>
                         </table>
                     </div>
-                    <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">REGISTER NOW</a> 
+                    <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">REGISTER NOW »</a> 
                 </div>
   <!--END LIVE WEBINAR WITH HEADER SECTION-->
     `
@@ -664,7 +664,7 @@ export function live_webinar_wo_header(fields) {
                               </tr>
                           </table>
                       </div>
-                      <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">REGISTER NOW</a> 
+                      <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">REGISTER NOW »</a> 
                   </div>
               </td>
           </tr>
@@ -706,7 +706,7 @@ export function on_demand_webinar(fields) {
                         </tr>
                     </table>
                 </div>
-                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">CLICK HERE TO VIEW THE WEBINAR</a> 
+                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">CLICK HERE TO VIEW THE WEBINAR »</a> 
             </div>
             <!-- End of Webinar # -->
         </td>
@@ -748,7 +748,7 @@ export function on_demand_webinar_wo_header(fields) {
                         </tr>
                     </table>
                 </div>
-                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">CLICK HERE TO VIEW THE WEBINAR</a> 
+                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">CLICK HERE TO VIEW THE WEBINAR »</a> 
             </div>
             <!-- End of Webinar # -->
         </td>
@@ -822,7 +822,7 @@ export function featured_ce(fields) {
                         </td>
                     </tr>
                 </table>
-                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">FOR MORE INFORMATION</a> 
+                <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">FOR MORE INFORMATION »</a> 
             </div>
             <!-- End of Course # -->
         </td>
@@ -862,7 +862,7 @@ export function featured_ce_wo_header(fields) {
                 </td>
             </tr>
         </table>
-      <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">FOR MORE INFORMATION</a> 
+      <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">FOR MORE INFORMATION »</a> 
     </div>
     <!-- End of Course # -->
       <td>
@@ -953,7 +953,7 @@ export function featured_article(fields) {
                               <span style="color:#333333; font-weight: bold;">${title}</span><br />
                           ${author}<br>
                               <em>${source}</em><br>
-                            <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                            <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE »</a> 
                           </div>
                       </td>
                       <!-- End of Article - Only -->                                
@@ -985,7 +985,7 @@ export function featured_article_wo_header(fields) {
                           <span style="color:#333333; font-weight: bold;">${title}</span><br />
                       ${author}<br>
                           <em>${source}</em><br>
-                        <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                        <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE »</a> 
                       </div>
                   </td>
                   <!-- End of Article - Only -->                                
@@ -1036,7 +1036,7 @@ ${title}</span>
                           </div>
                             <div style="margin-top: 4px;">${description}
 </div>
-                            <a href="${link}" target="_blank" style="color: #fff;display:inline-block; margin-top:14px; background-color:#2f84c0;text-decoration: none;padding: 10px 12px;border-radius: 5px;">Download your free eBook</a>
+                            <a href="${link}" target="_blank" style="color: #fff;display:inline-block; margin-top:14px; background-color:#2f84c0;text-decoration: none;padding: 10px 12px;border-radius: 5px;">Download your free eBook »</a>
                         </div>
                     </td>
                 </tr>
@@ -1092,7 +1092,7 @@ export function event(fields) {
                                   <strong>${details}</strong>
                               </div>
                               <div style="margin-top: 4px;">${description}</div>
-                              <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                              <a class="link" href="${link}" target="_blank" style="color:#2f84c0;">READ MORE »</a> 
                           </div>
                       </td>
                   </tr>
@@ -1169,7 +1169,7 @@ export function featured_webinar(fields) {
                         <div style="margin:8px 0;"><strong>${title}</strong><br>${presenter}<br>
                         ${dates}
                         <a href="${link}" target="_blank" style="color:#2f84c0;"><br>
-                        READ MORE</a></div>
+                        READ MORE »</a></div>
 
                     </div>
                   </td>
@@ -1208,7 +1208,7 @@ export function featured_product(fields) {
                   <div class="module-title" style="font-family:Arial, sans-serif; font-size:16px; font-weight:bold; color:#333333; padding:0 32px 0 32px;line-height:27px;">${header}</div>
                     <div class="margin" style="font-family:Arial, sans-serif; font-size:12px; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
                       <div style="margin:8px 0;"><strong>${title}</strong><br>${description}<br>
-                      <a href="${link}" target="_blank" style="color:#2f84c0;">READ MORE</a></div>
+                      <a href="${link}" target="_blank" style="color:#2f84c0;">READ MORE »</a></div>
 
                   </div>
                 </td>
@@ -1258,7 +1258,7 @@ export function products(fields) {
                           <span style="color:#333333; font-weight: bold;">${product1}</span><br />
                           <em>${company1}</em>
                           <div style="margin:8px 0;">${description1}</div>
-                        <a class="link" href="${link1}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                        <a class="link" href="${link1}" target="_blank" style="color:#2f84c0;">READ MORE »</a> 
                       </div>
                   </td>
                   <!-- End of Product # -->
@@ -1269,7 +1269,7 @@ export function products(fields) {
                           <span style="color:#333333; font-weight: bold;">${product2}</span><br />
                           <em>${company2}</em>
                           <div style="margin:8px 0;">${description2}</div>
-                        <a class="link" href="  ${link2}" target="_blank" style="color:#2f84c0;">READ MORE</a> 
+                        <a class="link" href="  ${link2}" target="_blank" style="color:#2f84c0;">READ MORE »</a> 
                       </div>
                   </td>
                   <!-- End of Product # -->

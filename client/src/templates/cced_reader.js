@@ -986,6 +986,8 @@ export function end(fields) {
                       <td align="center"><a href="https://twitter.com/compendiumced" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59474/" style="display:block; margin:0px; max-width:32px;" width="32"></a></td>
                       <td width="23"></td>
                       <td align="center"><a href="mailto:?subject=FW:%20${monthName}%20${year}%20Issue%20Available%20Now&body=I%20thought%20you%20might%20be%20interested%20in%20this:%20https://www.dentalaegis.com/cced/${year}/${month}/newsletter?refer=true" target="_blank"><img alt="" border="0" src="https://www.dentalaegis.com/media/59475/" style="display:block; margin:0px; max-width:31px;" width="31"></a></td>
+					  <td width="23" align="center">&nbsp;</td>
+					  <td width="21" align="center"><a href="https://www.dentalaegis.com/cced/subscribe/thematic?cced=4418a&__hstc=186597750.95c82f0ed87213b054058d30bb1dc4bc.1511294891615.1523303094801.1523367485698.299&__hssc=186597750.2.1523367485698&__hsfp=1966902064" target="_blank"><img src="http://aegispublications.com/news/cced/2018/05/subscribe.png" width="32" height="32" alt=""/></a></td>
                     </tr>
                   </table>
                 </td>

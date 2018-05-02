@@ -160,6 +160,7 @@ export const cdew_da_forms = {
       { label: 'Presenter', name: 'presenter' },
       { label: 'Provider', name: 'provider' },
       { label: 'Source', name: 'source' },
+      { label: 'Commercial Supporter', name: 'supporter' },
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
       { label: 'Link', name: 'link' }
@@ -177,6 +178,7 @@ export const cdew_da_forms = {
       { label: 'Presenter', name: 'presenter' },
       { label: 'Provider', name: 'provider' },
       { label: 'Source', name: 'source' },
+      { label: 'Commercial Supporter', name: 'supporter' },
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
       { label: 'Link', name: 'link' }
@@ -245,6 +247,22 @@ export const cdew_da_forms = {
       { label: 'Credits', name: 'credits' },
       { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here »' },
       { label: 'Link', name: 'link' },
+      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/160x130' }
+    ]
+  },
+  featured_product: {
+    typeOfRow: 'featured_product',
+    header: 'Featured Product',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured Product' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description' },
+      { label: 'Call-to-Action', name: 'cta', value: 'More Information »' },
+      { label: 'Link', name: 'link' },
       { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x150' }
     ]
   },
@@ -311,6 +329,7 @@ export const cdew_da_initial_state = [
   _.cloneDeep(cdew_da_forms.ebook),
   _.cloneDeep(cdew_da_forms.portal_partner),
   _.cloneDeep(cdew_da_forms.featured_event),
+  _.cloneDeep(cdew_da_forms.featured_product),
   _.cloneDeep(cdew_da_forms.border),
   _.cloneDeep(cdew_da_forms.end)
 ];
@@ -826,9 +845,10 @@ export function new_content_w_header(fields) {
   let presenter = fields[2].value;
   let provider = fields[3].value;
   let source = fields[4].value;
-  let cost = fields[5].value;
-  let credits = fields[6].value;
-  let link = fields[7].value;
+  let supporter = fields[5].value;
+  let cost = fields[6].value;
+  let credits = fields[7].value;
+  let link = fields[8].value;
 
   return (`<!--NEW CONTENT WITH HEADER-->
     <tr>
@@ -847,7 +867,12 @@ export function new_content_w_header(fields) {
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
                 <tr>
                   <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
-                    Source: <em>${source}</em></td>
+                    Source: <em>${source}</em> 
+                    ${supporter ?
+      `<br>
+                      Commercial Supporter: <em>${supporter}</em>`
+      : ``}</td>
+                    
                 </tr>
               </table>
 
@@ -872,9 +897,10 @@ export function new_content_wo_header(fields) {
   let presenter = fields[1].value;
   let provider = fields[2].value;
   let source = fields[3].value;
-  let cost = fields[4].value;
-  let credits = fields[5].value;
-  let link = fields[6].value;
+  let supporter = fields[4].value;
+  let cost = fields[5].value;
+  let credits = fields[6].value;
+  let link = fields[7].value;
 
   return (`                          <!--NEW CONTENT WITHOUT HEADER-->
     <tr>
@@ -891,7 +917,11 @@ ${title}</strong><br />
             <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="305" align="left" class="w100">
                 <tr>
                   <td width="307" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> Provider: ${provider}<br>
-                    Source: <em>${source}</em></td>
+                    Source: <em>${source}</em>
+                    ${supporter ?
+      `<br>
+                    Commercial Supporter: <em>${supporter}</em>`
+      : ``} </td>
                 </tr>
               </table>
               
@@ -922,7 +952,7 @@ export function new_content_end(fields) {
     <td height="35" align="center"></td>
   </tr>
   <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/courses/search?c=281" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld CE Articles »</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/courses/dental-assistant" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld CE Articles »</a></td>
   </tr>
 <tr>
     <td height="20" align="center"></td>
@@ -1114,6 +1144,99 @@ export function featured_event(fields) {
   return (
     `<!--FEATURED EVENT -->
     <tr>
+    <td colspan="2" align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>
+  <tr>
+    <td height="20" colspan="2" align="center"></td>
+  </tr>
+    <tr>
+      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
+    </tr>
+  <tr>
+      <td height="1" colspan="2" align="center"></td>
+    </tr>
+    <tr>
+      <td height="17" colspan="2" align="center"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
+    </tr>
+    
+
+    <tr>
+      <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td align="center">
+            <table cellpadding="0" cellspacing="0" border="0" align="left" class="w100">
+                <tr>
+                  <td width="400" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  ${description}<br>
+      <div style="font-size:13px; margin:11px 0 0 0;"> ${location} |  ${date} |  ${credits}</div>
+					</td>
+                </tr>
+              </table>
+              
+              <!--[if gte mso 9]>
+              </td>
+              <td align="center"  valign="top">
+<![endif]-->
+              
+              <table cellpadding="0" cellspacing="0" border="0" width="170" align="left" style="margin:0 0 0 14px;" class="w100">
+                <tr>
+                 
+                  <td width="168" align="center" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  <a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:flex; margin:0 0 0 17px; min-width:156px; width: 28%"/></a>
+                    </td>
+                </tr>
+              </table></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
+    </tr>
+
+
+    <!--<tr>
+
+
+
+      This comprehensive one-day program in contemporary oral healthcare will feature the foremost educators in dentistry discussing a range of vital subject areas as well as networking and career development opportunities.<br>
+      <div style="font-size:13px; margin:11px 0 0 0;"> Select Cities |  April 2018 – September 2018 |  6 live CE credits and 12 on-demand CE credits</div>
+      
+     <a href="https://cdeworld.com/regional-events?utm_source=CDEW&utm_medium=CDEW%20Prof%20Suite%20DA&utm_campaign=May" target="_blank"> <img src="https://www.aegisdentalnetwork.com/media/67949" alt="" border="0" style="display:flex; margin:0 0 0 17px; min-width:156px; width: 28%"/></a>
+
+
+
+    </tr>
+    <tr>
+      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="https://cdeworld.com/regional-events?utm_source=CDEW&utm_medium=CDEW%20Prof%20Suite%20DA&utm_campaign=May" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">Learn More & Register here »</a></td>
+    </tr>
+<tr>-->
+<td height="31" colspan="2" align="center"></td>
+</tr>
+    <tr>
+      <td colspan="2" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld Events »</a></td>
+    </tr>
+    <tr>
+      <td height="20" colspan="2" align="center"></td>
+    </tr>
+<!--END FEATURED EVENT --> 
+`)
+}
+
+export function featured_product(fields) {
+
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let cta = fields[3].value;
+  let link = fields[4].value;
+  let imgSrc = fields[5].value;
+
+  return (
+    `<!--FEATURED PRODUCT -->
+    <tr>
     <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
   </tr>
   <tr>
@@ -1135,22 +1258,16 @@ export function featured_event(fields) {
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">${description}<br />
-        <span style="font-size:13px; line-height:28px;">${location} | ${date} | ${credits}</span></td>
-    </tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">${description}</td>
+  </tr>
     <tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
     </tr>
-<tr>
-<td height="31" align="center"></td>
-</tr>
-    <tr>
-      <td style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld Events »</a></td>
-    </tr>
+
     <tr>
       <td height="20" align="center"></td>
     </tr>
-<!--END FEATURED EVENT -->  
+<!--END FEATURED PRODUCT -->  
 `)
 }
 
@@ -1294,37 +1411,9 @@ in the Office</a><br>
       <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px; margin:18px 0;" width="600" class="w100"/></td>
     </tr>
     <tr>
-      <td align="center" style="padding-top:5px;"> <img src="https://cdeworld.com/media/14014/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </td>
-    </tr>
-    <tr>
-      <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
-          <tr>
-            <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="225" align="left" class="w100">
-                <tr>
-                  <td align="left" class="txtCenter" style="font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:18px; color:#818181; padding-left:10px;"><span class="black">© ${year} CDEWorld. All rights reserved.<br />
-PO Box 510 | Newtown, PA 18940</span></td>
-                </tr>
-              </table>
-              
-              <!--[if gte mso 9]>
-              </td>
-              <td align="center"  valign="top">
-<![endif]-->
-              
-              <table cellpadding="0" cellspacing="0" border="0" width="110" align="right" class="w100">
-                <tr>
-                  <td align="center" height="40"><table cellpadding="0" cellspacing="0" border="0">
-                      <tr>
-                        <td align="center"><a href="https://www.facebook.com/pages/CDE-World/141910839256792?ref=hl" target="_blank"> <img src="https://www.dentalaegis.com/media/60420/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                        <td align="center"><a href="https://twitter.com/CDEWorld" target="_blank"> <img src="https://www.dentalaegis.com/media/60421/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                        <td align="center" style="padding-left:1px;"><a href="mailto:?subject=FW: Dental Assistant News&amp;body=I thought you might be interested in this: http://aegispublications.com/news/ce/${year}/${month}/da.html" target="_blank"> <img src="https://www.dentalaegis.com/media/60422/" alt="" border="0" style="display:block; margin:0px; max-width:25px;" width="25"/> </a></td>
-                      </tr>
-                    </table></td>
-                </tr>
-              </table></td>
-          </tr>
-        </table></td>
-    </tr>
+  	<td align="center"> <img src="http://aegispublications.com/news/ce/2018/04/base.jpg" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </td>
+	</tr>
+
     <tr>
       <td height="25" align="center"></td>
     </tr>

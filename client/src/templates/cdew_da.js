@@ -260,10 +260,10 @@ export const cdew_da_forms = {
     fields: [
       { label: 'Header', name: 'header', value: 'Featured Product' },
       { label: 'Title', name: 'title' },
-      { label: 'Description', name: 'description' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' },
       { label: 'Call-to-Action', name: 'cta', value: 'More Information »' },
       { label: 'Link', name: 'link' },
-      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x150' }
+      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x100' }
     ]
   },
   border: {
@@ -275,6 +275,16 @@ export const cdew_da_forms = {
     draggable: true,
     fields: []
   },
+  space: {
+    typeOfRow: 'space',
+    header: 'Space',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: []
+  },
+
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
@@ -320,6 +330,7 @@ export const cdew_da_initial_state = [
   _.cloneDeep(cdew_da_forms.live_webinar_w_header),
   _.cloneDeep(cdew_da_forms.live_webinar_wo_header),
   _.cloneDeep(cdew_da_forms.end_live_webinar),
+  _.cloneDeep(cdew_da_forms.border),
   _.cloneDeep(cdew_da_forms.on_demand_webinar_w_header),
   _.cloneDeep(cdew_da_forms.on_demand_webinar_wo_header),
   _.cloneDeep(cdew_da_forms.center_banner),
@@ -331,6 +342,7 @@ export const cdew_da_initial_state = [
   _.cloneDeep(cdew_da_forms.featured_event),
   _.cloneDeep(cdew_da_forms.featured_product),
   _.cloneDeep(cdew_da_forms.border),
+  _.cloneDeep(cdew_da_forms.space),
   _.cloneDeep(cdew_da_forms.end)
 ];
 
@@ -682,7 +694,10 @@ export function end_live_webinar(fields) {
   return (
     `	<tr>
 	  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><br><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=279&p=&o=&commit=SEARCH" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All Live CDEWorld Webinars »</a></td>
-	</tr>`
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>`
   )
 }
 
@@ -1192,6 +1207,7 @@ export function featured_event(fields) {
           </tr>
         </table></td>
     </tr>
+
     <tr>
       <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
     </tr>
@@ -1248,18 +1264,38 @@ export function featured_product(fields) {
 <tr>
       <td height="20" align="center"></td>
     </tr>
-    <tr>
-      <td align="left"><a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:block; margin:0px; max-width:156px;" width="156"/> </a></td>
-    </tr>
-    <tr>
-      <td height="25" align="center"></td>
-    </tr>
+
     <tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
     </tr>
     <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">${description}</td>
-  </tr>
+      <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td align="center">
+            <table cellpadding="0" cellspacing="0" border="0" align="left" class="w100">
+                <tr>
+                  <td width="400" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  ${description}
+					</td>
+                </tr>
+              </table>
+              
+              <!--[if gte mso 9]>
+              </td>
+              <td align="center"  valign="top">
+<![endif]-->
+              
+              <table cellpadding="0" cellspacing="0" border="0" width="170" align="left" style="margin:0 0 0 14px;" class="w100">
+                <tr>
+                 
+                  <td width="168" align="center" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  <a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:flex; margin:0 0 0 17px; min-width:156px; width: 28%"/></a>
+                    </td>
+                </tr>
+              </table></td>
+          </tr>
+        </table></td>
+    </tr>
     <tr>
       <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
     </tr>
@@ -1274,8 +1310,17 @@ export function featured_product(fields) {
 export function border(fields) {
   return (
     `<tr>
-      <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100" /></td>
+      <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px 0px 0px 0px; max-width:600px;" width="600" class="w100" /></td>
     </tr>`
+  )
+}
+
+export function space(fields) {
+  return (
+    `<tr>
+      <td height="20" align="center"></td>
+    </tr>
+    `
   )
 }
 

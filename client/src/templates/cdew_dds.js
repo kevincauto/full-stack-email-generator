@@ -209,6 +209,7 @@ export const cdew_dds_forms = {
     addable: true,
     draggable: true,
     fields: [
+      { label: 'Header', name: 'header', value: 'Featured CE eBook' },
       { label: 'Title', name: 'title' },
       { label: 'author', name: 'author' },
       { label: 'Commercial Supporter', name: 'supporter' },
@@ -250,21 +251,21 @@ export const cdew_dds_forms = {
   },
   featured_event: {
     typeOfRow: 'featured_event',
-    header: 'Upcoming Event',
+    header: 'Featured Event',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
     fields: [
-      { label: 'Header', name: 'header', value: 'Upcoming Event' },
+      { label: 'Header', name: 'header', value: 'Featured Event' },
       { label: 'Title', name: 'title' },
-      { label: 'Description', name: 'description' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' },
       { label: 'Location', name: 'location' },
       { label: 'Date', name: 'date' },
       { label: 'Credits', name: 'credits' },
-      { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here!' },
+      { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here »' },
       { label: 'Link', name: 'link' },
-      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x150' }
+      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/160x130' }
     ]
   },
   event_end: {
@@ -275,6 +276,22 @@ export const cdew_dds_forms = {
     addable: true,
     draggable: true,
     fields: []
+  },
+  featured_product: {
+    typeOfRow: 'featured_product',
+    header: 'Featured Product',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured Product' },
+      { label: 'Title', name: 'title' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' },
+      { label: 'Call-to-Action', name: 'cta', value: 'More Information »' },
+      { label: 'Link', name: 'link' },
+      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x100' }
+    ]
   },
   border: {
     typeOfRow: 'border',
@@ -352,6 +369,7 @@ export const cdew_dds_initial_state = [
   _.cloneDeep(cdew_dds_forms.portal_partner),
   _.cloneDeep(cdew_dds_forms.featured_event),
   _.cloneDeep(cdew_dds_forms.event_end),
+  _.cloneDeep(cdew_dds_forms.featured_product),
   _.cloneDeep(cdew_dds_forms.border),
   _.cloneDeep(cdew_dds_forms.space),
   _.cloneDeep(cdew_dds_forms.end)
@@ -966,7 +984,7 @@ export function end_new_content(fields) {
   <td height="20" align="center"></td>
 </tr>
 <tr>
-  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/courses/search?c=279&hq_e=el&hq_m=4255273&hq_l=19&hq_v=1030197208" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld CE Articles »</a>
+  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/courses/dentist" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld CE Articles »</a>
   </td>
 </tr>
 <tr>
@@ -976,27 +994,32 @@ export function end_new_content(fields) {
 
 export function ebook(fields) {
 
-  let title = fields[0].value;
-  let author = fields[1].value;
-  let supporter = fields[2].value;
-  let cost = fields[3].value;
-  let source = fields[4].value;
-  let credits = fields[5].value;
-  let description = fields[6].value;
-  let link = fields[7].value;
-  let imgSrc = fields[8].value;
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let author = fields[2].value;
+  let supporter = fields[3].value;
+  let cost = fields[4].value;
+  let source = fields[5].value;
+  let credits = fields[6].value;
+  let description = fields[7].value;
+  let link = fields[8].value;
+  let imgSrc = fields[9].value;
 
   return (
     `<!--START EBOOK SECTION -->
+    ${header ?
+      `<tr>
+      <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+    </tr>
     <tr>
-    <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-  </tr>
-  <tr>
-    <td height="20" align="center"></td>
-  </tr>
-<tr>
-  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured CE eBook</td>
-</tr>
+      <td height="20" align="center"></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured CE eBook</td>
+    </tr>` :
+      ``}
+
+
 <tr>
   <td height="20" align="center"></td>
 </tr>
@@ -1163,40 +1186,66 @@ export function featured_event(fields) {
   return (
     `<!--FEATURED EVENT -->
     <tr>
-    <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+    <td colspan="2" align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
   </tr>
- 
-  ${header ? `    <tr>
-  <td height="20" align="center"></td>
-</tr>
- <tr>
-  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
-</tr>` : ``}
+  <tr>
+    <td height="20" colspan="2" align="center"></td>
+  </tr>
+    <tr>
+      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
+    </tr>
+  <tr>
+      <td height="1" colspan="2" align="center"></td>
+    </tr>
+    <tr>
+      <td height="17" colspan="2" align="center"></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
+    </tr>
+    
 
-<tr>
-      <td height="20" align="center"></td>
-    </tr>
     <tr>
-      <td align="left"><a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:block; margin:0px; max-width:156px;" width="156"/> </a></td>
+      <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td align="center">
+            <table cellpadding="0" cellspacing="0" border="0" align="left" class="w100">
+                <tr>
+                  <td width="400" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  ${description}<br>
+      <div style="font-size:13px; margin:11px 0 0 0;"> ${location} |  ${date} |  ${credits}</div>
+					</td>
+                </tr>
+              </table>
+              
+              <!--[if gte mso 9]>
+              </td>
+              <td align="center"  valign="top">
+<![endif]-->
+              
+              <table cellpadding="0" cellspacing="0" border="0" width="170" align="left" style="margin:0 0 0 14px;" class="w100">
+                <tr>
+                 
+                  <td width="168" align="center" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  <a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:flex; margin:0 0 0 17px; min-width:156px; width: 28%"/></a>
+                    </td>
+                </tr>
+              </table></td>
+          </tr>
+        </table></td>
     </tr>
+
     <tr>
-      <td height="25" align="center"></td>
+      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
     </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
-    </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">${description}<br />
-        <span style="font-size:13px; line-height:28px;">${location} | ${date} | ${credits}</span></td>
-    </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
-    </tr>
-<tr>
-<td height="31" align="center"></td>
-<!--END FEATURED EVENT -->   
+
+<td height="31" colspan="2" align="center"></td>
+</tr>
+
+<!--END FEATURED EVENT --> 
 `)
 }
+
 export function event_end(fields) {
   return (
     `
@@ -1208,6 +1257,73 @@ export function event_end(fields) {
   </tr>`
   )
 }
+
+export function featured_product(fields) {
+
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let description = fields[2].value;
+  let cta = fields[3].value;
+  let link = fields[4].value;
+  let imgSrc = fields[5].value;
+
+  return (
+    `<!--FEATURED PRODUCT -->
+    <tr>
+    <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
+  </tr>
+  <tr>
+    <td height="20" align="center"></td>
+  </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">${header}</td>
+    </tr>
+<tr>
+      <td height="20" align="center"></td>
+    </tr>
+
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>${title}</strong></td>
+    </tr>
+    <tr>
+      <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td align="center">
+            <table cellpadding="0" cellspacing="0" border="0" align="left" class="w100">
+                <tr>
+                  <td width="400" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  ${description}
+					</td>
+                </tr>
+              </table>
+              
+              <!--[if gte mso 9]>
+              </td>
+              <td align="center"  valign="top">
+<![endif]-->
+              
+              <table cellpadding="0" cellspacing="0" border="0" width="170" align="left" style="margin:0 0 0 14px;" class="w100">
+                <tr>
+                 
+                  <td width="168" align="center" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  <a href="${link}" target="_blank"> <img src="${imgSrc}" alt="" border="0" style="display:flex; margin:0 0 0 17px; min-width:156px; width: 28%"/></a>
+                    </td>
+                </tr>
+              </table></td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
+    </tr>
+
+    <tr>
+      <td height="20" align="center"></td>
+    </tr>
+<!--END FEATURED PRODUCT -->  
+`)
+}
+
 export function border(fields) {
   return (
     `<tr>
@@ -1277,24 +1393,26 @@ export function end(fields) {
 						</table>
 					</td>
 				</tr>
-				<tr>
-					<td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px; margin:18px 0 0 0;" width="600" class="w100"></td>
-			   </tr>	
-               <tr>
-                 <td align="center" style="padding:10px 0px;"> <img src="https://cdeworld.com/media/14014/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-               </tr>
-             </table></td>
-           <td width="30" class="w20"></td>
-         </tr>
-       </table></td>
-   </tr>
- </table></td>
-</tr>
-
-
-<tr>
-<td height="22" align="center"></td>
-</tr>
+        <tr>
+        <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px; margin:18px 0;" width="600" class="w100"/></td>
+      </tr>
+      <tr>
+      <td align="center"> <img src="http://aegispublications.com/news/ce/2018/04/base.jpg" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/> </td>
+    </tr>
+  
+      <tr>
+        <td height="25" align="center"></td>
+      </tr>
+    </table></td>
+  <td width="30" class="w20"></td>
+  </tr>
+  </table></td>
+  </tr>
+  </table></td>
+  </tr>
+  <tr>
+  <td height="22" align="center"></td>
+  </tr>
 
 <tr>
 <td align="center" style="font-family:Arial, sans-serif; font-size:11px; text-align:center; color:#666666; font-size:10px; " valign="middle">

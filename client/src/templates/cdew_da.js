@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if (month < 10) { month = '0' + '' + month }
+if (month < 10) { month = '0' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -347,12 +347,12 @@ export const cdew_da_initial_state = [
 ];
 
 export function beginning(fields) {
-  let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  // let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
-  let subscribe = fields[5].value;
+  // let subscribe = fields[5].value;
 
   let monthName;
   if (month === '01') { monthName = 'January' };
@@ -707,8 +707,8 @@ export function on_demand_webinar_w_header(fields) {
   let presenter = fields[2].value;
   let provider = fields[3].value;
   let supporter = fields[4].value;
-  let cost = fields[5].value;
-  let credits = fields[6].value;
+  // let cost = fields[5].value;
+  // let credits = fields[6].value;
   let link = fields[7].value;
   let img = fields[8].value;
 
@@ -777,8 +777,8 @@ export function on_demand_webinar_wo_header(fields) {
   let presenter = fields[1].value;
   let provider = fields[2].value;
   let supporter = fields[3].value;
-  let cost = fields[4].value;
-  let credits = fields[5].value;
+  // let cost = fields[4].value;
+  // let credits = fields[5].value;
   let link = fields[6].value;
   let img = fields[7].value;
 
@@ -1211,26 +1211,8 @@ export function featured_event(fields) {
     <tr>
       <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="${link}" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">${cta}</a></td>
     </tr>
-
-
-    <!--<tr>
-
-
-
-      This comprehensive one-day program in contemporary oral healthcare will feature the foremost educators in dentistry discussing a range of vital subject areas as well as networking and career development opportunities.<br>
-      <div style="font-size:13px; margin:11px 0 0 0;"> Select Cities |  April 2018 – September 2018 |  6 live CE credits and 12 on-demand CE credits</div>
-      
-     <a href="https://cdeworld.com/regional-events?utm_source=CDEW&utm_medium=CDEW%20Prof%20Suite%20DA&utm_campaign=May" target="_blank"> <img src="https://www.aegisdentalnetwork.com/media/67949" alt="" border="0" style="display:flex; margin:0 0 0 17px; min-width:156px; width: 28%"/></a>
-
-
-
+    <td height="31" colspan="2" align="center"></td>
     </tr>
-    <tr>
-      <td colspan="2" align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="https://cdeworld.com/regional-events?utm_source=CDEW&utm_medium=CDEW%20Prof%20Suite%20DA&utm_campaign=May" target="_blank" style="color:#2f84c0; text-decoration:underline; text-transform: uppercase">Learn More & Register here »</a></td>
-    </tr>
-<tr>-->
-<td height="31" colspan="2" align="center"></td>
-</tr>
     <tr>
       <td colspan="2" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/events" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All CDEWorld Events »</a></td>
     </tr>
@@ -1325,95 +1307,12 @@ export function space(fields) {
 }
 
 export function end(fields) {
-  let month = fields[0].value;
-  let year = fields[1].value;
+  // let month = fields[0].value;
+  // let year = fields[1].value;
   return (
     ` <!--END-->
     
-    <!--<tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:8px;">Featured Video</td>
-    </tr>
-    <tr>
-      <td height="20" align="center"></td>
-    </tr>
-    <tr>
-      <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
-          <tr>
-            <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="276" align="left" class="w100">
-                <tr>
-                  <td align="center"><a href="https://www.youtube.com/embed/WXrYsYGWEfE" target="_blank"> <img src="http://aegispublications.com/news/ce/2017/01/images/sdi-video.jpg" alt="" border="0" style="display:block; margin:0px; max-width:276px;" width="276"/> </a></td>
-                </tr>
-                <tr>
-                  <td height="20" align="center"></td>
-                </tr>
-              </table>
-              <table cellpadding="0" cellspacing="0" border="0" width="270" align="right" class="w100">
-                <tr>
-                  <td class="hgt" height="178" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:26px; color:#333333;"><strong>POLA Tooth Whitening Procedure</strong><br>
-                    <span class="blue"><a href="https://www.youtube.com/embed/WXrYsYGWEfE" target="_blank" style="color:#2f84c0;">Click on the video to learn more.</a></span></td>
-                </tr>
-              </table></td>
-          </tr>
-        </table></td>
-    </tr>-->
-<!-- <tr>
-      <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-    </tr>
-<tr>
-      <td height="25" align="center"></td>
-    </tr>
-<tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold;">Featured Event</td>
-    </tr>
-    <tr>
-      <td height="20" align="center"></td>
-    </tr>
-    <tr>
-      <td align="left"><a href="https://cdeworld.com/go/c2c" target="_blank"> <img src="https://cdeworld.com/images/webinar-series/concept-to-complete-logo.jpg" alt="" width="297" height="87" border="0" style="display:block; margin:0px;"/></a></td>
-    </tr>
-    <tr>
-      <td height="25" align="center"></td>
-    </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; padding-bottom:7px;"><strong>Concept to Complete: Executing the Vision</strong></td>
-    </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Thinking of building a new practice, expanding, or renovating? Your office is your strongest marketing tool, which means creating the right environment has never been more critical. Make the first step to building your dream practice easier with this comprehensive dental office design seminar. &nbsp;During this digital event, a robust team of industry experts will walk you through the critical elements of the dental office design process. Earn&nbsp;<strong>3 FREE CEU</strong>&nbsp;while building the knowledge and confidence you need to create your dream practice.<br />
-        <span style="font-size:13px; line-height:28px;">Online only | September 8, 2017 | 3 CE credits</span></td>
-    </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#2f84c0; padding-top:7px;"><a href="https://cdeworld.com/webinar_series/pelton/home" target="_blank" style="color:#2f84c0; text-decoration:underline;">LEARN MORE & REGISTER HERE  »</a></td>
-    </tr>
-    <tr>
-      <td height="30" align="center"></td>
-    </tr>-->
 
-    <!--<tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:18px; color:#333333; font-weight:bold; padding-top:8px;">Featured Live Event</td>
-    </tr>
-    <tr>
-      <td height="20" align="center"></td>
-    </tr>
-    <tr>
-      <td align="center"><img src="http://aegispublications.com/news/ce/2015/11/images/southern-conference-masthead.jpg" alt="" border="0" style="display:block; margin:0px; max-width:602px;" width="600" class="w100"/></td>
-    </tr>
-    <tr>
-      <td height="20" align="center"></td>
-    </tr>
-    <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"> <span class="black">The Southeastern Conference of Dental Laboratories was organized to support and educate dental laboratory owners, managers and technicians and is well known for hosting the ‘premiere dental laboratory meeting’ in the Southeastern part of the United States since 1961.<br />
-        <br />
-        You’re invited to join us once again at the Georgian Terrace in Atlanta on March 18-20, 2016 for our 56th annual meeting. Our theme this year is "Leadership…Not Luck! Don’t Leave Your Lab to Chance" and centers around leadership and technical tools to grow your laboratory. This is a "must attend" meeting for 2016, and is packed with useful information and top-notch speakers and clinicians.</span> <br />
-        <br />
-        <span class="blue"><a href="http://scdl-online.org/annual-meeting.php" target="_blank" style="color:#2f84c0;text-decoration:underline;">REGISTER TODAY »</a></span></td>
-    </tr>
-    
-    <tr>
-      <td height="20" align="center"></td>
-    </tr>
-    <tr>
-      <td align="center"><img src="http://aegispublications.com/news/ce/2015/02/images/divide.png" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
-    </tr>-->
     <tr>
       <td>
       	<table width="100%" border="0" cellspacing="0" cellpadding="0">

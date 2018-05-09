@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if (month < 10) { month = '0' + '' + month }
+if (month < 10) { month = '0' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -326,15 +326,15 @@ export const cdew_lab_initial_state = [
 ];
 
 export function beginning(fields) {
-  let emailName;
-  if (fields[0].value) {
-    emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
-  }
+  // let emailName;
+  // if (fields[0].value) {
+  //   emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  // }
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
-  let subscribe = fields[5].value;
+  // let subscribe = fields[5].value;
   let header = fields[6].value;
   let description = fields[7].value;
   let monthName;
@@ -1165,8 +1165,8 @@ export function border(fields) {
 }
 
 export function end(fields) {
-  let month = fields[0].value;
-  let year = fields[1].value;
+  // let month = fields[0].value;
+  // let year = fields[1].value;
   return (
     `  
   <!--START OF THE END -->

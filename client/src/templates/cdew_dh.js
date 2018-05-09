@@ -3,7 +3,7 @@ import _ from 'lodash';
 //Auto detect the month and year for the url.  
 let d = new Date();
 let month = d.getMonth() + 1;
-if (month < 10) { month = '0' + '' + month }
+if (month < 10) { month = '0' + month }
 
 month = month.toString();
 let year = d.getFullYear();
@@ -89,7 +89,7 @@ export const cdew_dh_forms = {
       { label: 'Link', name: 'link' }
     ]
   },
-    end_live_webinar: {
+  end_live_webinar: {
     typeOfRow: 'end_live_webinar',
     header: 'End of Live Webinar Section',
     closable: true,
@@ -334,14 +334,14 @@ export const cdew_dh_initial_state = [
 ];
 
 export function beginning(fields) {
-  if (fields[0].value) {
-    let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
-  }
+  // if (fields[0].value) {
+  //   let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  // }
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
   let mastheadSrc = fields[4].value;
-  let subscribe = fields[5].value;
+  // let subscribe = fields[5].value;
   let header = fields[6].value;
   let description = fields[7].value;
 
@@ -1182,8 +1182,8 @@ export function space(fields) {
 }
 
 export function end(fields) {
-  let month = fields[0].value;
-  let year = fields[1].value;
+  // let month = fields[0].value;
+  // let year = fields[1].value;
   return (
     `  
   <!--START OF THE END -->

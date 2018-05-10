@@ -707,8 +707,8 @@ export function on_demand_webinar_w_header(fields) {
   let presenter = fields[2].value;
   let provider = fields[3].value;
   let supporter = fields[4].value;
-  // let cost = fields[5].value;
-  // let credits = fields[6].value;
+  let cost = fields[5].value;
+  let credits = fields[6].value;
   let link = fields[7].value;
   let img = fields[8].value;
 
@@ -724,7 +724,7 @@ export function on_demand_webinar_w_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:16px; color:#333333; "><table cellpadding="0" cellspacing="0" border="0" width="100%">
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tbody>
           <tr>
             <td align="left"><strong>${title}</strong></td>
@@ -754,8 +754,8 @@ export function on_demand_webinar_w_header(fields) {
               
               <table cellpadding="0" cellspacing="0" border="0" width="333" align="left" style="margin:0 0 0 14px;" class="w100">
                 <tr>
-                  <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br>
-                  Credits: 1 Self-Study CEU</td>
+                  <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
+                  Credits: ${credits}</td>
                   <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
                   	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
                     </td>
@@ -777,8 +777,8 @@ export function on_demand_webinar_wo_header(fields) {
   let presenter = fields[1].value;
   let provider = fields[2].value;
   let supporter = fields[3].value;
-  // let cost = fields[4].value;
-  // let credits = fields[5].value;
+  let cost = fields[4].value;
+  let credits = fields[5].value;
   let link = fields[6].value;
   let img = fields[7].value;
 
@@ -788,7 +788,7 @@ export function on_demand_webinar_wo_header(fields) {
       <td height="20" align="center"></td>
     </tr>
     <tr>
-      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333; "><strong>
+      <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;"><strong>
 ${title}</strong></td>
     </tr>
     <tr>
@@ -811,8 +811,8 @@ ${title}</strong></td>
               
               <table cellpadding="0" cellspacing="0" border="0" width="333" align="left" style="margin:0 0 0 14px;" class="w100">
                 <tr>
-                  <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: Free<br>
-                  Credits: 1 Self-Study CEU</td>
+                  <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
+                  Credits: ${credits}</td>
                   <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
                   	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
                     </td>

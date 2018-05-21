@@ -1030,7 +1030,7 @@ export function ebook(fields) {
             <tr>
               <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#676262;">
               ${author ? `<p><strong>By:</strong> ${author}<br />` : ``}
-              <strong>Supported By:</strong> <em>${supporter}</em><br>
+              ${supporter ? `<strong>Supported By:</strong> <em>${supporter}</em><br>` : ``}
                   <strong>Cost:</strong> ${cost}  | <strong>Source:</strong> ${source}<strong><br>
                     Credits:</strong> ${credits} </p></td>
             </tr>

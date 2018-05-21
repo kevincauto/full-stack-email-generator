@@ -703,7 +703,7 @@ export function live_webinar_wo_header(fields) {
 export function end_live_webinar(fields) {
   return (
     `	<tr>
-	  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><br><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=279&p=&o=&commit=SEARCH" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All Live CDEWorld Webinars »</a></td>
+	  <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><br><a href="https://cdeworld.com/webinars/search?utf8=%E2%9C%93&q=&c=280&p=&o=&commit=SEARCH" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All Live CDEWorld Webinars »</a></td>
 	</tr>`
   )
 }
@@ -840,7 +840,7 @@ export function on_demand_webinar_end(fields) {
     <td height="35" align="center"></td>
     </tr>
     <tr>
-    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?c=280" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All Live CDEWorld Webinars »</a></td>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:22px; font-weight:bold;"><a href="https://cdeworld.com/webinars/search?c=280" target="_blank" style="color:#fff; text-decoration:none; background-color:#2f84c0; padding:4px 7px; border-radius:7px;">View All On-Demand CDEWorld Webinars »</a></td>
     </tr>
     <tr>
     <td height="20" align="center"></td>
@@ -855,14 +855,6 @@ export function center_banner(fields) {
   let imgSrc = fields[1].value;
   return (`
   <!--CENTER BANNER-->
-  <tr>
-  <td height="35" align="center"></td>
-</tr>
-
-<tr>
-  <td height="20" align="center"></td>
-</tr>
-
 ${imgSrc ? `
 <tr>
 <td align="center"><img src="https://www.dentalaegis.com/media/60287/" alt="" border="0" style="display:block; margin:0px; max-width:600px;" width="600" class="w100"/></td>
@@ -1030,7 +1022,7 @@ export function ebook(fields) {
             <tr>
               <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#676262;">
               ${author ? `<p><strong>By:</strong> ${author}<br />` : ``}
-              <strong>Supported By:</strong> <em>${supporter}</em><br>
+              ${supporter ? `<strong>Supported By:</strong> <em>${supporter}</em><br>` : ``}
                   <strong>Cost:</strong> ${cost}  | <strong>Source:</strong> ${source}<strong><br>
                     Credits:</strong> ${credits} </p></td>
             </tr>

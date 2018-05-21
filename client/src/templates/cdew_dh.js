@@ -234,7 +234,7 @@ export const cdew_dh_forms = {
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
       { label: 'Link', name: 'link' },
-      { label: 'Partner Logo Source', name: 'imgSrc' },
+      { label: 'Partner Logo Source', name: 'imgSrc', value: 'https://placehold.it/200x80' },
       { label: 'Brand Link', name: 'brandLink' },
     ]
   },

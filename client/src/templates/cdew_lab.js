@@ -236,27 +236,8 @@ export const cdew_lab_forms = {
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
       { label: 'Link', name: 'link' },
-      { label: 'Partner Logo Source', name: 'imgSrc' },
+      { label: 'Partner Logo Source', name: 'imgSrc', value: 'https://placehold.it/200x80' },
       { label: 'Brand Link', name: 'brandLink' },
-    ]
-  },
-  featured_event: {
-    typeOfRow: 'featured_event',
-    header: 'Upcoming Event',
-    closable: true,
-    switchable: true,
-    addable: true,
-    draggable: true,
-    fields: [
-      { label: 'Header', name: 'header', value: 'Upcoming Event' },
-      { label: 'Title', name: 'title' },
-      { label: 'Description', name: 'description' },
-      { label: 'Location', name: 'location' },
-      { label: 'Date', name: 'date' },
-      { label: 'Credits', name: 'credits' },
-      { label: 'Call-to-Action', name: 'cta', value: 'Learn More & Register here!' },
-      { label: 'Link', name: 'link' },
-      { label: 'Event Image Source', name: 'imgSrc', value: 'https://placehold.it/150x150' }
     ]
   },
   featured_event: {

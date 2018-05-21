@@ -241,7 +241,7 @@ export const cdew_dds_forms = {
       { label: 'Title', name: 'title' },
       { label: 'Presenter', name: 'presenter' },
       { label: 'Provider', name: 'provider' },
-      { label: 'Source', name: 'source' },
+      { label: 'Source', name: 'source', value: 'https://placehold.it/200x80' },
       { label: 'Cost', name: 'cost' },
       { label: 'Credits', name: 'credits' },
       { label: 'Link', name: 'link' },

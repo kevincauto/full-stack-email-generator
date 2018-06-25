@@ -17,7 +17,7 @@ export const cdew_thematic_forms = {
         addable: true,
         draggable: false,
         fields: [
-            { label: 'Email Name', name: 'emailName', value: '' },
+            { label: 'Email Title', name: 'emailName', value: '' },
             {
                 label: 'Month', name: 'month', value: month, dropdown: [
                     { value: '01', text: 'Send Month: January' },
@@ -66,7 +66,8 @@ export const cdew_thematic_forms = {
             { label: 'Commercial Supporter', name: 'supporter' },
             { label: 'Cost', name: 'cost' },
             { label: 'Credits', name: 'credits' },
-            { label: 'Link', name: 'link' }
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source Link', name: 'img', value: "https://placehold.it/150x100" }
         ]
     },
     live_webinar_wo_header: {
@@ -84,7 +85,8 @@ export const cdew_thematic_forms = {
             { label: 'Commercial Supporter', name: 'supporter' },
             { label: 'Cost', name: 'cost' },
             { label: 'Credits', name: 'credits' },
-            { label: 'Link', name: 'link' }
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source Link', name: 'img', value: "https://placehold.it/150x100" }
         ]
     },
     on_demand_webinar: {
@@ -102,7 +104,8 @@ export const cdew_thematic_forms = {
             { label: 'Commercial Supporter', name: 'supporter' },
             { label: 'Cost', name: 'cost' },
             { label: 'Credits', name: 'credits' },
-            { label: 'Link', name: 'link' }
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source Link', name: 'img', value: "https://placehold.it/150x100" }
         ]
     },
     on_demand_webinar_wo_header: {
@@ -119,7 +122,8 @@ export const cdew_thematic_forms = {
             { label: 'Commercial Supporter', name: 'supporter' },
             { label: 'Cost', name: 'cost' },
             { label: 'Credits', name: 'credits' },
-            { label: 'Link', name: 'link' }
+            { label: 'Link', name: 'link' },
+            { label: 'Image Source Link', name: 'img', value: "https://placehold.it/150x100" }
         ]
     },
     end_webinar_section: {
@@ -389,7 +393,7 @@ export function beginning(fields) {
   <html lang="en">
   <head>
       <meta charset="UTF-8">
-      <title>${topic} CE Opportunities</title>
+      <title>${emailName}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <style type="text/css">
@@ -600,6 +604,7 @@ export function live_webinar(fields) {
     let cost = fields[6].value;
     let credits = fields[7].value;
     let link = fields[8].value;
+    let img = fields[9].value;
 
     return (
         `
@@ -619,8 +624,21 @@ export function live_webinar(fields) {
                                     Commercial Supporter: <em>${supporter}</em>
                                </td>
                                 <td valign="top">
-                                    Credits: ${credits}<br>
-                                    Cost: ${cost}
+                                <table>
+                                <tr>
+                                    <td valign="top" style="padding-right: 50px">
+                                        Credits: ${credits}<br>
+                                        Cost: ${cost}
+                                    </td>
+                                    ${img ?
+            `<td>
+                                        <a href="${link}" target="_blank">
+                                            <img src="${img}" />
+                                        </a>
+                                        </td>` :
+            ``}
+                                </tr>
+                                </table>
                                 </td>
                             </tr>
                         </table>
@@ -643,6 +661,7 @@ export function live_webinar_wo_header(fields) {
     let cost = fields[5].value;
     let credits = fields[6].value;
     let link = fields[7].value;
+    let img = fields[8].value;
     return (
         `
     <!--START LIVE WEBINAR WITHOUT HEADER-->
@@ -658,8 +677,21 @@ export function live_webinar_wo_header(fields) {
                                       Commercial Supporter: <em>${supporter}</em>
                                  </td>
                                   <td valign="top">
-                                      Credits: ${credits}<br>
-                                      Cost: ${cost}
+                                  <table>
+                                  <tr>
+                                      <td valign="top" style="padding-right: 50px">
+                                          Credits: ${credits}<br>
+                                          Cost: ${cost}
+                                      </td>
+                                      ${img ?
+            `<td>
+                                          <a href="${link}" target="_blank">
+                                              <img src="${img}" />
+                                          </a>
+                                          </td>` :
+            ``}
+                                  </tr>
+                                  </table>
                                   </td>
                               </tr>
                           </table>
@@ -682,6 +714,7 @@ export function on_demand_webinar(fields) {
     let cost = fields[5].value;
     let credits = fields[6].value;
     let link = fields[7].value;
+    let img = fields[8].value;
     return (
         `
     <!--START ON-DEMAND WEBINAR WITH HEADER-->
@@ -698,10 +731,23 @@ export function on_demand_webinar(fields) {
                                 Presenter: ${presenter}<br>
                                 Provider: ${provider}<br>
                                 Commercial Supporter: <em>${supporter}</em>
-                          </td>
+                            </td>
                             <td valign="top">
-                                Credits: ${credits}<br>
-                                Cost: ${cost}
+                                <table>
+                                <tr>
+                                    <td valign="top" style="padding-right: 50px">
+                                        Credits: ${credits}<br>
+                                        Cost: ${cost}
+                                    </td>
+                                    ${img ?
+            `<td>
+                                        <a href="${link}" target="_blank">
+                                            <img src="${img}" />
+                                        </a>
+                                        </td>` :
+            ``}
+                                </tr>
+                                </table>
                             </td>
                         </tr>
                     </table>
@@ -724,6 +770,7 @@ export function on_demand_webinar_wo_header(fields) {
     let cost = fields[4].value;
     let credits = fields[5].value;
     let link = fields[6].value;
+    let img = fields[7].value;
 
     return (
         `
@@ -742,8 +789,21 @@ export function on_demand_webinar_wo_header(fields) {
                                 Commercial Supporter: <em>${supporter}</em>
                           </td>
                             <td valign="top">
-                                Credits: ${credits}<br>
-                                Cost: ${cost}
+                            <table>
+                            <tr>
+                                <td valign="top" style="padding-right: 50px">
+                                    Credits: ${credits}<br>
+                                    Cost: ${cost}
+                                </td>
+                                ${img ?
+            `<td>
+                                    <a href="${link}" target="_blank">
+                                        <img src="${img}" />
+                                    </a>
+                                    </td>` :
+            ``}
+                            </tr>
+                            </table>
                             </td>
                         </tr>
                     </table>
@@ -1031,7 +1091,7 @@ export function ebook(fields) {
 ${title}</span>
                             <div style="margin:8px 0;">
                             ${author ? `<strong>By:</strong> ${author}<br>` : ''}
-                            <strong>Supported By: </strong><em>${supporter}</em><br>
+                            ${supporter ? `<strong>Supported By: </strong><em>${supporter}</em><br>` : ``}
                                 <strong>Cost: </strong>${cost} | <strong>Credits:</strong> ${credits} 
                           </div>
                             <div style="margin-top: 4px;">${description}

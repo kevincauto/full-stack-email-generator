@@ -18,7 +18,7 @@ export const cdew_dds_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName', value: '' },
+      { label: 'Email Title', name: 'emailName', value: '' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -376,7 +376,7 @@ export const cdew_dds_initial_state = [
 ];
 
 export function beginning(fields) {
-  // let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
+  let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -405,7 +405,7 @@ export function beginning(fields) {
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <title>New CE Opportunities for Dentists</title>
+  <title>${emailName}</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />

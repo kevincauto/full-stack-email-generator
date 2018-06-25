@@ -18,7 +18,7 @@ export const cced_reader_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName' },
+      { label: 'Email Title', name: 'emailName' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -243,7 +243,7 @@ export const cced_reader_initial_state = [
 
 export function beginning(fields) {
 
-  // let emailName = fields[0].value;
+  let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -272,7 +272,7 @@ export function beginning(fields) {
   return `<!DOCTYPE html>
   <html>
   <head>
-    <title></title>
+    <title>${emailName}</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width" name="viewport">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">

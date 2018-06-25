@@ -17,7 +17,7 @@ export const idt_digital_forms = {
         addable: true,
         draggable: false,
         fields: [
-            { label: 'Email Name', name: 'emailName' },
+            { label: 'Email Title', name: 'emailName' },
             {
                 label: 'Month', name: 'month', value: currentMonth,
                 dropdown: [
@@ -131,7 +131,7 @@ export const idt_digital_initial_state = [
 ];
 
 export function beginning(fields) {
-    // let emailName = fields[0].value;
+    let emailName = fields[0].value;
     let month = fields[1].value;
     let year = fields[2].value;
     // let headerSrc = fields[3].value;
@@ -158,7 +158,7 @@ export function beginning(fields) {
   <html>
       <head>
           <meta charset="UTF-8" />
-          <title>Inside Dental Technology</title>
+          <title>${emailName}</title>
       </head>
       <body>
   <!-- g-link -->		

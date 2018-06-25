@@ -17,7 +17,7 @@ export const cdew_lab_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName' },
+      { label: 'Email Title', name: 'emailName' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -355,10 +355,10 @@ export const cdew_lab_initial_state = [
 ];
 
 export function beginning(fields) {
-  // let emailName;
-  // if (fields[0].value) {
-  //   emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
-  // }
+  let emailName;
+  if (fields[0].value) {
+    emailName = fields[0].value;
+  }
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -384,7 +384,7 @@ export function beginning(fields) {
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <title>New CE Opportunities for Lab Technicians</title>
+  <title>${emailName}</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -762,7 +762,7 @@ export function on_demand_webinar_w_header(fields) {
               <!--[if gte mso 9]>
               </td>
               <td align="center"  valign="top">
-<![endif]-->
+              <![endif]-->
               
               <table cellpadding="0" cellspacing="0" border="0" width="333" align="left" style="margin:0 0 0 14px;" class="w100">
                 <tr>
@@ -770,9 +770,10 @@ export function on_demand_webinar_w_header(fields) {
                   Credits: ${credits}</td>
                   <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
                   	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
-                    </td>
+                  </td>
                 </tr>
-              </table></td>
+              </table>
+            </td>
           </tr>
         </table></td>
     </tr>

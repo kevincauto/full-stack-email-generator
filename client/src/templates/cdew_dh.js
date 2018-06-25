@@ -17,7 +17,7 @@ export const cdew_dh_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName' },
+      { label: 'Email Title', name: 'emailName' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -353,9 +353,7 @@ export const cdew_dh_initial_state = [
 ];
 
 export function beginning(fields) {
-  // if (fields[0].value) {
-  //   let emailName = fields[0].value.trim().replace(/\s+/g, '-').toLowerCase();
-  // }
+  let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -382,7 +380,7 @@ export function beginning(fields) {
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <title>New CE Courses For Dental Hygienists</title>
+  <title>${emailName}</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -762,9 +760,11 @@ export function on_demand_webinar_w_header(fields) {
                 <tr>
                   <td width="165" align="left" valign="top" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">Cost: ${cost}<br>
                   Credits: ${credits}</td>
-                  <td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
+                  ${img ?
+      `<td width="168" align="right" class="black" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#333333;">
                   	<a href="${link}" target="_blank"><img src="${img}" width="140" alt=""/></a>
-                    </td>
+                  </td>` :
+      ``}
                 </tr>
               </table></td>
           </tr>

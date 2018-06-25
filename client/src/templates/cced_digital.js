@@ -17,7 +17,7 @@ export const cced_digital_forms = {
         addable: true,
         draggable: false,
         fields: [
-            { label: 'Email Name', name: 'emailName' },
+            { label: 'Email Title', name: 'emailName' },
             {
                 label: 'Month', name: 'month', value: currentMonth,
                 dropdown: [
@@ -130,7 +130,7 @@ export const cced_digital_initial_state = [
 
 //Several functions to generate the html sections of the email
 export function beginning(fields) {
-    // let emailName = fields[0].value;
+    let emailName = fields[0].value;
     let month = fields[1].value;
     let year = fields[2].value;
     let headerSrc = fields[3].value;
@@ -155,7 +155,7 @@ export function beginning(fields) {
   <html>
       <head>
           <meta charset="UTF-8" />
-          <title>Your Digital Edition is Now Available!</title>
+          <title>${emailName}</title>
       </head>
       <body bgcolor="#efefef">
   <!-- g-link -->	

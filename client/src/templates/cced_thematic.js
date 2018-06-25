@@ -18,7 +18,7 @@ export const cced_thematic_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName' },
+      { label: 'Email Title', name: 'emailName' },
       {
         label: 'Month', name: 'month', value: month,
         dropdown: [
@@ -208,7 +208,7 @@ export const cced_thematic_initial_state = [
 ];
 
 export function beginning(fields) {
-  // let emailName = fields[0].value;
+  let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -226,7 +226,7 @@ export function beginning(fields) {
       <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
   <!--[if !mso]><!-->		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
   <!--<![endif]-->		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-      <title></title>
+      <title>${emailName}</title>
       <style type="text/css">
   body {
       margin: 0 !important;

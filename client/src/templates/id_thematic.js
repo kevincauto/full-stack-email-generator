@@ -17,7 +17,7 @@ export const id_thematic_forms = {
         addable: true,
         draggable: false,
         fields: [
-            { label: 'Email Name', name: 'emailName' },
+            { label: 'Email Title', name: 'emailName' },
             {
                 label: 'Month', name: 'month', value: currentMonth,
                 dropdown: [
@@ -135,6 +135,7 @@ export const id_thematic_forms = {
             { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
             { label: 'Link', name: 'link' },
             { label: 'Image Source Link', name: 'imgSrc' },
+            { label: 'Call-To-Action', name: 'cta', value: 'Learn More' },
         ]
     },
     products: {
@@ -181,7 +182,7 @@ export const id_thematic_initial_state = [
 ];
 
 export function beginning(fields) {
-    // let emailName = fields[0].value;
+    let emailName = fields[0].value;
     let month = fields[1].value;
     let year = fields[2].value;
     let mastheadLink = fields[3].value;
@@ -195,31 +196,18 @@ export function beginning(fields) {
     let url = `https://www.aegisdentalnetwork.com/id/${year}/${month}/newsletter/${topic.trim().replace(/\s+/g, '-').toLowerCase()}`;
 
     return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-  
-  <html xmlns="http://www.w3.org/1999/xhtml">
-  
-      <head>
-  
-          <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-  
-  <!--[if !mso]><!-->		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  
-  <!--<![endif]-->		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  
-          <title></title>
-  
-          <style type="text/css">
-  
-  body {
-  
-      margin: 0 !important;
-  
-      padding: 0;
-  
-      background-color: #ffffff;
-  
-      font-family: "Times New Roman", Times, serif;
-  
+  <html xmlns="http://www.w3.org/1999/xhtml"> 
+      <head>  
+          <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />  
+  <!--[if !mso]><!-->		<meta content="IE=edge" http-equiv="X-UA-Compatible" />  
+  <!--<![endif]-->		<meta content="width=device-width, initial-scale=1.0" name="viewport" />  
+          <title>${emailName}</title>  
+          <style type="text/css">  
+  body {  
+      margin: 0 !important;  
+      padding: 0;  
+      background-color: #ffffff;  
+      font-family: "Times New Roman", Times, serif;  
   }
   
   table {
@@ -1169,7 +1157,7 @@ export function news(fields) {
 export function ce(fields) {
 
     let title = fields[0].value;
-    // let description = fields[1].value;
+    let description = fields[1].value;
     let author = fields[2].value;
     let credits = fields[3].value;
     let cost = fields[4].value;
@@ -1211,6 +1199,13 @@ export function ce(fields) {
                                     <a href="${link}" style="text-decoration:none;color:#444;" target="_blank">${title}</a></p>
 
                                 <em style="font-family:'Times New Roman', Times, serif;">${author}</em><br />
+
+                                ${description ?
+            ` <p style="font-family:arial, 'sans serif';font-size:13px;margin:5px 0px 0px 0px;">
+                                    ${description}
+                                </p>` :
+            ``}
+                               
 
                                 <p style="font-family:arial, 'sans serif';font-size:13px;margin:5px 0px 0px 0px;">
 
@@ -1427,6 +1422,7 @@ export function featured(fields) {
     let description = fields[2].value;
     let link = fields[3].value;
     let imgSrc = fields[4].value;
+    let cta = fields[5].value;
 
     return (
         ` <!--FEATURED PRODUCT-->
@@ -1475,7 +1471,7 @@ export function featured(fields) {
     
                                                                         <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:15px;Margin-bottom:10px;text-transform:uppercase;color:#9d0707; margin-top:5px;">
     
-                                                                            <a href="${link}" style="text-decoration:none;text-transform:uppercase;color:#9d0707;" target="_blank">Learn More</a></p>
+                                                                            <a href="${link}" style="text-decoration:none;text-transform:uppercase;color:#9d0707;" target="_blank">${cta}</a></p>
     
                                                                     </td>
     
@@ -1658,7 +1654,7 @@ export function products(fields) {
                                             <td class="text" style="padding-bottom:0;padding-right:0;padding-left:0;padding-top:10px;">
 
                                                 <div style="font-size:15px; font-weight:normal; margin:0 0 0 0; font-family:'Times New Roman', serif; width:160px; color:#918f93; text-transform:uppercase; width:94%;">
-
+                                                        &nbsp;
                                                      </div>
 
                                                 <div style="font-size:19px; font-weight:normal; margin:4px 0px 4px 0px; font-family:'Times New Roman', serif;  width:94%;">
@@ -1669,13 +1665,13 @@ export function products(fields) {
 
                                                     ${description2}</div>
 
-                                                <div style="font-family:Gotham, sans-serif; font-size:12px; margin:5px 0 4px 14; width:94%; font-size:15px;">
+             
 
                                                     <p style="Margin:0;font-family:'Times New Roman', Times, serif;font-size:15px;Margin-bottom:10px; margin-top:5px; text-transform:uppercase;color:#9d0707;">
 
                                                         <a href="${link2}" style="text-decoration:none;text-transform:uppercase;color:#9d0707;" target="_blank">Learn More</a></p>
 
-                                                </div>
+                                            
 
                                             </td>
 

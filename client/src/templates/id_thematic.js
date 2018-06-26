@@ -1422,7 +1422,9 @@ export function featured(fields) {
     let description = fields[2].value;
     let link = fields[3].value;
     let imgSrc = fields[4].value;
-    if(fields[5])
+    let cta = "";    
+/*
+if(fields[5])
 {
 
     let cta = fields[5].value;
@@ -1431,6 +1433,7 @@ else
 {
     let cta = '';
 }
+*/
     return (
         ` <!--FEATURED PRODUCT-->
     

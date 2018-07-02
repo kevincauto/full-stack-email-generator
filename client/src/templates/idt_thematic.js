@@ -15,7 +15,7 @@ export const idt_thematic_forms = {
     addable: true,
     draggable: false,
     fields: [
-      { label: 'Email Name', name: 'emailName' },
+      { label: 'Email Title', name: 'emailName' },
       {
         label: 'Month', name: 'month', value: currentMonth,
         dropdown: [
@@ -74,7 +74,7 @@ export const idt_thematic_forms = {
     draggable: true,
     fields: [
       { label: 'Title', name: 'title' },
-      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Description', name: 'description' },
       { label: 'Author', name: 'author' },
       { label: 'Credits', name: 'credits' },
       { label: 'Cost', name: 'cost' },
@@ -118,23 +118,41 @@ export const idt_thematic_forms = {
   },
   featured_article: {
     typeOfRow: 'featured_article',
-    header: 'Featured Article',
+    header: 'Featured Section White Background',
     closable: true,
     switchable: true,
     addable: true,
     draggable: true,
     fields: [
-      { label: 'Header', name: 'header' },
+      { label: 'Header', name: 'header', value: 'Featured Article' },
       { label: 'Title', name: 'title' },
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
       { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/300x200' },
+      { label: 'Call-To-Action', name: 'cta', value: 'Read More' },
+    ]
+  },
+  featured_pink: {
+    typeOfRow: 'featured_pink',
+    header: 'Featured Section Pink Background',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured Product' },
+      { label: 'Title', name: 'title' },
+      { label: 'Author', name: 'author' },
+      { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/300x200' },
+      { label: 'Call-To-Action', name: 'cta', value: 'Learn More' },
     ]
   },
   featured_video: {
     typeOfRow: 'featured_video',
-    header: 'Featured Video',
+    header: 'Featured Section Blue Background',
     closable: true,
     switchable: true,
     addable: true,
@@ -145,7 +163,34 @@ export const idt_thematic_forms = {
       { label: 'Author', name: 'author' },
       { label: 'Description', name: 'description', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
       { label: 'Link', name: 'link' },
-      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/300x200' }
+      { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/300x200' },
+      { label: 'Call-To-Action', name: 'cta', value: 'Watch Here' },
+    ]
+  },
+  three_columns: {
+    typeOfRow: 'three_columns',
+    header: 'Three Column Section',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'Products' },
+
+      { label: 'First Title', name: 'product1' },
+      { label: 'First Description', name: 'description1', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'First Link', name: 'link1' },
+      { label: 'First Call-to-Action', name: 'cta1', value: 'Learn More' },
+
+      { label: 'Second Title', name: 'product2' },
+      { label: 'Second Description', name: 'description2', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Second Link', name: 'link2' },
+      { label: 'Second Call-to-Action', name: 'cta2', value: 'Learn More' },
+
+      { label: 'Third Title', name: 'product3' },
+      { label: 'Third Product Description', name: 'description3', value: 'Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  Lorem ipsum dolar emet eres consequetor alias dormutus.  ' },
+      { label: 'Third Link', name: 'link3' },
+      { label: 'Third Call-to-Action', name: 'cta3', value: 'Learn More' },
     ]
   },
   products: {
@@ -194,13 +239,15 @@ export const idt_thematic_initial_state = [
   _.cloneDeep(idt_thematic_forms.resources),
   _.cloneDeep(idt_thematic_forms.center_banner),
   _.cloneDeep(idt_thematic_forms.featured_article),
+  _.cloneDeep(idt_thematic_forms.featured_pink),
+  _.cloneDeep(idt_thematic_forms.three_columns),
   _.cloneDeep(idt_thematic_forms.featured_video),
   _.cloneDeep(idt_thematic_forms.products),
   _.cloneDeep(idt_thematic_forms.end)
 ];
 
 export function beginning(fields) {
-  // let emailName = fields[0].value;
+  let emailName = fields[0].value;
   let month = fields[1].value;
   let year = fields[2].value;
   let mastheadLink = fields[3].value;
@@ -217,7 +264,7 @@ export function beginning(fields) {
   return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-          <title></title>
+          <title>${emailName}</title>
           <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
           <meta content="width=device-width" name="viewport" />
           <meta content="IE=edge" http-equiv="X-UA-Compatible" />
@@ -525,7 +572,7 @@ export function news(fields) {
                                       </tr>
                                       <tr>
                                         <td align="center" height="11" style="font-size:11px; line-height:11px;">
-                                          <img alt="" border="0" height="11" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px;" width="11" /></td>
+                                          </td>
                                       </tr>
                                     </tbody>
                                   </table>
@@ -554,7 +601,7 @@ export function news(fields) {
 
 export function ce(fields) {
   let title = fields[0].value;
-  // let description = fields[1].value;
+  let description = fields[1].value;
   let author = fields[2].value;
   let credits = fields[3].value;
   let cost = fields[4].value;
@@ -576,13 +623,14 @@ export function ce(fields) {
                   <tbody>
                     <tr>
                       <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                        <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                        </td>
                     </tr>
                     <tr>
                       <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
                         <span style="color:#febe10; font-weight:bold;font-size:13px; line-height:20px;">FEATURED CE</span><br />
                         <span style="color:#000000; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#000000;" target="_blank">${title}</a> </span><br />
                         <em>${author}</em><br />
+                        ${description ? `${description}<br />` : ``}
                         <strong>Credits:</strong> ${credits}<br />
                         <strong>Cost:</strong> ${cost}<br />
                         <strong>Source:</strong> <em>${source}</em><br />
@@ -594,7 +642,7 @@ export function ce(fields) {
                     </tr>
                     <tr>
                       <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;">
-                        <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                        </td>
                     </tr>
                   </tbody>
                 </table>
@@ -606,7 +654,7 @@ export function ce(fields) {
                           <tbody>
                             <tr>
                               <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                </td>
                             </tr>
                             <tr>
                               <td align="center" valign="top">
@@ -614,7 +662,7 @@ export function ce(fields) {
                             </tr>
                             <tr>
                               <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                </td>
                             </tr>
                           </tbody>
                         </table>
@@ -657,7 +705,7 @@ export function resources(fields) {
               <tbody>
                 <tr>
                   <td align="center" height="8" style="font-size:8px; line-height:8px;">
-                    <img alt="" border="0" height="8" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:8px;" width="10" /></td>
+                    </td>
                 </tr>
                 <tr>
                   <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
@@ -671,7 +719,7 @@ export function resources(fields) {
                 </tr>
                 <tr>
                   <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                    <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                    </td>
                 </tr>
               </tbody>
             </table>
@@ -679,7 +727,7 @@ export function resources(fields) {
               <tbody>
                 <tr>
                   <td align="center" class="hide" height="8" style="font-size:8px; line-height:8px;">
-                    <img alt="" border="0" height="8" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:8px;" width="8" /></td>
+                    </td>
                 </tr>
                 <tr>
                   <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
@@ -693,7 +741,7 @@ export function resources(fields) {
                 </tr>
                 <tr>
                   <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                    <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                    </td>
                 </tr>
               </tbody>
             </table>
@@ -727,6 +775,7 @@ export function featured_article(fields) {
   let description = fields[3].value;
   let link = fields[4].value;
   let imgSrc = fields[5].value;
+  let cta = fields[6].value;
 
   return (
     ` 
@@ -741,22 +790,22 @@ export function featured_article(fields) {
                   <tbody>
                     <tr>
                       <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                        <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                        </td>
                     </tr>
                     <tr>
                       <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px; padding-left:10px">
                         <span style="color:#f26647; font-weight:bold; font-size:13px; line-height:20px; text-transform:uppercase;">${header}</span><br />
                         <span style="color:#000000; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#000;" target="_blank"> ${title} </a></span><br />
-                        <em>${author}</em><br />
+                        ${author ? `<em>${author}</em><br />` : ``}
                         ${description}</td>
                     </tr>
                     <tr>
                       <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; padding-left:10px">
-                        <a href="${link}" style="color:#d2232a; text-decoration:none;" target="_blank">Read More</a></td>
+                        <a href="${link}" style="color:#d2232a; text-decoration:none;" target="_blank">${cta}</a></td>
                     </tr>
                     <tr>
                       <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;">
-                        <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                        </td>
                     </tr>
                   </tbody>
                 </table>
@@ -771,7 +820,7 @@ export function featured_article(fields) {
                           <tbody>
                             <tr>
                               <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                </td>
                             </tr>
                             <tr>
                               <td align="center" valign="top">
@@ -779,7 +828,7 @@ export function featured_article(fields) {
                             </tr>
                             <tr>
                               <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                </td>
                             </tr>
                           </tbody>
                         </table>
@@ -798,42 +847,44 @@ export function featured_article(fields) {
   )
 }
 
-export function featured_video(fields) {
+export function featured_pink(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
-  // let author = fields[2].value;
+  let author = fields[2].value;
   let description = fields[3].value;
   let link = fields[4].value;
   let imgSrc = fields[5].value;
+  let cta = fields[6].value;
 
   return (
     `
-    <!--START FEATURED VIDEO SECTION -->
+    <!--START FEATURED PINK SECTION -->
     <tr>
       <td align="center" style="padding-top:10px;">
         <table border="0" cellpadding="0" cellspacing="0" width="100%">
           <tbody>
             <tr>
-              <td align="center" bgcolor="#eaf6f7">
+              <td align="center" bgcolor="#fdebe2">
                 <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="384">
                   <tbody>
                     <tr>
                       <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                        <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                        </td>
                     </tr>
                     <tr>
                       <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px; padding-left:15px;">
-                        <span style="color:#00bdcd; font-weight:bold; text-transform:uppercase;">${header}</span><br />
-                        <span style="color:#000000; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a></span><br />
+                        <span style="color:#f26647; font-weight:bold; text-transform:uppercase;">${header}</span><br />
+                        ${title ? `<span style="color:#000000; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a></span><br />` : ``}
+                        ${author ? `<em>${author}</em><br />` : ``}
                         ${description}</td>
                     </tr>
                     <tr>
                       <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; padding-left:15px;">
-                        <a href="${link}" style="color:#d2232a; text-decoration:none; font-weight:bold; line-height:18px;" target="_blank">Watch Here</a></td>
+                        <a href="${link}" style="color:#d2232a; text-decoration:none; font-weight:bold; line-height:18px;" target="_blank">${cta}</a></td>
                     </tr>
                     <tr>
                       <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                        <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                        </td>
                     </tr>
                   </tbody>
                 </table>
@@ -856,7 +907,85 @@ export function featured_video(fields) {
                             </tr>
                             <tr>
                               <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <!--END FEATURED PINK SECTION--> `
+  )
+}
+
+export function featured_video(fields) {
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let author = fields[2].value;
+  let description = fields[3].value;
+  let link = fields[4].value;
+  let imgSrc = fields[5].value;
+  let cta = fields[6].value;
+
+  return (
+    `
+    <!--START FEATURED VIDEO SECTION -->
+    <tr>
+      <td align="center" style="padding-top:10px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <td align="center" bgcolor="#eaf6f7">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="w100" width="384">
+                  <tbody>
+                    <tr>
+                      <td align="center" height="15" style="font-size:15px; line-height:15px;">
+                        </td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="black" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px; padding-left:15px;">
+                        <span style="color:#00bdcd; font-weight:bold; text-transform:uppercase;">${header}</span><br />
+                        ${title ? `<span style="color:#000000; font-weight:bold;"><a href="${link}" style="text-decoration:none; color:#000;" target="_blank">${title}</a></span><br />` : ``}
+                        ${author ? `<em>${author}</em><br />` : ``}
+                        ${description}</td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="maroon" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; padding-left:15px;">
+                        <a href="${link}" style="color:#d2232a; text-decoration:none; font-weight:bold; line-height:18px;" target="_blank">${cta}</a></td>
+                    </tr>
+                    <tr>
+                      <td align="center" height="15" style="font-size:15px; line-height:15px;">
+                        </td>
+                    </tr>
+                  </tbody>
+                </table>
+<!--[if gte mso 9]>
+                        </td>
+                        <td align="center"  valign="top">
+<![endif]-->														<table align="right" border="0" cellpadding="0" cellspacing="0" class="w100" width="225">
+                  <tbody>
+                    <tr>
+                      <td align="center">
+                        <table align="left" border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td align="center" class="hide" height="15">
+                                 </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding-left:15px;" valign="top">
+                                <a href="${link}" target="_blank"> <img alt="" border="0" src="${imgSrc}" style="display:block; max-width:196px; width:196px;  border:solid 1px #cccccc;" width="196" /></a></td>
+                            </tr>
+                            <tr>
+                              <td align="center" height="15" style="font-size:15px; line-height:15px;">
+                                </td>
                             </tr>
                           </tbody>
                         </table>
@@ -872,6 +1001,72 @@ export function featured_video(fields) {
     </tr>
     <!--END FEATURED VIDEO SECTION--> `
   )
+}
+
+export function three_columns(fields) {
+  let header = fields[0].value;
+
+  let product1 = fields[1].value;
+  let description1 = fields[2].value;
+  let link1 = fields[3].value;
+  let cta1 = fields[4].value;
+
+  let product2 = fields[5].value;
+  let description2 = fields[6].value;
+  let link2 = fields[7].value;
+  let cta2 = fields[8].value;
+
+  let product3 = fields[9].value;
+  let description3 = fields[10].value;
+  let link3 = fields[11].value;
+  let cta3 = fields[12].value;
+
+
+  return (`
+  <!--THREE COLUMNS -->
+  <tr>
+  <td align="center" height="15" style="font-size:15px; line-height:15px;">
+    </td>
+</tr>
+  <tr>
+    <td align="left" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:20px; color:#f26647; font-weight:bold; text-transform:uppercase;">
+      ${header}
+    </td>
+  </tr>
+  <tr>
+  <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding:0px 0 0 0; margin:0 0 14px 0;">
+    <tbody>
+      <tr>
+        <td width="31%" valign="top">
+            <div style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
+                  <span style="color:#000000; font-weight:bold;"><a href="${link1}" style="text-decoration:none; color:#000;" target="_blank">${product1}</a> </span><br />
+                  ${description1}</div>
+                  
+                  <a href="${link1}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; text-decoration:none;" target="_blank">${cta1}</a>
+        </td>
+        <td width="3%">&nbsp;</td>
+        <td width="31%" valign="top">
+          <div style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
+                  <span style="color:#000000; font-weight:bold;"><a href="${link2}" style="text-decoration:none; color:#000;" target="_blank">${product2}</a> </span><br />
+                  ${description2}</div>
+                  
+                  <a href="${link2}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; text-decoration:none;" target="_blank">${cta2}</a>
+        </td>
+        <td width="3%">&nbsp;</td>
+        <td width="33%">
+          <div style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px;">
+                  <span style="color:#000000; font-weight:bold;"><a href="${link3}" style="text-decoration:none; color:#000;" target="_blank">${product3}</a> </span>
+                  <br />
+                  ${description3}</div>
+                  
+                  <a href="${link3}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:18px; color:#d2232a; font-weight:bold; text-decoration:none;" target="_blank">${cta3}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table></td>
+</tr>
+  <!--END THREE COLUMNS-->
+  `)
 }
 
 export function products(fields) {
@@ -921,7 +1116,7 @@ export function products(fields) {
                           </tr>
                           <tr>
                             <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                              <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                              </td>
                           </tr>
                         </tbody>
                       </table>
@@ -967,7 +1162,7 @@ export function products(fields) {
                                                   </tr>
                                                   <tr>
                                                     <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                                      <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                                      </td>
                                                   </tr>
                                                 </tbody>
                                               </table>
@@ -987,7 +1182,7 @@ export function products(fields) {
                                                   </tr>
                                                   <tr>
                                                     <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                                      <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                                      </td>
                                                   </tr>
                                                 </tbody>
                                               </table>
@@ -1003,7 +1198,7 @@ export function products(fields) {
                                         <tbody>
                                           <tr>
                                             <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                              <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                              </td>
                                           </tr>
                                           <tr>
                                             <td align="left" style="font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:13px; line-height:16px; padding-left:15px;">
@@ -1017,7 +1212,7 @@ export function products(fields) {
                                           </tr>
                                           <tr>
                                             <td align="center" class="hide" height="15" style="font-size:15px; line-height:15px;">
-                                              <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                              </td>
                                           </tr>
                                         </tbody>
                                       </table>
@@ -1029,7 +1224,7 @@ export function products(fields) {
                                                 <tbody>
                                                   <tr>
                                                     <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                                      <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                                      </td>
                                                   </tr>
                                                   <tr>
                                                     <td align="center" style="padding-left:15px;" valign="top">
@@ -1037,7 +1232,7 @@ export function products(fields) {
                                                   </tr>
                                                   <tr>
                                                     <td align="center" height="15" style="font-size:15px; line-height:15px;">
-                                                      <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+                                                      </td>
                                                   </tr>
                                                 </tbody>
                                               </table>
@@ -1080,7 +1275,7 @@ export function end() {
   </tr>
     <tr>
       <td align="center" height="15" style="font-size:15px; line-height:15px;">
-        <img alt="" border="0" height="15" src="https://www.dentalaegis.com/media/59866/" style="display:block; margin:0px; max-width:15px;" width="15" /></td>
+        </td>
     </tr>
   </tbody>
 </table>

@@ -184,6 +184,26 @@ export const cced_thematic_forms = {
       { label: 'Image Source Link', name: 'imgSrc', value: 'https://placehold.it/150' },
     ]
   },
+  on_demand_webinar: {
+    typeOfRow: 'on_demand_webinar',
+    header: 'On-Demand Webinar',
+    closable: true,
+    switchable: true,
+    addable: true,
+    draggable: true,
+    fields: [
+      { label: 'Header', name: 'header', value: 'Featured On-Demand Webinar' },
+      { label: 'Title', name: 'title', value: 'Lorem Ipsum Title' },
+      { label: 'Presenter', name: 'presenter', value: 'Dr. Lorem' },
+      { label: 'Provider', name: 'provider', value: 'Ipsum' },
+      { label: 'Commercial Supporter', name: 'supporter', value: 'Lor Ipsum LLC' },
+      { label: 'Cost', name: 'cost', value: '$16.00' },
+      { label: 'Credits', name: 'credits', value: '2 CEU' },
+      { label: 'Link', name: 'link' },
+      { label: 'Image Source Link', name: 'img', value: "https://placehold.it/150x100" },
+      { label: 'Call-to-Action', name: 'cta', value: 'Learn More ▶' }
+    ]
+  },
   end: {
     typeOfRow: 'end',
     header: 'End of the Email',
@@ -204,6 +224,7 @@ export const cced_thematic_initial_state = [
   _.cloneDeep(cced_thematic_forms.featured),
   _.cloneDeep(cced_thematic_forms.products),
   _.cloneDeep(cced_thematic_forms.featured_video),
+  _.cloneDeep(cced_thematic_forms.on_demand_webinar),
   _.cloneDeep(cced_thematic_forms.end)
 ];
 
@@ -228,6 +249,129 @@ export function beginning(fields) {
   <!--<![endif]-->		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
       <title>${emailName}</title>
       <style type="text/css">
+      /* RESET STYLES */
+      img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+      table { border-collapse: collapse !important; }
+      body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+      .webinar-img{
+        float: right;
+      }
+      @media (max-width: 425px) {
+          /* General Styles */
+          
+          img {
+              max-width: 100%;
+          }
+          .margin {
+              margin-left: 15px !important;
+              margin-right: 15px !important;
+          }
+      .clear {
+            float: none !important;
+              display: block !important;
+              width: 100% !important;
+              margin-bottom: 10px !important;
+          }
+          
+          /* Email Container */
+          
+          .email-container {
+              width: 100% !important;
+          }
+          .main-content,
+          .main-content {
+              width: 100% !important;
+          }
+          
+          /* Header and Navigation */
+          
+          .nav-mod {
+              padding: 20px 0 0 0 !important;
+          }
+          .nav-mod td {
+              width: 100% !important;
+              display: block;
+              text-align: center;
+          }
+          .nav-mod td .soc {
+              width: 56px !important;
+              padding: 10px 0 !important;
+          }
+          .masthead {
+              padding: 0 10px !important;
+          }
+          .image img {
+              width: 100% !important;
+              margin: 0 !important;
+              padding: 0 !important;
+          }
+          .header-module table {
+              width: 100% !important;
+          }
+          .header-module table td {
+              width: 50% !important;
+              text-align: center;
+          }
+          .cdeworld-logo,
+          .subscribe-button {
+              margin: 0 !important;  
+              padding: 0 !important;
+          }
+          .cdeworld-logo {
+              max-width: 95%;
+              padding: 10px 0 !important;
+          }
+          .subscribe-button img {
+              max-width: 73% !important;
+              height: auto !important;
+          }
+          .main-image img {
+              border: none !important;
+          }
+          .newsletter-title {
+              font-size: 1.2em !important;
+              padding-left: 15px !important;
+              padding-right: 15px !important;
+          }
+          
+          /* Modules */
+          
+          .module-title {
+              padding: 0 15px !important;
+          }
+          .module-body {
+              margin: 0 15px !important;
+          }
+          .columns td {
+              width: 100% !important;
+              display: block !important;
+          }
+          .link {
+              padding: 12px 10px !important;
+              display: inline-block !important;
+              background-color: #2f84c0 !important;
+              color: #ffffff !important;
+              text-decoration: none !important;
+              margin-bottom: 15px !important;
+              margin-top: 7px !important;
+          }
+          
+          /* Section End */
+          .section-end-mod table {
+              margin: 12px 15px 0 15px !important; 
+          }
+          
+          /* Divider */
+          .divider {
+              text-align: center !important;
+          }
+          
+          .featured-article {
+              margin-top: 15px !important;
+              margin-bottom: 15px !important;
+          }
+      }
+
   body {
       margin: 0 !important;
       padding: 0;
@@ -952,7 +1096,7 @@ ${header2}</span>	`
 export function featured(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
-  // let author = fields[2].value;
+  let author = fields[2].value;
   let description = fields[3].value;
   let link = fields[4].value;
   let imgLink = fields[5].value;
@@ -982,12 +1126,13 @@ export function featured(fields) {
                                       <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
                                         <a href="${link}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title}</a></div>
                                       <div style="font-size:14px; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
+                                        ${author ? `<em>${author}</em><br />` : ``}
                                         ${description}<br />
                                         <a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">${cta} ▶</a></div>
                                     </td>
                                     <td width="40%">
                                       <center>
-                                        <a href="${link}" target="_blank"><img align="right" alt="" src="${imgLink}" style="border-width:0;max-width:150px; margin-right:10px;" width="150" /></a></center>
+                                        <a href="${link}" target="_blank"><img align="right" alt="" src="${imgLink}" style="border-width:0;max-width:150px; margin-right:20px;" width="150" /></a></center>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -1006,7 +1151,7 @@ export function featured(fields) {
 export function featured_video(fields) {
   let header = fields[0].value;
   let title = fields[1].value;
-  // let author = fields[2].value;
+  let author = fields[2].value;
   let description = fields[3].value;
   let link = fields[4].value;
   let imgLink = fields[5].value;
@@ -1036,12 +1181,13 @@ export function featured_video(fields) {
                                       <div style="font-size:16px; font-weight:bold; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
                                         <a href="${link}" style="font-size:16px; font-weight:bold; font-family:'Times New Roman', serif; color:#000000; text-decoration:none;" target="_blank">${title}</a></div>
                                       <div style="font-size:14px; margin:0 0 0 14px; font-family:'Times New Roman', serif;">
+                                        ${author ? `<em>${author}</em><br />` : ``}
                                         ${description}<br />
                                         <a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">${cta} ▶</a></div>
                                     </td>
                                     <td width="40%">
                                       <center>
-                                        <a href="${link}" target="_blank"><img align="right" alt="" src="${imgLink}" style="border-width:0;max-width:150px; margin-right:10px;" width="150" /></a></center>
+                                        <a href="${link}" target="_blank"><img align="right" alt="" src="${imgLink}" style="border-width:0;max-width:150px; margin-right:20px;" width="150" /></a></center>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -1165,6 +1311,67 @@ export function products(fields) {
               <![endif]-->							</td>
   </tr>
   `)
+}
+
+export function on_demand_webinar(fields) {
+  let header = fields[0].value;
+  let title = fields[1].value;
+  let presenter = fields[2].value;
+  let provider = fields[3].value;
+  let supporter = fields[4].value;
+  let cost = fields[5].value;
+  let credits = fields[6].value;
+  let link = fields[7].value;
+  let img = fields[8].value;
+  let cta = fields[9].value;
+  return (
+    `
+  <!--START ON-DEMAND WEBINAR WITH HEADER-->
+  <tr>
+      <td>
+          ${header ? `<center>
+          <div style="background-color:#333333; color:#fff; text-transform:uppercase; font-size:10px; font-family:Arial, San Serif; padding:2px 6px; display: inline-block; letter-spacing: .5px; margin:0px 0px 14px 0px; vertical-align:top;">
+            ${header}</div>
+        </center>` : ``}
+          <!-- Webinar # -->
+          <div class="module-body" style="font-size:14px; font-family:'Times New Roman', serif; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+              ${title ? `<span style="color:#333333; font-weight: bold; font-size:16px; line-height:20px;">${title}</span>` : ``}
+              <div style="margin:0px 0px;">
+                  <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0; font-family:'Times New Roman', serif;">
+                      <tr>
+                          <td valign="top" width="48%" style="padding-right: 15px;">
+                              ${presenter ? `<strong>Presenter:</strong> ${presenter}<br>` : ``}
+                              ${provider ? `<strong>Provider:</strong> ${provider}<br>` : ``}
+                              ${supporter ? `<strong>Commercial Supporter:</strong> <em>${supporter}</em>` : ``}
+                          </td>
+                          <td valign="top">
+                              <table style="font-family:'Times New Roman', serif;">
+                              <tr>
+                                  <td valign="top" style="padding-right: 25px;"  width="50%">
+                                  ${credits ? `<strong>Credits:</strong> ${credits}<br>` : ``}
+                                  ${cost ? `<strong>Cost:</strong> ${cost}` : ``}
+                                  </td>
+                                  ${img ?
+      `<td  width="50%">
+                                      <a href="${link}" target="_blank">
+                                          <img class="webinar-img" src="${img}" />
+                                      </a>
+                                      </td>` :
+      ``}
+                              </tr>
+                              </table>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+              <div style="margin-bottom:10px"><a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">${cta}</a><div>
+            </div>
+          <!-- End of Webinar # -->
+      </td>
+  </tr>
+  <!--END ON-DEMAND WEBINAR WITH HEADER-->
+  `
+  )
 }
 
 export function end() {

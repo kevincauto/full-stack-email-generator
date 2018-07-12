@@ -193,7 +193,7 @@ export const cced_thematic_forms = {
     draggable: true,
     fields: [
       { label: 'Header', name: 'header', value: 'Featured On-Demand Webinar' },
-      { label: 'Title', name: 'title', value: 'Lorem Ipsum Title' },
+      { label: 'Title', name: 'title', value: 'undefined title' },
       { label: 'Presenter', name: 'presenter', value: 'Dr. Lorem' },
       { label: 'Provider', name: 'provider', value: 'Ipsum' },
       { label: 'Commercial Supporter', name: 'supporter', value: 'Lor Ipsum LLC' },
@@ -201,7 +201,7 @@ export const cced_thematic_forms = {
       { label: 'Credits', name: 'credits', value: '2 CEU' },
       { label: 'Link', name: 'link' },
       { label: 'Image Source Link', name: 'img', value: "https://placehold.it/150x100" },
-      { label: 'Call-to-Action', name: 'cta', value: 'Learn More ▶' }
+      { label: 'Call-to-Action', name: 'cta', value: 'Learn More' }
     ]
   },
   end: {
@@ -1334,7 +1334,7 @@ export function on_demand_webinar(fields) {
             ${header}</div>
         </center>` : ``}
           <!-- Webinar # -->
-          <div class="module-body" style="font-size:14px; font-family:'Times New Roman', serif; color:#54575A; margin:15px 32px 15px 32px; line-height:16px;">
+          <div class="module-body" style="font-size:14px; font-family:'Times New Roman', serif; color:#54575A; margin:15px 30px 15px 30px; line-height:16px;">
               ${title ? `<span style="color:#333333; font-weight: bold; font-size:16px; line-height:20px;">${title}</span>` : ``}
               <div style="margin:0px 0px;">
                   <table class="columns" width="100%" cellpadding="0" cellspacing="0" border="0" style="padding:5px 0; font-family:'Times New Roman', serif;">
@@ -1364,7 +1364,7 @@ export function on_demand_webinar(fields) {
                       </tr>
                   </table>
               </div>
-              <div style="margin-bottom:10px"><a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">${cta}</a><div>
+              <div style="margin-bottom:10px"><a href="${link}" style="color:#76706a; text-decoration:none; font-family:Gotham, sans-serif; font-size:12px;" target="_blank">${cta} ▶</a><div>
             </div>
           <!-- End of Webinar # -->
       </td>

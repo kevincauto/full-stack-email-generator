@@ -46,9 +46,15 @@ export const id_digital_forms = {
                     { value: '2022', text: 'Send Year: 2022' }
                 ]
             },
-            { label: 'Header Image Source', name: 'headerSrc', value: 'https://www.dentalaegis.com/media/64933/' },
+            { label: 'Header Image Source', name: 'headerSrc', value: 'https://www.aegisdentalnetwork.com/media/65652/' },
             { label: 'Cover Image Source', name: 'coverSrc', value: 'https://placehold.it/180x220' },
-            { label: 'Digimag Link', name: 'link' }
+            { label: 'Digimag Link', name: 'link' },
+            { label: 'Volume Number', name: 'volume' },
+            { label: 'Magazine Number', name: 'number' },
+            {
+                label: 'Subscribe Link', name: 'subscribe',
+                // value: 'https://www.aegisdentalnetwork.com/id/subscribe/digital?6418a' 
+            }
         ]
     },
     article: {
@@ -131,9 +137,12 @@ export function beginning(fields) {
     let emailName = fields[0].value;
     let month = fields[1].value;
     let year = fields[2].value;
-    let headerSrc = fields[3].value;
+    // let headerSrc = fields[3].value;
     let coverSrc = fields[4].value;
     let link = fields[5].value;
+    let volume = fields[6].value;
+    let number = fields[7].value;
+    let subcribe = fields[8].value;
 
     let monthName;
     if (month === '01') { monthName = 'January' };
@@ -151,51 +160,57 @@ export function beginning(fields) {
 
 
     return (`
-  <html>
-      <head>
-          <title>${emailName}</title>
-      </head>
-      <body>
-      <a href="https://www.dentalaegis.com/id" target="_blank"></a>
-          <center>
-              <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial, sans-serif; border:solid 1px #e7e7e8; color:#000000;" width="612">
-                  <tbody>
-                      <tr>
-                          <td align="center" colspan="2" style="font-family:Arial, sans-serif; font-size:10px; color:#6d6f72; text-align:center; text-transform:uppercase; border-bottom:solid 1px #989797;">
-                              Having trouble viewing this email? <a href="https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital" style="color:#9d0707; text-decoration:none;" target="_blank">Click here</a>.</td>
-                      </tr>
-                      <tr>
-                          <td align="center">
-                              <a href="https://www.dentalaegis.com/id" target="_blank"><img alt="" height="118" src="${headerSrc}" usemap="#Map2" width="600" /></a></td>
-                      </tr>
-                      <tr>
-                          <td>
-                              <table border="0" cellpadding="0" cellspacing="0" width="612">
-                                  <tbody>
-                                      <tr>
-                                          <td align="center" colspan="2" valign="top">
-                                              <table border="0" cellpadding="0" cellspacing="0" style="margin:4% 0 0 0; background-color:#aaa;" width="555">
-                                                  <tbody>
-                                                      <tr>
-                                                          <td valign="middle" width="352">
-                                                              <div style="color:#ffffff; margin:0 11px 14px 21px; width:290px; font-family:Arial, sans-serif; text-align:left; font-size:34px;">
-                                                                  <a href="${link}" style="text-decoration:none; color:#ffffff;" target="_blank">Your ${monthName} Digital Edition<br />
-                                                                  Is Here!</a></div>
-                                                              <a href="${link}" target="_blank"><img src="http://aegispublications.com/news/id/2016/11/digital-btn.png" style="margin:0 0 0 22px;" width="257" /></a></td>
-                                                          <td width="203">
-                                                              <a href="${link}" target="_blank"><img alt="" src="${coverSrc}" style="margin:11% 4% 11% 4%;" width="164" /></a></td>
-                                                      </tr>
-                                                  </tbody>
-                                              </table>
-                                          </td>
-                                      </tr>
-                                      <tr>
-                                          <td align="center" colspan="2">
-                                              <div style="margin:1px 0 12px 0; clear:both; padding:14px 0 0 0;">
-                                                  <img alt="" src="http://aegispublications.com/news/cced/2015/img/dash.jpg" width="600" /></div>
-                                          </td>
-                                      </tr>
-  <!--END OF BEGINING-->
+    <!doctype html>
+    <html>
+        <head>
+            <meta charset="UTF-8" />
+            <title>${emailName}</title>
+        </head>
+        <body>
+    <!-- g-link -->		
+    <a href="https://www.dentalaegis.com/idt/" target="_blank"></a>
+    <center>
+                <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial, sans-serif; border:solid 1px #e7e7e8; color:#000000; border:solid 1px #aaa;" widh="612">
+                    <tbody>
+                        <tr>
+                            <td align="center" colspan="2" style="font-size:11px; line-height:16px; border-bottom:solid 1px #aaa;">
+                                Having trouble viewing this email? <a href="https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital" style="color:#db1f28; text-decoration:none;" target="_blank">Click here</a>.</td>
+                        </tr>
+                        <tr>
+                        <td align="center" colspan="2">
+                            <a href="http://www.dentalaegis.com/id/" target="_blank"><img src="https://i.imgur.com/GaDS8bl.png" style="padding: 5px;" width="220" /></a></td>
+                    </tr>
+                    <tr>
+                        <td valign="middle">
+                            <div style="color:#FFFFFF; font-family: 'Times New Roman', serif; font-size:13px; padding: 8px 5px; margin: 0px 5px; background-color:#ac1d0f;  vertical-align:middle; text-align: center;">
+                                <a href="http://www.dentalaegis.com/id/${year}/${month}" style="color:#fff; text-decoration: none;" target="_blank">${monthName} ${year} | Vol. ${volume}, No. ${number}</a> | <a href="https://www.aegisdentalnetwork.com/id/" style="color:#fff; text-decoration: none;" target="_blank">insidedentistry.net</a> | <a href="${subcribe}" style="color:#fff; text-decoration: none;" target="_blank">Subscribe</a> | <a href="mailto:?subject=FW:%20Inside%20Dentistry%20${monthName}%20${year}%20Digital%20Edition%20&amp;body=I%20thought%20you%20might%20be%20interested%20in%20this: https://www.dentalaegis.com/id/${year}/${month}/newsletter/digital?refer=true" style="color:#fff; text-decoration: none;" target="_blank">Forward to a Colleague</a></div>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <table border="0" cellpadding="0" cellspacing="0" style="margin:4% 0 0 0; background-color:#aaa;" width="555">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="middle" width="337">
+                                                <div style="color:#ffffff;  font-size:34px; margin:14px 21px 4px 21px; width:300px; font-family:Arial, sans-serif; text-align:left; font-size:35px;">
+                                                    <a href="${link}" style="color:#fff; text-decoration:none;" target="_blank">Your ${monthName}<br />
+                                                    Digital Edition<br />
+                                                    Is Here!</a></div>
+                                                <a href="${link}" target="_blank"> <img alt="" src="https://www.dentalaegis.com/media/58943/" style="margin:0 22px 14px 22px" width="242" /></a></td>
+                                            <td valign="middle" width="218">
+                                                <a href="${link}" target="_blank"><img alt="" src="${coverSrc}" style="margin:4%;" width="152" /></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <div style="margin:14px 0 12px 0; clear:both; padding:14 0 0 0;">
+                                    <img alt="" src="http://aegispublications.com/news/cced/2015/img/dash.jpg" width="600" /></div>
+                            </td>
+                        </tr>
+    <!--END OF BEGINING-->
   `)
 }
 

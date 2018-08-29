@@ -564,7 +564,7 @@ export function beginning(fields) {
                                   <tr>
                                       <td>
                                           <a href="http://www.cdeworld.com" target="_blank">
-                                              <img class="cdeworld-logo" src="http://aegispublications.com/news/cdeworld/2017/logos/cde-logo.jpg" width="420" height="85" alt="CDEWorld" style="margin:0 18px 27px 22px;" border="0">
+                                              <img class="cdeworld-logo" src="http://aegispublications.com/news/cdeworld/2017/logos/cde-logo-new.jpg" width="420" height="85" alt="CDEWorld" style="margin:0 18px 27px 22px;" border="0">
                                           </a>
                                       </td>
                                       <td class="subscribe-button" width="170" style="padding-bottom: 31px; padding-left: 20px; padding-right: 28px;"><a href="${subscribe}" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/10/email-subscribebtn.png" border="0" style="height:45px;" /></a></td>
@@ -1357,7 +1357,7 @@ export function end(fields) {
     <tr>
         <!-- Fine Print - Credits -->
         <td class="masthead image">
-            <img class="ads" src="http://aegispublications.com/news/cdeworld/2017/08/images/dls-fineprint.jpg" width="540" alt="" style="margin-left:25px;">
+            <img class="ads" src="http://aegispublications.com/news/cdeworld/2017/08/images/dls-fineprint-new.jpg" width="540" alt="" style="margin-left:25px;">
         </td>
         <!-- End of Fine Print - Credits -->
     </tr>

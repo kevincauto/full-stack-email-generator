@@ -543,7 +543,7 @@ export function beginning(fields) {
                             <tr>
                               <td align="center"><table cellpadding="0" cellspacing="0" border="0" width="100%">
                                   <tr>
-                                    <td style="padding:12px 0 0;"><a href="http://www.cdeworld.com" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2017/logos/cdew-logo.jpg" width="420" height="85" alt="" border="0" class="w420"></a></td>
+                                    <td style="padding:12px 0 0;"><a href="http://www.cdeworld.com" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2017/logos/cde-logo-new.jpg" width="420" height="85" alt="" border="0" class="w420"></a></td>
                                     <td width="170" style="padding-left: 20px;" class="padL"><a href="http://aegispublications.com/machform/view.php?id=82" target="_blank"><img src="http://aegispublications.com/news/cdeworld/2014/10/email-subscribebtn.png" border="0" style="height:45px; width:170px;" width="170" class="w170"></a></td>
                                   </tr>
                                 </table></td>

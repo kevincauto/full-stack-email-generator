@@ -1,2 +1,9 @@
 node_modules
 dev.js
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/full-stack-email-generator.iml
+.DS_Store
+.DS_Store

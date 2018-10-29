@@ -170,7 +170,7 @@ export function beginning(fields) {
     <!-- g-link -->		
     <a href="https://www.dentalaegis.com/idt/" target="_blank"></a>
     <center>
-                <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial, sans-serif; border:solid 1px #e7e7e8; color:#000000; border:solid 1px #aaa;" widh="612">
+                <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial, sans-serif; border:solid 1px #e7e7e8; color:#000000; border:solid 1px #aaa;" width="612">
                     <tbody>
                         <tr>
                             <td align="center" colspan="2" style="font-size:11px; line-height:16px; border-bottom:solid 1px #aaa;">
@@ -178,7 +178,7 @@ export function beginning(fields) {
                         </tr>
                         <tr>
                         <td align="center" colspan="2">
-                            <a href="http://www.dentalaegis.com/id/" target="_blank"><img src="https://i.imgur.com/GaDS8bl.png" style="padding: 5px;" width="220" /></a></td>
+                            <a href="http://www.dentalaegis.com/id/" target="_blank"><img src="http://aegispublications.com/news/id/2018/10/id-logo-digital.png" style="padding: 5px;" width="220" /></a></td>
                     </tr>
                     <tr>
                         <td valign="middle">

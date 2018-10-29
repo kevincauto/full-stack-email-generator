@@ -925,7 +925,7 @@ export function beginning(fields) {
   
                                               <td class="full-width-image" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
   
-                                                  <img alt="" src="https://www.aegisdentalnetwork.com/media/66081/" style="border-width:0;width:100%;max-width:600px;height:auto;" width="600" /></td>
+                                                  <img alt="" src="http://aegispublications.com/news/id/2018/10/id-logo-thematic.png" style="border-width:0;width:100%;max-width:600px;height:auto;" width="600" /></td>
   
                                           </tr>
   
